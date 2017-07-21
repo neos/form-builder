@@ -1,6 +1,7 @@
 'Wwwision.Neos.Form:DatePicker':
   superTypes:
     'Wwwision.Neos.Form:FormElement': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
   ui:
     label: 'Date picker'
     icon: 'icon-calendar'
