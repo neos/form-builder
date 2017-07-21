@@ -1,0 +1,4 @@
+# See Neos\Flow\Validation\Validator\EmailAddressValidator
+prototype(Wwwision.Neos.Form:EmailAddressValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:EmailAddress'
+}

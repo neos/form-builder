@@ -1,0 +1,4 @@
+prototype(Wwwision.Neos.Form:HiddenField) < prototype(Wwwision.Neos.Form:FormElement) {
+    formElementType = 'Neos.Form:HiddenField'
+
+}

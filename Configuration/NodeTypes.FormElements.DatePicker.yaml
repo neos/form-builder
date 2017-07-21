@@ -1,0 +1,14 @@
+'Wwwision.Neos.Form:DatePicker':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+  ui:
+    label: 'Date picker'
+    icon: 'icon-calendar'
+    group: 'form.custom'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-calendar'
+  options:
+    form:
+      formElementType: 'Neos.Form:DatePicker'

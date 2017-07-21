@@ -1,0 +1,95 @@
+'Wwwision.Neos.Form:EmailFinisher':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractFinisher': TRUE
+  ui:
+    label: 'Email finisher'
+    icon: 'icon-envelope-o'
+    inspector:
+      groups:
+        'finisher':
+          icon: 'icon-envelope-o'
+  options:
+    form:
+      formElementType: 'Neos.Form:Email'
+  properties:
+    'subject':
+      type: string
+      ui:
+        label: 'Email subject'
+        inspector:
+          group: 'finisher'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'recipientAddress':
+      type: string
+      ui:
+        label: 'Recipient email address'
+        inspector:
+          group: 'finisher'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'recipientName':
+      type: string
+      ui:
+        label: 'Recipient name'
+        inspector:
+          group: 'finisher'
+    'senderAddress':
+      type: string
+      ui:
+        label: 'Sender email address'
+        inspector:
+          group: 'finisher'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'senderName':
+      type: string
+      ui:
+        label: 'Sender name'
+        inspector:
+          group: 'finisher'
+    'replyToAddress':
+      type: string
+      ui:
+        label: 'ReplyTo email address'
+        inspector:
+          group: 'finisher'
+    'carbonCopyAddress':
+      type: string
+      ui:
+        label: 'CC email address'
+        inspector:
+          group: 'finisher'
+    'blindCarbonCopyAddress':
+      type: string
+      ui:
+        label: 'BCC email address'
+        inspector:
+          group: 'finisher'
+    'format':
+      type: string
+      ui:
+        label: 'Email format'
+        inspector:
+          group: 'finisher'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'html':
+                label: 'HTML'
+                icon: 'icon-code'
+              'plaintext':
+                label: 'Plaintext'
+                icon: 'icon-font'
+    'testMode':
+      type: boolean
+      ui:
+        label: 'Test mode (do not send)'
+        inspector:
+          group: 'finisher'

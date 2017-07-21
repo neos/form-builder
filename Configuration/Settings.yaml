@@ -1,0 +1,32 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        'Wwwision.Neos.Form': true
+
+    nodeTypes:
+      groups:
+        'form.elements':
+          label: 'Input Form Elements'
+          collapsed: false
+        'form.select':
+          label: 'Select Form Elements'
+          collapsed: false
+        'form.custom':
+          label: 'Custom Form Elements'
+          collapsed: false
+        'form.container':
+          label: 'Container Form Elements'
+          collapsed: false
+        'form.pages':
+          label: 'Form Pages'
+          collapsed: false
+        'form.finisher':
+          label: 'Form Finisher'
+          collapsed: false
+        'form.validator':
+          label: 'Form Validators'
+          collapsed: false
+        'form.selectOptions':
+          label: 'Select options'
+          collapsed: false

@@ -1,0 +1,13 @@
+'Wwwision.Neos.Form:TextValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Text validator'
+    icon: 'icon-font'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-font'
+  options:
+    form:
+      formElementType: 'Neos.Flow:Text'

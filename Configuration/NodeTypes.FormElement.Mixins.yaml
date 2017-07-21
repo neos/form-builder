@@ -1,0 +1,16 @@
+'Wwwision.Neos.Form:SelectionMixin':
+  ui:
+    group: 'form.select'
+  childNodes:
+    'options':
+      type: 'Wwwision.Neos.Form:SelectOptionCollection'
+
+'Wwwision.Neos.Form:DefaultValueMixin':
+  properties:
+    'defaultValue':
+      type: string
+      ui:
+        label: 'Default value'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElementMore'

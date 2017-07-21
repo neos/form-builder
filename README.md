@@ -1,2 +1,5 @@
 # Wwwision.Neos.Form
-[BETA] Flow Form Framework integration into Neos CMS
+
+Flow Form Framework integration into Neos CMS (BETA)
+
+*This is work in progress, stay tuned*

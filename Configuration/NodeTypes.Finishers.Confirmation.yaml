@@ -1,0 +1,23 @@
+'Wwwision.Neos.Form:ConfirmationFinisher':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractFinisher': TRUE
+  ui:
+    label: 'Confirmation finisher'
+    icon: 'icon-comment'
+    inspector:
+      groups:
+        'finisher':
+          icon: 'icon-comment'
+  options:
+    form:
+      formElementType: 'Neos.Form:Confirmation'
+  properties:
+    'message':
+      type: string
+      ui:
+        label: 'Confirmation message'
+        inspector:
+          group: 'finisher'
+          editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'edit confirmation message'

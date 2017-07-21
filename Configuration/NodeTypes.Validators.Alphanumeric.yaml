@@ -1,0 +1,13 @@
+'Wwwision.Neos.Form:AlphanumericValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Alphanumeric validator'
+    icon: 'icon-font'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-font'
+  options:
+    form:
+      formElementType: 'Neos.Flow:Alphanumeric'

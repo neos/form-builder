@@ -1,0 +1,7 @@
+prototype(Wwwision.Neos.Form:Validator) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\ValidatorImplementation'
+
+    formElementType = ${null}
+
+    options = Neos.Fusion:RawArray
+}

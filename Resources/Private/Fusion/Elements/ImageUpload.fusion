@@ -1,0 +1,7 @@
+prototype(Wwwision.Neos.Form:FileUpload) < prototype(Wwwision.Neos.Form:FormElement) {
+    formElementType = 'Neos.Form:ImageUpload'
+
+    properties {
+        allowedTypes = Neos.Fusion:RawArray
+    }
+}

@@ -1,0 +1,4 @@
+# See Neos\Flow\Validation\Validator\TextValidator
+prototype(Wwwision.Neos.Form:TextValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:Text'
+}

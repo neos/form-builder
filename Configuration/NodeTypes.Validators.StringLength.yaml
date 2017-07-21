@@ -1,0 +1,28 @@
+'Wwwision.Neos.Form:StringLengthValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'String length validator'
+    icon: 'icon-text-width'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-text-width'
+  options:
+    form:
+      formElementType: 'Neos.Flow:StringLength'
+  properties:
+    'minimum':
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Minimum length'
+        inspector:
+          group: 'validator'
+    'maximum':
+      type: integer
+      defaultValue: 100
+      ui:
+        label: 'Maximum length'
+        inspector:
+          group: 'validator'

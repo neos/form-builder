@@ -1,0 +1,15 @@
+'Wwwision.Neos.Form:PreviewPage':
+  superTypes:
+    'Wwwision.Neos.Form:FormPage': TRUE
+  ui:
+    label: 'Preview page'
+    icon: 'icon-file-text-o'
+    inspector:
+      groups:
+        'formPage':
+          icon: 'icon-file-text-o'
+  options:
+    form:
+      formElementType: 'Neos.Form:PreviewPage'
+  childNodes:
+    'elements': ~

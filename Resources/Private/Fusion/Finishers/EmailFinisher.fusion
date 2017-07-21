@@ -1,0 +1,21 @@
+prototype(Wwwision.Neos.Form:EmailFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+    formElementType = 'Neos.Form:Email'
+
+    options {
+        subject = ${null}
+        recipientAddress = ${null}
+        recipientName = ''
+        senderAddress = ${null}
+        senderName = ''
+        replyToAddress = ${null}
+        carbonCopyAddress = ${null}
+        blindCarbonCopyAddress = ${null}
+        format = 'html'
+        testMode = ${false}
+
+        templatePathAndFilename = ${null}
+        partialRootPath = ${null}
+        layoutRootPath = ${null}
+        variables = ${null}
+    }
+}

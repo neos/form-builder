@@ -1,0 +1,34 @@
+'Wwwision.Neos.Form:ImageUpload':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+  ui:
+    label: 'Image Upload'
+    icon: 'icon-picture-o'
+    group: 'form.custom'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-picture-o'
+  options:
+    form:
+      formElementType: 'Neos.Form:ImageUpload'
+  properties:
+    'allowedTypes':
+      type: array
+      ui:
+        label: 'Allowed image types'
+        inspector:
+          group: 'formElement'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'jpeg':
+                label: 'JPEG'
+              'png':
+                label: 'PNG'
+              'gif':
+                label: 'GIF'
+                icon: 'icon-file-excel-o'
+              'tiff':
+                label: 'TIFF'

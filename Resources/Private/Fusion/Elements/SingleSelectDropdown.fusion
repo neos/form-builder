@@ -1,0 +1,4 @@
+prototype(Wwwision.Neos.Form:SingleSelectDropdown) < prototype(Wwwision.Neos.Form:SelectionFormElement) {
+    formElementType = 'Neos.Form:SingleSelectDropdown'
+
+}

@@ -1,0 +1,7 @@
+# See Neos\Flow\Validation\Validator\RegularExpressionValidator
+prototype(Wwwision.Neos.Form:RegularExpressionValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:RegularExpression'
+    options {
+        regularExpression = ''
+    }
+}

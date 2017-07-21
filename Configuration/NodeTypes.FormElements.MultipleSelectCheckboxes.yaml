@@ -1,0 +1,16 @@
+'Wwwision.Neos.Form:MultipleSelectCheckboxes':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+    'Wwwision.Neos.Form:SelectionMixin': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+  ui:
+    label: 'Multiple Select (Checkboxes)'
+    icon: 'icon-list-ol'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-list-ol'
+    position: 35
+  options:
+    form:
+      formElementType: 'Neos.Form:MultipleSelectCheckboxes'

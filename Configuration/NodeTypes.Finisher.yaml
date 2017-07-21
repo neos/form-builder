@@ -1,0 +1,35 @@
+'Wwwision.Neos.Form:AbstractFinisher':
+  abstract: TRUE
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    label: 'Form finisher'
+    icon: 'icon-sign-out'
+    group: 'form.finisher'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'finisher':
+          label: 'Finisher options'
+          position: 35
+          icon: 'icon-sign-out'
+  options:
+    fusion:
+      prototypeGenerator: null
+
+'Wwwision.Neos.Form:FinisherCollection':
+  label: '${"Form finishers"}'
+  ui:
+    icon: 'icon-share-square-o'
+    inlineEditable: TRUE
+  superTypes:
+    'Neos.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'Wwwision.Neos.Form:AbstractFinisher': TRUE
+
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Wwwision.Neos.Form:AbstractFinisher': FALSE

@@ -1,0 +1,32 @@
+'Wwwision.Neos.Form:DateTimeRangeValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'DateTime range validator'
+    icon: 'icon-calendar-check-o'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-calendar-check-o'
+  options:
+    form:
+      formElementType: 'Neos.Flow:DateTimeRange'
+  properties:
+    'earliestDate':
+      type: string
+      ui:
+        label: 'Earliest date'
+        inspector:
+          group: 'validator'
+          editor: 'Neos.Neos/Inspector/Editors/DateTimeEditor'
+          editorOptions:
+            format: d-m-Y
+    'latestDate':
+      type: string
+      ui:
+        label: 'Latest date'
+        inspector:
+          group: 'validator'
+          editor: 'Neos.Neos/Inspector/Editors/DateTimeEditor'
+          editorOptions:
+            format: d-m-Y

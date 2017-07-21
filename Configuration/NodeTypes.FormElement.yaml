@@ -1,0 +1,140 @@
+'Wwwision.Neos.Form:FormElement':
+  abstract: TRUE
+  superTypes:
+    'Neos.Neos:Content': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  label: "${q(node).property('identifier') || q(node).property('label') || ((node.nodeType.label || node.nodeType.name) + ' (' + node.name + ')')}"
+  ui:
+    inlineEditable: TRUE
+    label: 'Form element'
+    icon: 'icon-square-o'
+    group: 'form.elements'
+    inspector:
+      groups:
+        'formElement':
+          label: 'Form Element options'
+          position: 45
+          icon: 'icon-square-o'
+        'formElementMore':
+          label: 'Form Element options'
+          position: 100
+          icon: 'icon-square-o'
+  options:
+    fusion:
+      prototypeGenerator: null
+  childNodes:
+    'validators':
+      type: 'Wwwision.Neos.Form:ValidatorCollection'
+  properties:
+    _nodeType:
+      ui:
+        inspector:
+          editorOptions:
+            baseNodeType: 'Wwwision.Neos.Form:FormElement'
+    'identifier':
+      type: string
+      ui:
+        label: 'Identifier (optional)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]+$/i'
+    'label':
+      type: string
+      ui:
+        label: 'Label'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+    'required':
+      type: boolean
+      ui:
+        label: 'Required field'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+
+'Wwwision.Neos.Form:ElementCollection':
+  label: '${"Elements"}'
+  ui:
+    icon: 'icon-list'
+    inlineEditable: TRUE
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'Wwwision.Neos.Form:FormElement': TRUE
+
+'Wwwision.Neos.Form:SelectOption':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  label: "${q(node).property('label') || q(node).property('value') || '[not set]'}"
+  ui:
+    inlineEditable: TRUE
+    label: 'Select option'
+    icon: 'icon-check'
+    group: 'form.selectOptions'
+    inspector:
+      groups:
+        'selectOption':
+          label: 'Select option'
+          position: 45
+          icon: 'icon-check'
+  options:
+    fusion:
+      prototypeGenerator: null
+  properties:
+    'value':
+      type: string
+      ui:
+        label: 'Value'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'selectOption'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'label':
+      type: string
+      ui:
+        label: 'Label (optional)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'selectOption'
+
+'Wwwision.Neos.Form:SelectOptionCollection':
+  label: '${"Select options"}'
+  ui:
+    icon: 'icon-list-ul'
+    inlineEditable: TRUE
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'Wwwision.Neos.Form:SelectOption': TRUE
+
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Wwwision.Neos.Form:FormElement': FALSE
+      'Wwwision.Neos.Form:SelectOption': FALSE

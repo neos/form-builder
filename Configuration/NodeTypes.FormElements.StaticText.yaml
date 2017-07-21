@@ -1,0 +1,25 @@
+'Wwwision.Neos.Form:StaticText':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+  ui:
+    label: 'Static Text'
+    icon: 'icon-align-left'
+    group: 'form.custom'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-align-left'
+  options:
+    form:
+      formElementType: 'Neos.Form:StaticText'
+  properties:
+    'text':
+      type: string
+      ui:
+        label: 'Text'
+        inspector:
+          group: 'formElement'
+          editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'edit text'

@@ -1,0 +1,11 @@
+prototype(Wwwision.Neos.Form:FlashMessageFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+    formElementType = 'Neos.Form:FlashMessage'
+
+    options {
+        messageBody = ${null}
+        messageTitle = ''
+        messageArguments = Neos.Fusion:RawArray
+        messageCode = ${null}
+        severity = 'OK'
+    }
+}

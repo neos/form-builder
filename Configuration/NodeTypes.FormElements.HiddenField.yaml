@@ -1,0 +1,14 @@
+'Wwwision.Neos.Form:HiddenField':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+  ui:
+    label: 'Hidden value'
+    icon: 'icon-eye-slash'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-eye-slash'
+    group: 'form.custom'
+  options:
+    form:
+      formElementType: 'Neos.Form:HiddenField'

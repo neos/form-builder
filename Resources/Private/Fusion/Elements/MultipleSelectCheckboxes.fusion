@@ -1,0 +1,4 @@
+prototype(Wwwision.Neos.Form:MultipleSelectCheckboxes) < prototype(Wwwision.Neos.Form:SelectionFormElement) {
+    formElementType = 'Neos.Form:MultipleSelectCheckboxes'
+
+}

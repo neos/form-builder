@@ -1,0 +1,7 @@
+prototype(Wwwision.Neos.Form:StaticText) < prototype(Wwwision.Neos.Form:FormElement) {
+    formElementType = 'Neos.Form:StaticText'
+
+    properties {
+        text = ${null}
+    }
+}

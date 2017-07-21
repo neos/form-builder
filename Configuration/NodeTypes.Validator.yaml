@@ -1,0 +1,42 @@
+'Wwwision.Neos.Form:AbstractValidator':
+  abstract: TRUE
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    label: 'Form validator'
+    icon: 'icon-check'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'validator':
+          label: 'Validator options'
+          position: 35
+          icon: 'icon-check'
+  options:
+    fusion:
+      prototypeGenerator: null
+  properties:
+    _nodeType:
+      ui:
+        inspector:
+          editorOptions:
+            baseNodeType: 'Wwwision.Neos.Form:AbstractValidator'
+
+'Wwwision.Neos.Form:ValidatorCollection':
+  ui:
+    icon: 'icon-check-circle'
+    inlineEditable: TRUE
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'Wwwision.Neos.Form:AbstractValidator': TRUE
+
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Wwwision.Neos.Form:AbstractValidator': FALSE

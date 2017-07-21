@@ -1,0 +1,8 @@
+# See Neos\Flow\Validation\Validator\StringLengthValidator
+prototype(Wwwision.Neos.Form:StringLengthValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:StringLength'
+    options {
+        minimum = 0
+        maximum = 9999999999999999999
+    }
+}

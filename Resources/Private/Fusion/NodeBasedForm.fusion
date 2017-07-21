@@ -1,0 +1,128 @@
+prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form) {
+    identifier = ${node.properties.identifier ? node.properties.identifier : 'form-' + node.identifier}
+    presetName = ${node.properties.preset ? node.properties.preset : 'default'}
+    formElementType = ${node.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
+
+    renderCallbacks.formElementWrapping = Wwwision.Neos.Form:FormElementWrapping {
+        formNode = ${node}
+        formFusionPath = ${this.path}
+        @if.isInBackend = ${node.context.inBackend}
+    }
+
+    firstPage.elements = Wwwision.Neos.Form:ElementCollection {
+        collection = ${q(node).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
+    }
+    furtherPages = Wwwision.Neos.Form:PageCollection {
+        collection = ${q(node).children('furtherPages').children('[instanceof Wwwision.Neos.Form:FormPage]')}
+    }
+    finishers = Wwwision.Neos.Form:FinisherCollection {
+        collection = ${q(node).children('finishers').children('[instanceof Wwwision.Neos.Form:AbstractFinisher]')}
+    }
+
+
+    #    @cache {
+    #        mode = 'dynamic'
+    #        entryIdentifier {
+    #            node = ${node}
+    #        }
+    #        entryDiscriminator = ${request.httpRequest.methodSafe ? 'static' : false}
+    #        context {
+    #            1 = 'node'
+    #            2 = 'documentNode'
+    #        }
+    #        entryTags {
+    #            1 = ${'Node_' + node.identifier}
+    #            2 = ${'DescendantOf_' + node.identifier}
+    #        }
+    #    }
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
+    }
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
+prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:RawCollection) {
+
+    itemName = 'elementNode'
+    itemRenderer = Neos.Fusion:Renderer {
+        type = ${elementNode.nodeType.name}
+        element {
+            @context.element = ${this}
+            identifier = ${elementNode.properties.identifier ? elementNode.properties.identifier : elementNode.identifier}
+            label = ${elementNode.properties.label}
+            required = ${elementNode.properties.required}
+            defaultValue = ${elementNode.properties.defaultValue}
+            properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
+            validators = Wwwision.Neos.Form:ValidatorCollection {
+                collection = ${q(elementNode).children('validators').children()}
+            }
+            renderingOptions._node = ${elementNode}
+            renderingOptions._fusionPath = ${element.path}
+
+            properties.options {
+                collection = ${q(elementNode).children('options').children()}
+                valuePropertyPath = 'properties.value'
+                labelPropertyPath = 'properties.label'
+                @if.isSelectFormElement = ${q(elementNode).is('[instanceof Wwwision.Neos.Form:SelectionMixin]')}
+            }
+        }
+    }
+}
+
+
+prototype(Wwwision.Neos.Form:PageCollection)< prototype(Neos.Fusion:RawCollection) {
+    itemName = 'pageNode'
+#    itemRenderer = Neos.Fusion:Renderer {
+#        type = Wwwision.Neos.Form:FormPage
+##${elementNode.nodeType.name}
+#        element {
+#            @context.page = ${this}
+#            identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+#            formElementType = ${pageNode.nodeType.options.form.formElementType}
+#            renderingOptions._node = ${pageNode}
+#            renderingOptions._fusionPath = ${page.path}
+#
+#            elements = Wwwision.Neos.Form:ElementCollection {
+#                collection = ${q(pageNode).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
+#            }
+#        }
+    itemRenderer = Wwwision.Neos.Form:FormPage {
+        @context.page = ${this}
+        identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+        formElementType = ${pageNode.nodeType.options.form.formElementType}
+        renderingOptions._node = ${pageNode}
+        renderingOptions._fusionPath = ${page.path}
+
+        elements = Wwwision.Neos.Form:ElementCollection {
+            collection = ${q(pageNode).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
+        }
+    }
+}
+
+prototype(Wwwision.Neos.Form:FinisherCollection)< prototype(Neos.Fusion:RawCollection) {
+    itemName = 'finisherNode'
+    itemRenderer = Neos.Fusion:Renderer {
+        type = ${finisherNode.nodeType.name}
+        element {
+            options.@process.addNodeProperties = ${Array.concat(value, finisherNode.properties)}
+        }
+    }
+}
+
+prototype(Wwwision.Neos.Form:ValidatorCollection)< prototype(Neos.Fusion:RawCollection) {
+    itemName = 'validatorNode'
+    itemRenderer = Neos.Fusion:Renderer {
+        type = ${validatorNode.nodeType.name}
+        element {
+            options.@process.addNodeProperties = ${Array.concat(value, validatorNode.properties)}
+        }
+    }
+}
+
+prototype(Wwwision.Neos.Form:FormElementWrapping) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementWrappingImplementation'
+}

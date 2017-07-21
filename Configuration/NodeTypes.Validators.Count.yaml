@@ -1,0 +1,28 @@
+'Wwwision.Neos.Form:CountValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Count validator'
+    icon: 'icon-sort-amount-asc'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-sort-amount-asc'
+  options:
+    form:
+      formElementType: 'Neos.Flow:Count'
+  properties:
+    'minimum':
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Minimum count'
+        inspector:
+          group: 'validator'
+    'maximum':
+      type: integer
+      defaultValue: 100
+      ui:
+        label: 'Maximum count'
+        inspector:
+          group: 'validator'

@@ -1,0 +1,9 @@
+prototype(Wwwision.Neos.Form:DatePicker) < prototype(Wwwision.Neos.Form:FormElement) {
+    formElementType = 'Neos.Form:DatePicker'
+
+    properties {
+        dateFormat = 'Y-m-d'
+        initialDate = ${null}
+        enableDatePicker = ${false}
+    }
+}

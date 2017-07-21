@@ -1,0 +1,46 @@
+'Wwwision.Neos.Form:FileUpload':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+  ui:
+    label: 'File upload'
+    icon: 'icon-upload'
+    group: 'form.custom'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-upload'
+  options:
+    form:
+      formElementType: 'Neos.Form:FileUpload'
+  properties:
+    'allowedExtensions':
+      type: array
+      ui:
+        label: 'Allowed file types'
+        inspector:
+          group: 'formElement'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'pdf':
+                label: '.pdf'
+                icon: 'icon-file-pdf-o'
+              'xls':
+                label: '.xls'
+                icon: 'icon-file-excel-o'
+              'xlsx':
+                label: '.xlsx'
+                icon: 'icon-file-excel-o'
+              'doc':
+                label: '.doc'
+                icon: 'icon-file-text'
+              'docx':
+                label: '.docx'
+                icon: 'icon-file-text'
+              'odt':
+                label: '.odt'
+                icon: 'icon-file-text'
+              'csv':
+                label: '.csv'
+                icon: 'icon-file-text'

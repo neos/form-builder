@@ -1,0 +1,21 @@
+'Wwwision.Neos.Form:MultiLineText':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+  ui:
+    label: 'Multi-line Text'
+    icon: 'icon-pencil-square-o'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-pencil-square-o'
+    position: 20
+  options:
+    form:
+      formElementType: 'Neos.Form:MultiLineText'
+  properties:
+    'placeholder':
+      type: string
+      ui:
+        label: 'Placeholder text'
+        inspector:
+          group: 'formElement'

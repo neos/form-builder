@@ -1,0 +1,18 @@
+{
+    "description": "Flow Form Framework integration into Neos CMS",
+    "type": "neos-package",
+    "name": "wwwision/neos-form",
+    "require": {
+        "neos/neos": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wwwision\\Neos\\Form\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Wwwision.Neos.Form"
+        }
+    }
+}

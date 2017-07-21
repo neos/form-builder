@@ -1,0 +1,44 @@
+'Wwwision.Neos.Form:NodeBasedForm':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    label: 'Form (node based)'
+    icon: 'icon-list-alt'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'form':
+          label: 'Form options'
+          position: 30
+          icon: 'icon-list-alt'
+  options:
+    fusion:
+      prototypeGenerator: null
+  childNodes:
+    'elements':
+      type: 'Wwwision.Neos.Form:ElementCollection'
+    'furtherPages':
+      type: 'Wwwision.Neos.Form:PageCollection'
+    'finishers':
+      type: 'Wwwision.Neos.Form:FinisherCollection'
+  properties:
+    'preset':
+      type: string
+      ui:
+        label: 'Preset'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'form'
+    'identifier':
+      type: string
+      ui:
+        label: 'Identifier (optional)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'form'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]+$/i'

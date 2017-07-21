@@ -1,0 +1,6 @@
+prototype(Wwwision.Neos.Form:SingleLineText) < prototype(Wwwision.Neos.Form:FormElement) {
+    formElementType = 'Neos.Form:SingleLineText'
+    properties {
+        placeholder = ${null}
+    }
+}

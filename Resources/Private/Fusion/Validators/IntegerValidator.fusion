@@ -1,0 +1,4 @@
+# See Neos\Flow\Validation\Validator\IntegerValidator
+prototype(Wwwision.Neos.Form:IntegerValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:Integer'
+}

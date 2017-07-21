@@ -1,0 +1,8 @@
+# See Neos\Flow\Validation\Validator\NumberRangeValidator
+prototype(Wwwision.Neos.Form:NumberRangeValidator) < prototype(Wwwision.Neos.Form:Validator) {
+    formElementType = 'Neos.Flow:NumberRange'
+    options {
+        minimum = 0
+        maximum = 9999999999999999999
+    }
+}

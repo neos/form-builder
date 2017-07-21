@@ -1,0 +1,24 @@
+'Wwwision.Neos.Form:RegularExpressionValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Regular Expression validator'
+    icon: 'icon-terminal'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-terminal'
+  options:
+    form:
+      formElementType: 'Neos.Flow:RegularExpression'
+  properties:
+    'regularExpression':
+      type: string
+      ui:
+        label: 'Regular expression'
+        inspector:
+          group: 'validator'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []

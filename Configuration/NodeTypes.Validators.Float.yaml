@@ -1,0 +1,13 @@
+'Wwwision.Neos.Form:FloatValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Floating-point number validator'
+    icon: 'icon-sort-numeric-asc'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-sort-numeric-asc'
+  options:
+    form:
+      formElementType: 'Neos.Flow:Float'

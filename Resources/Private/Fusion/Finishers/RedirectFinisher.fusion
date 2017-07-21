@@ -1,0 +1,13 @@
+prototype(Wwwision.Neos.Form:RedirectFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+    formElementType = 'Neos.Form:Redirect'
+
+    options {
+        package = ${null}
+        controller = ${null}
+        action = ''
+        arguments = Neos.Fusion:RawArray
+        uri = ''
+        delay = 0
+        statusCode = 303
+    }
+}

@@ -1,0 +1,44 @@
+'Wwwision.Neos.Form:FormPage':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Form page'
+    icon: 'icon-file-o'
+    group: 'form.pages'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'formPage':
+          label: 'Form Page options'
+          position: 35
+          icon: 'icon-file-o'
+  options:
+    fusion:
+      prototypeGenerator: null
+    form:
+      formElementType: 'Neos.Form:Page'
+  childNodes:
+    'elements':
+      type: 'Wwwision.Neos.Form:ElementCollection'
+
+'Wwwision.Neos.Form:PageCollection':
+  label: '${"Further form pages"}'
+  ui:
+    inlineEditable: TRUE
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'Wwwision.Neos.Form:FormPage': TRUE
+
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Wwwision.Neos.Form:FormPage': FALSE

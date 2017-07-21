@@ -1,0 +1,21 @@
+'Wwwision.Neos.Form:SingleLineText':
+  superTypes:
+    'Wwwision.Neos.Form:FormElement': TRUE
+  ui:
+    label: 'Single-line text'
+    icon: 'icon-pencil-square-o'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-pencil-square-o'
+    position: 10
+  options:
+    form:
+      formElementType: 'Neos.Form:SingleLineText'
+  properties:
+    'placeholder':
+      type: string
+      ui:
+        label: 'Placeholder text'
+        inspector:
+          group: 'formElement'

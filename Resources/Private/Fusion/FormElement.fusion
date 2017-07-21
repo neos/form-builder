@@ -1,0 +1,18 @@
+prototype(Wwwision.Neos.Form:FormElement) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementImplementation'
+
+    formElementType = ${null}
+    required = ${true}
+    label = ${null}
+    defaultValue = ${null}
+    properties = Neos.Fusion:RawArray
+
+    rendererClassName = ${null}
+    renderingOptions = Neos.Fusion:RawArray
+
+    validators = Neos.Fusion:RawArray
+}
+
+prototype(Wwwision.Neos.Form:SelectionFormElement) < prototype(Wwwision.Neos.Form:FormElement) {
+    properties.options = Wwwision.Neos.Form:SelectOptionCollection
+}

@@ -1,0 +1,9 @@
+prototype(Wwwision.Neos.Form:FormPage) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormPageImplementation'
+
+    identifier = 'page'
+    formElementType = 'Neos.Form:Page'
+    renderingOptions = Neos.Fusion:RawArray
+
+    elements = Neos.Fusion:RawArray
+}

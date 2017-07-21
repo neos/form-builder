@@ -1,0 +1,7 @@
+prototype(Wwwision.Neos.Form:ConfirmationFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+    formElementType = 'Neos.Form:Confirmation'
+
+    options {
+        message = '<p>The form has been submitted.</p>'
+    }
+}

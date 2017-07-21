@@ -1,0 +1,6 @@
+prototype(Wwwision.Neos.Form:Finisher) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\FinisherImplementation'
+
+    formElementType = ${null}
+    options = Neos.Fusion:RawArray
+}

@@ -1,0 +1,14 @@
+prototype(Wwwision.Neos.Form:Form) {
+    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormImplementation'
+
+    identifier = 'form'
+    presetName = 'default'
+    formElementType = 'Neos.Form:Form'
+
+    renderCallbacks = Neos.Fusion:RawArray
+    firstPage = Wwwision.Neos.Form:FormPage {
+        elements = Neos.Fusion:RawArray
+    }
+    furtherPages = Neos.Fusion:RawArray
+    finishers = Neos.Fusion:RawArray
+}

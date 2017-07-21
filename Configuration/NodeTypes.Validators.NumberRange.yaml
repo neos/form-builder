@@ -1,0 +1,28 @@
+'Wwwision.Neos.Form:NumberRangeValidator':
+  superTypes:
+    'Wwwision.Neos.Form:AbstractValidator': TRUE
+  ui:
+    label: 'Number range validator'
+    icon: 'icon-sort-numeric-asc'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-sort-numeric-asc'
+  options:
+    form:
+      formElementType: 'Neos.Flow:NumberRange'
+  properties:
+    'minimum':
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Minimum value'
+        inspector:
+          group: 'validator'
+    'maximum':
+      type: integer
+      defaultValue: 100
+      ui:
+        label: 'Maximum value'
+        inspector:
+          group: 'validator'

@@ -1,0 +1,4 @@
+prototype(Wwwision.Neos.Form:MultipleSelectDropdown) < prototype(Wwwision.Neos.Form:SelectionFormElement) {
+    formElementType = 'Neos.Form:MultipleSelectDropdown'
+
+}
