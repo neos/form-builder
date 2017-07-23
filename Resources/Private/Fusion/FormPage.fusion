@@ -4,6 +4,6 @@ prototype(Wwwision.Neos.Form:FormPage) {
     identifier = 'page'
     formElementType = 'Neos.Form:Page'
     renderingOptions = Neos.Fusion:RawArray
-
+    label = ${null}
     elements = Neos.Fusion:RawArray
 }

@@ -9,14 +9,17 @@ prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form)
         @if.isInBackend = ${node.context.inBackend}
     }
 
-    firstPage.elements = Wwwision.Neos.Form:ElementCollection {
-        collection = ${q(node).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
+    firstPage {
+        label = ${node.properties.label}
+        elements = Wwwision.Neos.Form:ElementCollection {
+            collection = ${q(node).children('elements').children()}
+        }
     }
     furtherPages = Wwwision.Neos.Form:PageCollection {
-        collection = ${q(node).children('furtherPages').children('[instanceof Wwwision.Neos.Form:FormPage]')}
+        collection = ${q(node).children('furtherPages').children()}
     }
     finishers = Wwwision.Neos.Form:FinisherCollection {
-        collection = ${q(node).children('finishers').children('[instanceof Wwwision.Neos.Form:AbstractFinisher]')}
+        collection = ${q(node).children('finishers').children()}
     }
 
 
@@ -76,29 +79,16 @@ prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:RawColle
 
 prototype(Wwwision.Neos.Form:PageCollection)< prototype(Neos.Fusion:RawCollection) {
     itemName = 'pageNode'
-#    itemRenderer = Neos.Fusion:Renderer {
-#        type = Wwwision.Neos.Form:FormPage
-##${elementNode.nodeType.name}
-#        element {
-#            @context.page = ${this}
-#            identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
-#            formElementType = ${pageNode.nodeType.options.form.formElementType}
-#            renderingOptions._node = ${pageNode}
-#            renderingOptions._fusionPath = ${page.path}
-#
-#            elements = Wwwision.Neos.Form:ElementCollection {
-#                collection = ${q(pageNode).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
-#            }
-#        }
     itemRenderer = Wwwision.Neos.Form:FormPage {
         @context.page = ${this}
         identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+        label = ${pageNode.properties.label}
         formElementType = ${pageNode.nodeType.options.form.formElementType}
         renderingOptions._node = ${pageNode}
         renderingOptions._fusionPath = ${page.path}
 
         elements = Wwwision.Neos.Form:ElementCollection {
-            collection = ${q(pageNode).children('elements').children('[instanceof Wwwision.Neos.Form:FormElement]')}
+            collection = ${q(pageNode).children('elements').children()}
         }
     }
 }

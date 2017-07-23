@@ -21,6 +21,7 @@ class FormPageImplementation extends AbstractFusionObject
         $formDefinition = $context['form'];
 
         $page = $formDefinition->createPage($this->fusionValue('identifier'), $this->getFormElementType());
+        $page->setLabel($this->getLabel());
         foreach ($this->getRenderingOptions() as $optionName => $optionValue) {
             $page->setRenderingOption($optionName, $optionValue);
         }
@@ -38,5 +39,13 @@ class FormPageImplementation extends AbstractFusionObject
     private function getFormElementType(): string
     {
         return $this->fusionValue('formElementType');
+    }
+
+    /**
+     * @return string|null
+     */
+    private function getLabel()
+    {
+        return $this->fusionValue('label');
     }
 }

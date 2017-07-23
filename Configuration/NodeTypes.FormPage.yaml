@@ -23,6 +23,27 @@
   childNodes:
     'elements':
       type: 'Wwwision.Neos.Form:ElementCollection'
+  properties:
+    'identifier':
+      type: string
+      ui:
+        label: 'Identifier (optional)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formPage'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]+$/i'
+    'label':
+      type: string
+      ui:
+        label: 'Page Label'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formPage'
 
 'Wwwision.Neos.Form:PageCollection':
   label: '${"Further form pages"}'
