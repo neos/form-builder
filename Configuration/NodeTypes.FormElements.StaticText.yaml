@@ -18,6 +18,7 @@
       type: string
       ui:
         label: 'Text'
+        reloadIfChanged: TRUE
         inspector:
           group: 'formElement'
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'

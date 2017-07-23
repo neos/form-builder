@@ -17,5 +17,6 @@
       type: string
       ui:
         label: 'Placeholder text'
+        reloadIfChanged: TRUE
         inspector:
           group: 'formElement'
