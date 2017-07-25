@@ -3,6 +3,7 @@ namespace Wwwision\Neos\Form\Fusion;
 
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\Flow\Annotations as Flow;
+use Neos\Form\Core\Model\Page;
 use Neos\Form\Core\Model\Renderable\RootRenderableInterface;
 use Neos\Form\Core\Runtime\FormRuntime;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
@@ -17,29 +18,34 @@ class FormElementWrappingImplementation extends AbstractFusionObject
      */
     protected $contentElementWrappingService;
 
-    private function getFormNode(): NodeInterface
-    {
-        return $this->fusionValue('formNode');
-    }
-
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
+
         // TODO error handling if "formRuntime" is not available
         /** @var FormRuntime $formRuntime */
         $formRuntime = $context['formRuntime'];
         $formRuntime->registerRenderCallback(function (string $output, RootRenderableInterface $renderable) {
             $renderingOptions = $renderable->getRenderingOptions();
-            if ($renderable instanceof FormRuntime) {
-                $node = $this->getFormNode();
-                $fusionPath = $this->path;
-            } elseif (!isset($renderingOptions['_node']) || !isset($renderingOptions['_fusionPath'])) {
+            if (!isset($renderingOptions['_node']) || !isset($renderingOptions['_fusionPath'])) {
                 // TODO error/log?
                 return $output;
-            } else {
-                $node = $renderingOptions['_node'];
-                $fusionPath = $renderingOptions['_fusionPath'];
             }
+            /** @var NodeInterface $node */
+            $node = $renderingOptions['_node'];
+            /** @var string $fusionPath */
+            $fusionPath = $renderingOptions['_fusionPath'];
+
+            if ($renderable instanceof Page) {
+                $output = $this->contentElementWrappingService->wrapContentObject($node->getPrimaryChildNode(), $output, $fusionPath);
+
+                if ($node->getParent()->getNodeType()->isOfType('Wwwision.Neos.Form:PageCollection')) {
+                    $output = $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath);
+                    $output = $this->contentElementWrappingService->wrapContentObject($node->getParent(), $output, $fusionPath);
+                }
+                return $output;
+            }
+
             return $this->wrapNodeRecursively($node, $output, $fusionPath);
         });
     }
@@ -52,4 +58,5 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         }
         return $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath);
     }
+
 }

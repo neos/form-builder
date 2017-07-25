@@ -1,16 +1,17 @@
 prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form) {
+    @context.formFusionPath = ${this.path}
     identifier = ${node.properties.identifier ? node.properties.identifier : 'form-' + node.identifier}
     presetName = ${node.properties.preset ? node.properties.preset : 'default'}
     formElementType = ${node.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
 
     renderCallbacks.formElementWrapping = Wwwision.Neos.Form:FormElementWrapping {
-        formNode = ${node}
-        formFusionPath = ${this.path}
         @if.isInBackend = ${node.context.inBackend}
     }
 
     firstPage {
         label = ${node.properties.label}
+        renderingOptions._node = ${node}
+        renderingOptions._fusionPath = ${formFusionPath}
         elements = Wwwision.Neos.Form:ElementCollection {
             collection = ${q(node).children('elements').children()}
         }
@@ -77,7 +78,7 @@ prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:RawColle
 }
 
 
-prototype(Wwwision.Neos.Form:PageCollection)< prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:RawCollection) {
     itemName = 'pageNode'
     itemRenderer = Wwwision.Neos.Form:FormPage {
         @context.page = ${this}
@@ -93,7 +94,7 @@ prototype(Wwwision.Neos.Form:PageCollection)< prototype(Neos.Fusion:RawCollectio
     }
 }
 
-prototype(Wwwision.Neos.Form:FinisherCollection)< prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:RawCollection) {
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${finisherNode.nodeType.name}
@@ -103,7 +104,7 @@ prototype(Wwwision.Neos.Form:FinisherCollection)< prototype(Neos.Fusion:RawColle
     }
 }
 
-prototype(Wwwision.Neos.Form:ValidatorCollection)< prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:RawCollection) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${validatorNode.nodeType.name}
@@ -115,4 +116,6 @@ prototype(Wwwision.Neos.Form:ValidatorCollection)< prototype(Neos.Fusion:RawColl
 
 prototype(Wwwision.Neos.Form:FormElementWrapping) {
     @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementWrappingImplementation'
+    formNode = ${null}
+    formFusionPath = ${null}
 }

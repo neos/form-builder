@@ -19,6 +19,11 @@ class FormImplementation extends AbstractFusionObject
      */
     protected $formSettings;
 
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
     public function evaluate()
     {
         try {
