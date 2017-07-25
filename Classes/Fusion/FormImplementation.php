@@ -21,7 +21,11 @@ class FormImplementation extends AbstractFusionObject
 
     public function evaluate()
     {
-        $formDefinition = $this->buildFormDefinition();
+        try {
+            $formDefinition = $this->buildFormDefinition();
+        } catch (PresetNotFoundException $exception) {
+            return $exception->getMessage();
+        }
         $controllerContext = $this->runtime->getControllerContext();
 
         $response = new Response($controllerContext->getResponse());
@@ -38,7 +42,7 @@ class FormImplementation extends AbstractFusionObject
         return $formRuntime->render();
     }
 
-    protected function buildFormDefinition(): FormDefinition
+    protected function buildFormDefinition(): ?FormDefinition
     {
         $presetName = $this->getPresetName();
         $formDefaults = $this->getPresetConfiguration($presetName);
