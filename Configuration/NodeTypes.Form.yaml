@@ -25,10 +25,17 @@
     'preset':
       type: string
       ui:
-        label: 'Preset'
+        label: 'Form Preset'
         reloadIfChanged: TRUE
         inspector:
           group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'select preset'
+            dataSourceIdentifier: 'wwwision-neos-form-presets'
+            dataSourceAdditionalData:
+               # comma separated list of form presets to skip (we can't send complex data)
+              skipPresets: 'neos.setup'
     'identifier':
       type: string
       ui:
