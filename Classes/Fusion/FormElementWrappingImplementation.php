@@ -18,6 +18,13 @@ class FormElementWrappingImplementation extends AbstractFusionObject
      */
     protected $contentElementWrappingService;
 
+    /**
+     * We don't render further pages immediately so we can properly wrap them with the page collection
+     *
+     * @var string
+     */
+    private $pendingOutput = '';
+
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
@@ -37,11 +44,25 @@ class FormElementWrappingImplementation extends AbstractFusionObject
             $fusionPath = $renderingOptions['_fusionPath'];
 
             if ($renderable instanceof Page) {
-                $output = $this->contentElementWrappingService->wrapContentObject($node->getPrimaryChildNode(), $output, $fusionPath);
+                $elementsNode = $node->getNode('elements');
+                if ($elementsNode !== null) {
+                    $output = $this->contentElementWrappingService->wrapContentObject($elementsNode, $output, $fusionPath);
+                }
 
                 if ($node->getParent()->getNodeType()->isOfType('Wwwision.Neos.Form:PageCollection')) {
                     $output = $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath);
+
                     $output = $this->contentElementWrappingService->wrapContentObject($node->getParent(), $output, $fusionPath);
+                    $this->pendingOutput .= $output;
+                    return '';
+                }
+                $finishersNode = $node->getNode('finishers');
+                if ($finishersNode !== null) {
+                    $output = $this->wrapNodeRecursively($finishersNode, '', $fusionPath . '/finishers') . $output;
+                }
+                $furtherPagesNode = $node->getNode('furtherPages');
+                if ($furtherPagesNode !== null) {
+                    $output .= $this->wrapNodeRecursively($furtherPagesNode, $this->pendingOutput, $fusionPath . '/furtherPages');
                 }
                 return $output;
             }
