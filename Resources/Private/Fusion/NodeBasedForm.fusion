@@ -49,7 +49,7 @@ prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form)
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
 
-prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:Collection) {
 
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Renderer {
@@ -78,7 +78,7 @@ prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:RawColle
 }
 
 
-prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'pageNode'
     itemRenderer = Wwwision.Neos.Form:FormPage {
         @context.page = ${this}
@@ -94,7 +94,7 @@ prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:RawCollecti
     }
 }
 
-prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${finisherNode.nodeType.name}
@@ -104,7 +104,7 @@ prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:RawColl
     }
 }
 
-prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:RawCollection) {
+prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${validatorNode.nodeType.name}
