@@ -1,6 +1,12 @@
 'Wwwision.Neos.Form:NodeBasedForm':
   superTypes:
     'Neos.Neos:Content': TRUE
+  postprocessors:
+    FormNodeTypePostprocessor:
+      postprocessor: 'Wwwision\Neos\Form\NodeType\FormNodeTypePostprocessor'
+      postprocessorOptions:
+        skipPresets:
+          'neos.setup': TRUE
   ui:
     label: 'Form (node based)'
     icon: 'icon-list-alt'
@@ -11,6 +17,17 @@
           label: 'Form options'
           position: 30
           icon: 'icon-list-alt'
+# Preparation for the "new Neos UI":
+#
+#    creationDialog:
+#      elements:
+#        'preset':
+#          type: string
+#          ui:
+#            label: 'Form Preset'
+#            editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+#          validation:
+#            'Neos.Neos/Validation/NotEmptyValidator': []
   options:
     fusion:
       prototypeGenerator: null
@@ -27,15 +44,12 @@
       ui:
         label: 'Form Preset'
         reloadIfChanged: TRUE
+        defaultValue: 'default'
         inspector:
           group: 'form'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'select preset'
-            dataSourceIdentifier: 'wwwision-neos-form-presets'
-            dataSourceAdditionalData:
-               # comma separated list of form presets to skip (we can't send complex data)
-              skipPresets: 'neos.setup'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
     'identifier':
       type: string
       ui:
