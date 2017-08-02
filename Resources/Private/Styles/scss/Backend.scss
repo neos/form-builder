@@ -1,0 +1,6 @@
+$anyFormElement: "[typeof]";
+@function select($nodeType) {
+  @return "[typeof=\"typo3:#{$nodeType}\"]"
+}
+
+@import "Includes/All";

@@ -1,0 +1,128 @@
+[typeof="typo3:Wwwision.Neos.Form:NodeBasedForm"] {
+  position: relative; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"], [typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] .neos-empty-contentcollection-overlay {
+  padding-left: 20px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  height: 20px;
+  outline: none !important;
+  background: #fff;
+  vertical-align: middle; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] .neos-empty-contentcollection-overlay:before {
+  font: 18px FontAwesome;
+  color: #bbb;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  vertical-align: middle;
+  content: "\F045"; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] > [typeof] {
+  display: inline-block;
+  outline-offset: 1px !important;
+  padding: 0 3px;
+  margin: 0 1px;
+  cursor: pointer; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] > [typeof]:before {
+  font: 16px FontAwesome;
+  color: #00adee;
+  content: "\F045"; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] > [typeof="typo3:Wwwision.Neos.Form:ConfirmationFinisher"]:before {
+  content: "\F075"; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] > [typeof="typo3:Wwwision.Neos.Form:EmailFinisher"]:before {
+  content: "\F003"; }
+
+[typeof="typo3:Wwwision.Neos.Form:FinisherCollection"] > [typeof="typo3:Wwwision.Neos.Form:RedirectFinisher"]:before {
+  content: "\F061"; }
+
+[typeof="typo3:Wwwision.Neos.Form:ElementCollection"] {
+  padding-top: 30px; }
+
+[typeof="typo3:Wwwision.Neos.Form:ElementCollection"] > * {
+  position: relative;
+  padding-top: 10px; }
+
+[typeof="typo3:Wwwision.Neos.Form:PageCollection"] {
+  padding-top: 30px; }
+
+[typeof="typo3:Wwwision.Neos.Form:PageCollection"] > * {
+  position: relative;
+  padding-top: 10px; }
+
+[typeof="typo3:Wwwision.Neos.Form:FormPage"] {
+  padding-top: 30px;
+  border-top: 1px solid #bbb; }
+
+[typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"], [typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"] .neos-empty-contentcollection-overlay {
+  padding-left: 20px;
+  position: absolute;
+  z-index: 110;
+  top: 0;
+  right: 0;
+  outline: none !important;
+  height: 20px;
+  background: #fff;
+  vertical-align: middle; }
+
+[typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"] .neos-empty-contentcollection-overlay:before {
+  font: 16px FontAwesome;
+  color: #bbb;
+  outline: none;
+  display: inline-block;
+  height: 18px;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  vertical-align: middle;
+  content: "\F058"; }
+
+[typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"] [typeof] {
+  display: inline-block;
+  outline-offset: 1px !important;
+  padding: 0 3px;
+  margin: 0 1px;
+  cursor: pointer; }
+
+[typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"] [typeof]:before {
+  font: 16px FontAwesome;
+  color: #00adee;
+  content: "\F058"; }
+
+[typeof="typo3:Wwwision.Neos.Form:ValidatorCollection"] [typeof="typo3:Wwwision.Neos.Form:CountValidator"]:before {
+  content: "\F160"; }
+
+[typeof="typo3:Wwwision.Neos.Form:SelectOptionCollection"], [typeof="typo3:Wwwision.Neos.Form:SelectOptionCollection"] .neos-empty-contentcollection-overlay {
+  outline: none !important;
+  text-align: right;
+  margin-bottom: 10px;
+  vertical-align: middle; }
+
+[typeof="typo3:Wwwision.Neos.Form:SelectOptionCollection"] .neos-empty-contentcollection-overlay:before {
+  font: 16px FontAwesome;
+  color: #bbb;
+  outline: none;
+  display: inline-block;
+  height: 18px;
+  vertical-align: middle;
+  content: "\F0CA"; }
+
+[typeof="typo3:Wwwision.Neos.Form:SelectOptionCollection"] [typeof] {
+  display: inline-block;
+  outline-offset: 1px !important;
+  padding: 0 3px;
+  margin: 0 1px;
+  cursor: pointer; }
+
+[typeof="typo3:Wwwision.Neos.Form:SelectOptionCollection"] [typeof]:before {
+  font: 16px FontAwesome;
+  color: #00adee;
+  content: "\F28E"; }

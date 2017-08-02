@@ -1,0 +1,13 @@
+#{select("Wwwision.Neos.Form:PageCollection")} {
+  padding-top: 30px;
+}
+
+#{select("Wwwision.Neos.Form:PageCollection")} > * {
+  position: relative;
+  padding-top: 10px;
+}
+
+#{select("Wwwision.Neos.Form:FormPage")} {
+  padding-top: 30px;
+  border-top: 1px solid #bbb;
+}

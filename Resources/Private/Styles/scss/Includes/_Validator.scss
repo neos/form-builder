@@ -1,0 +1,43 @@
+#{select("Wwwision.Neos.Form:ValidatorCollection")}, #{select("Wwwision.Neos.Form:ValidatorCollection")} .neos-empty-contentcollection-overlay {
+  padding-left: 20px;
+  position: absolute;
+  z-index: 110;
+  top: 0;
+  right: 0;
+  outline: none !important;
+  height: 20px;
+  background: #fff;
+  vertical-align: middle;
+}
+
+
+#{select("Wwwision.Neos.Form:ValidatorCollection")} .neos-empty-contentcollection-overlay:before {
+  font: 16px FontAwesome;
+  color: #bbb;
+  outline: none;
+  display: inline-block;
+  height: 18px;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  vertical-align: middle;
+  content: "\F058";
+}
+
+#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyFormElement} {
+  display: inline-block;
+  outline-offset: 1px !important;
+  padding: 0 3px;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyFormElement}:before {
+  font: 16px FontAwesome;
+  color: #00adee;
+  content: "\F058";
+}
+
+#{select("Wwwision.Neos.Form:ValidatorCollection")} #{select("Wwwision.Neos.Form:CountValidator")}:before {
+  content: "\F160";
+}

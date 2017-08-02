@@ -1,0 +1,8 @@
+#{select("Wwwision.Neos.Form:ElementCollection")} {
+  padding-top: 30px;
+}
+
+#{select("Wwwision.Neos.Form:ElementCollection")} > * {
+  position: relative;
+  padding-top: 10px;
+}
