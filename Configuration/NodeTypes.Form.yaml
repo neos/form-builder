@@ -10,6 +10,7 @@
   ui:
     label: 'Form (node based)'
     icon: 'icon-list-alt'
+    position: 600
     inlineEditable: TRUE
     inspector:
       groups:
