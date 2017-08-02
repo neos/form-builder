@@ -87,14 +87,14 @@
   ui:
     inlineEditable: TRUE
     label: 'Select option'
-    icon: 'icon-check'
+    icon: 'icon-stop-circle-o'
     group: 'form.selectOptions'
     inspector:
       groups:
         'selectOption':
           label: 'Select option'
           position: 45
-          icon: 'icon-check'
+          icon: 'icon-stop-circle-o'
   options:
     fusion:
       prototypeGenerator: null
