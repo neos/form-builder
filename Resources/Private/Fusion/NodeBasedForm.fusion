@@ -1,26 +1,27 @@
 prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form) {
+    @context.formNode = ${q(node).closest('[instanceof Wwwision.Neos.Form:NodeBasedForm]').get(0)}
     @context.formFusionPath = ${this.path}
-    identifier = ${node.properties.identifier ? node.properties.identifier : 'form-' + node.identifier}
-    presetName = ${node.properties.preset ? node.properties.preset : 'default'}
-    formElementType = ${node.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
+    identifier = ${formNode.properties.identifier ? formNode.properties.identifier : 'form-' + formNode.identifier}
+    presetName = ${formNode.properties.preset ? formNode.properties.preset : 'default'}
+    formElementType = ${formNode.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
 
     renderCallbacks.formElementWrapping = Wwwision.Neos.Form:FormElementWrapping {
-        @if.isInBackend = ${node.context.inBackend}
+        @if.isInBackend = ${formNode.context.inBackend}
     }
 
     firstPage {
-        label = ${node.properties.label}
-        renderingOptions._node = ${node}
+        label = ${formNode.properties.label}
+        renderingOptions._node = ${formNode}
         renderingOptions._fusionPath = ${formFusionPath}
         elements = Wwwision.Neos.Form:ElementCollection {
-            collection = ${q(node).children('elements').children()}
+            collection = ${q(formNode).children('elements').children()}
         }
     }
     furtherPages = Wwwision.Neos.Form:PageCollection {
-        collection = ${q(node).children('furtherPages').children()}
+        collection = ${q(formNode).children('furtherPages').children()}
     }
     finishers = Wwwision.Neos.Form:FinisherCollection {
-        collection = ${q(node).children('finishers').children()}
+        collection = ${q(formNode).children('finishers').children()}
     }
 
 
@@ -116,6 +117,4 @@ prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:Collec
 
 prototype(Wwwision.Neos.Form:FormElementWrapping) {
     @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementWrappingImplementation'
-    formNode = ${null}
-    formFusionPath = ${null}
 }

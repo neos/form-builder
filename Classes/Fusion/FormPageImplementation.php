@@ -17,6 +17,9 @@ class FormPageImplementation extends AbstractFusionObject
     {
         $context = $this->runtime->getCurrentContext();
         // TODO error handling if "form" is not available
+        if (!isset($context['form'])) {
+            return '';
+        }
         /** @var FormDefinition $formDefinition */
         $formDefinition = $context['form'];
 
