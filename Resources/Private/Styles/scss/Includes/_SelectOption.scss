@@ -16,7 +16,7 @@
   content: "\F0CA";
 }
 
-#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyFormElement} {
+#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyContentElement} {
   display: inline-block;
   outline-offset: 1px !important;
   padding: 0 3px;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyFormElement}:before {
+#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyContentElement}:before {
   font: 16px FontAwesome;
   color: #00adee;
   content: "\F28E";

@@ -24,7 +24,7 @@
   content: "\F058";
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyFormElement} {
+#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyContentElement} {
   display: inline-block;
   outline-offset: 1px !important;
   padding: 0 3px;
@@ -32,12 +32,35 @@
   cursor: pointer;
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyFormElement}:before {
+#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyContentElement}:before {
   font: 16px FontAwesome;
   color: #00adee;
   content: "\F058";
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} #{select("Wwwision.Neos.Form:CountValidator")}:before {
-  content: "\F160";
+#{select("Wwwision.Neos.Form:ValidatorCollection")} {
+  #{select("Wwwision.Neos.Form:AlphanumericValidator")}:before,
+  #{select("Wwwision.Neos.Form:TextValidator")}:before {
+    content: "\F031";
+  }
+  #{select("Wwwision.Neos.Form:CountValidator")}:before {
+    content: "\F160";
+  }
+  #{select("Wwwision.Neos.Form:DateTimeRangeValidator")}:before {
+    content: "\F274";
+  }
+  #{select("Wwwision.Neos.Form:EmailAddressValidator")}:before {
+    content: "\F003";
+  }
+  #{select("Wwwision.Neos.Form:FloatValidator")}:before,
+  #{select("Wwwision.Neos.Form:IntegerValidator")}:before,
+  #{select("Wwwision.Neos.Form:NumberRangeValidator")}:before {
+    content: "\F162";
+  }
+  #{select("Wwwision.Neos.Form:RegularExpressionValidator")}:before {
+    content: "\F120";
+  }
+  #{select("Wwwision.Neos.Form:StringLengthValidator")}:before {
+    content: "\F035";
+  }
 }

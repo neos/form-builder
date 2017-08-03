@@ -1,6 +1,6 @@
-$anyFormElement: "[typeof]";
+$anyContentElement: "[data-node-_node-type]";
 @function select($nodeType) {
-  @return "[typeof=\"typo3:#{$nodeType}\"]"
+  @return "[data-node-_node-type=\"#{$nodeType}\"]"
 }
 
 @import "Includes/All";
