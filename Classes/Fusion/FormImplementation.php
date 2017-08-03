@@ -47,7 +47,7 @@ class FormImplementation extends AbstractFusionObject
         return $formRuntime->render();
     }
 
-    protected function buildFormDefinition(): ?FormDefinition
+    protected function buildFormDefinition(): FormDefinition
     {
         $presetName = $this->getPresetName();
         $formDefaults = $this->getPresetConfiguration($presetName);
