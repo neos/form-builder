@@ -1,3 +1,30 @@
+'Neos.Form.Builder:IdentifierMixin':
+  properties:
+    'identifier':
+      type: string
+      ui:
+        label: 'Identifier (optional)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]+$/i'
+
+'Neos.Form.Builder:LabelMixin':
+  properties:
+    'label':
+      type: string
+      defaultValue: 'Label'
+      ui:
+        label: 'Label'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+
 'Neos.Form.Builder:SelectionMixin':
   ui:
     group: 'form.select'
@@ -14,3 +41,18 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formElementMore'
+
+'Neos.Form.Builder:RequiredCheckboxMixin':
+  properties:
+    'required':
+      type: boolean
+      ui:
+        label: 'Required field'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+
+'Neos.Form.Builder:ValidatorsMixin':
+  childNodes:
+    'validators':
+      type: 'Neos.Form.Builder:ValidatorCollection'

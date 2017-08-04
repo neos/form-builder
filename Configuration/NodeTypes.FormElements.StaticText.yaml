@@ -1,7 +1,10 @@
 'Neos.Form.Builder:StaticText':
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:IdentifierMixin': FALSE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:RequiredCheckboxMixin': FALSE
+    'Neos.Form.Builder:ValidatorsMixin': FALSE
   ui:
     label: 'Static Text'
     icon: 'icon-align-left'

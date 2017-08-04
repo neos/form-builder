@@ -2,7 +2,11 @@
   abstract: TRUE
   superTypes:
     'Neos.Neos:Content': TRUE
+    'Neos.Form.Builder:IdentifierMixin': TRUE
+    'Neos.Form.Builder:LabelMixin': TRUE
     'Neos.Form.Builder:DefaultValueMixin': TRUE
+    'Neos.Form.Builder:RequiredCheckboxMixin': TRUE
+    'Neos.Form.Builder:ValidatorsMixin': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
@@ -25,43 +29,12 @@
   options:
     fusion:
       prototypeGenerator: null
-  childNodes:
-    'validators':
-      type: 'Neos.Form.Builder:ValidatorCollection'
   properties:
     _nodeType:
       ui:
         inspector:
           editorOptions:
             baseNodeType: 'Neos.Form.Builder:FormElement'
-    'identifier':
-      type: string
-      ui:
-        label: 'Identifier (optional)'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formElement'
-      validation:
-        'Neos.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 255
-        'Neos.Neos/Validation/RegularExpressionValidator':
-          regularExpression: '/^[a-z0-9\-]+$/i'
-    'label':
-      type: string
-      defaultValue: 'Label'
-      ui:
-        label: 'Label'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formElement'
-    'required':
-      type: boolean
-      ui:
-        label: 'Required field'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formElement'
 
 'Neos.Form.Builder:ElementCollection':
   label: '${"Elements"}'
