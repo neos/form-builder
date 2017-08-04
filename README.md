@@ -7,10 +7,10 @@ prototypes that allow for dynamic Fusion based Form definitions.
 
 ## Usage
 
-Install this package using the [Composer Dependency Manager](https://getcomposer.org/):
+Install this package using GIT:
 
 ```
-composer require neos/form-builder
+git clone https://github.com/bwaidelich/form-builder.git Packages/Application/Neos.Form.Builder
 ```
 
 **Note:** This package requires the `neos/neos` package in version 3.1 or higher
