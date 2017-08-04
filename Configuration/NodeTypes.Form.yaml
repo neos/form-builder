@@ -1,9 +1,9 @@
-'Wwwision.Neos.Form:NodeBasedForm':
+'Neos.Form.Builder:NodeBasedForm':
   superTypes:
     'Neos.Neos:Content': TRUE
   postprocessors:
     FormNodeTypePostprocessor:
-      postprocessor: 'Wwwision\Neos\Form\NodeType\FormNodeTypePostprocessor'
+      postprocessor: 'Neos\Form\Builder\NodeType\FormNodeTypePostprocessor'
       postprocessorOptions:
         skipPresets:
           'neos.setup': TRUE
@@ -34,11 +34,11 @@
       prototypeGenerator: null
   childNodes:
     'elements':
-      type: 'Wwwision.Neos.Form:ElementCollection'
+      type: 'Neos.Form.Builder:ElementCollection'
     'furtherPages':
-      type: 'Wwwision.Neos.Form:PageCollection'
+      type: 'Neos.Form.Builder:PageCollection'
     'finishers':
-      type: 'Wwwision.Neos.Form:FinisherCollection'
+      type: 'Neos.Form.Builder:FinisherCollection'
   properties:
     'preset':
       type: string

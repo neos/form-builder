@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:DatePicker) < prototype(Wwwision.Neos.Form:FormElement) {
+prototype(Neos.Form.Builder:DatePicker) < prototype(Neos.Form.Builder:FormElement) {
     formElementType = 'Neos.Form:DatePicker'
 
     properties {

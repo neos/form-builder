@@ -1,5 +1,5 @@
 # See Neos\Flow\Validation\Validator\NumberRangeValidator
-prototype(Wwwision.Neos.Form:NumberRangeValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:NumberRangeValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:NumberRange'
     options {
         minimum = 0

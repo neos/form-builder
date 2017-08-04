@@ -1,5 +1,5 @@
-prototype(Wwwision.Neos.Form:Validator) {
-    @class = 'Wwwision\\Neos\\Form\\Fusion\\ValidatorImplementation'
+prototype(Neos.Form.Builder:Validator) {
+    @class = 'Neos\\Form\\Builder\\Fusion\\ValidatorImplementation'
 
     formElementType = ${null}
 

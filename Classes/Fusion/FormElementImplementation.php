@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\Fusion;
+namespace Neos\Form\Builder\Fusion;
 
 use Neos\Flow\Validation\Validator\NotEmptyValidator;
 use Neos\Form\Core\Model\AbstractFormElement;

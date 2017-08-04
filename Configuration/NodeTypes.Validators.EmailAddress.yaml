@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:EmailAddressValidator':
+'Neos.Form.Builder:EmailAddressValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'Email address validator'
     icon: 'icon-envelope-o'

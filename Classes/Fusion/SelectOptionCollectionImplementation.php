@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\Fusion;
+namespace Neos\Form\Builder\Fusion;
 
 use Neos\Fusion\FusionObjects\AbstractArrayFusionObject;
 use Neos\Utility\ObjectAccess;

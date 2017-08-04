@@ -1,7 +1,7 @@
-'Wwwision.Neos.Form:DatePicker':
+'Neos.Form.Builder:DatePicker':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'Date picker'
     icon: 'icon-calendar'

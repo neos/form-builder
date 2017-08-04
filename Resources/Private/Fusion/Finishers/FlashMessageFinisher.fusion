@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:FlashMessageFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+prototype(Neos.Form.Builder:FlashMessageFinisher) < prototype(Neos.Form.Builder:Finisher) {
     formElementType = 'Neos.Form:FlashMessage'
 
     options {

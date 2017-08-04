@@ -1,11 +1,11 @@
-'Wwwision.Neos.Form:SelectionMixin':
+'Neos.Form.Builder:SelectionMixin':
   ui:
     group: 'form.select'
   childNodes:
     'options':
-      type: 'Wwwision.Neos.Form:SelectOptionCollection'
+      type: 'Neos.Form.Builder:SelectOptionCollection'
 
-'Wwwision.Neos.Form:DefaultValueMixin':
+'Neos.Form.Builder:DefaultValueMixin':
   properties:
     'defaultValue':
       type: string

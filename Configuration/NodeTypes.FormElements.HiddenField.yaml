@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:HiddenField':
+'Neos.Form.Builder:HiddenField':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
+    'Neos.Form.Builder:FormElement': TRUE
   ui:
     label: 'Hidden value'
     icon: 'icon-eye-slash'

@@ -1,4 +1,4 @@
 # See Neos\Flow\Validation\Validator\AlphanumericValidator
-prototype(Wwwision.Neos.Form:AlphanumericValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:AlphanumericValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:Alphanumeric'
 }

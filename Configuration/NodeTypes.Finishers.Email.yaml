@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:EmailFinisher':
+'Neos.Form.Builder:EmailFinisher':
   superTypes:
-    'Wwwision.Neos.Form:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
     label: 'Email finisher'
     icon: 'icon-envelope-o'

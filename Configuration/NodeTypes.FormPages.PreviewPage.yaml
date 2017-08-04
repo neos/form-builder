@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:PreviewPage':
+'Neos.Form.Builder:PreviewPage':
   superTypes:
-    'Wwwision.Neos.Form:FormPage': TRUE
+    'Neos.Form.Builder:FormPage': TRUE
   ui:
     label: 'Preview page'
     icon: 'icon-file-text-o'

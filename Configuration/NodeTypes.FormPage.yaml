@@ -1,4 +1,4 @@
-'Wwwision.Neos.Form:FormPage':
+'Neos.Form.Builder:FormPage':
   superTypes:
     'Neos.Neos:Content': TRUE
   constraints:
@@ -22,7 +22,7 @@
       formElementType: 'Neos.Form:Page'
   childNodes:
     'elements':
-      type: 'Wwwision.Neos.Form:ElementCollection'
+      type: 'Neos.Form.Builder:ElementCollection'
   properties:
     'identifier':
       type: string
@@ -45,7 +45,7 @@
         inspector:
           group: 'formPage'
 
-'Wwwision.Neos.Form:PageCollection':
+'Neos.Form.Builder:PageCollection':
   label: '${"Further form pages"}'
   ui:
     inlineEditable: TRUE
@@ -57,9 +57,9 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Wwwision.Neos.Form:FormPage': TRUE
+      'Neos.Form.Builder:FormPage': TRUE
 
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'Wwwision.Neos.Form:FormPage': FALSE
+      'Neos.Form.Builder:FormPage': FALSE

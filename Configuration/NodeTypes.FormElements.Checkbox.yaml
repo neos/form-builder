@@ -1,7 +1,7 @@
-'Wwwision.Neos.Form:Checkbox':
+'Neos.Form.Builder:Checkbox':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'Checkbox'
     icon: 'icon-check-square-o'

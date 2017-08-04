@@ -1,7 +1,7 @@
-'Wwwision.Neos.Form:StaticText':
+'Neos.Form.Builder:StaticText':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'Static Text'
     icon: 'icon-align-left'

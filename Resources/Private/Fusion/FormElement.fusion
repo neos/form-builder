@@ -1,5 +1,5 @@
-prototype(Wwwision.Neos.Form:FormElement) {
-    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementImplementation'
+prototype(Neos.Form.Builder:FormElement) {
+    @class = 'Neos\\Form\\Builder\\Fusion\\FormElementImplementation'
 
     formElementType = ${null}
     required = ${true}
@@ -13,6 +13,6 @@ prototype(Wwwision.Neos.Form:FormElement) {
     validators = Neos.Fusion:RawArray
 }
 
-prototype(Wwwision.Neos.Form:SelectionFormElement) < prototype(Wwwision.Neos.Form:FormElement) {
-    properties.options = Wwwision.Neos.Form:SelectOptionCollection
+prototype(Neos.Form.Builder:SelectionFormElement) < prototype(Neos.Form.Builder:FormElement) {
+    properties.options = Neos.Form.Builder:SelectOptionCollection
 }

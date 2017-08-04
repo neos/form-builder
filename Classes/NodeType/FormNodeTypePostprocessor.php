@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\NodeType;
+namespace Neos\Form\Builder\NodeType;
 
 use Neos\ContentRepository\Domain\Model\NodeType;
 use Neos\ContentRepository\NodeTypePostprocessor\NodeTypePostprocessorInterface;

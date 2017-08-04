@@ -1,7 +1,7 @@
-'Wwwision.Neos.Form:FileUpload':
+'Neos.Form.Builder:FileUpload':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'File upload'
     icon: 'icon-upload'

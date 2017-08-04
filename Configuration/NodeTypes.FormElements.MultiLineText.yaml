@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:MultiLineText':
+'Neos.Form.Builder:MultiLineText':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
+    'Neos.Form.Builder:FormElement': TRUE
   ui:
     label: 'Multi-line Text'
     icon: 'icon-pencil-square-o'

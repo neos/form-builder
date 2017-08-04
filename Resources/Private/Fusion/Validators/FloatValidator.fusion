@@ -1,4 +1,4 @@
 # See Neos\Flow\Validation\Validator\FloatValidator
-prototype(Wwwision.Neos.Form:FloatValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:FloatValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:Float'
 }

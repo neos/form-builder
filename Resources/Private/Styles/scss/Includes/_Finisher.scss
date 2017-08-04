@@ -1,4 +1,4 @@
-#{select("Wwwision.Neos.Form:FinisherCollection")}, #{select("Wwwision.Neos.Form:FinisherCollection")}  .neos-empty-contentcollection-overlay {
+#{select("Neos.Form.Builder:FinisherCollection")}, #{select("Neos.Form.Builder:FinisherCollection")}  .neos-empty-contentcollection-overlay {
   padding-left: 20px;
   position: absolute;
   z-index: 100;
@@ -9,7 +9,7 @@
   vertical-align: middle;
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} .neos-empty-contentcollection-overlay:before {
+#{select("Neos.Form.Builder:FinisherCollection")} .neos-empty-contentcollection-overlay:before {
   font: 18px FontAwesome;
   color: #bbb;
   display: inline-block;
@@ -22,7 +22,7 @@
   content: "\F045";
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} > #{$anyContentElement} {
+#{select("Neos.Form.Builder:FinisherCollection")} > #{$anyContentElement} {
   display: inline-block;
   outline-offset: 1px !important;
   padding: 0 3px;
@@ -30,20 +30,20 @@
   cursor: pointer;
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} > #{$anyContentElement}:before {
+#{select("Neos.Form.Builder:FinisherCollection")} > #{$anyContentElement}:before {
   font: 16px FontAwesome;
   color: #00adee;
   content: "\F045";
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} > #{select("Wwwision.Neos.Form:ConfirmationFinisher")}:before {
+#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:ConfirmationFinisher")}:before {
   content: "\F075";
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} > #{select("Wwwision.Neos.Form:EmailFinisher")}:before {
+#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:EmailFinisher")}:before {
   content: "\F003";
 }
 
-#{select("Wwwision.Neos.Form:FinisherCollection")} > #{select("Wwwision.Neos.Form:RedirectFinisher")}:before {
+#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:RedirectFinisher")}:before {
   content: "\F061";
 }

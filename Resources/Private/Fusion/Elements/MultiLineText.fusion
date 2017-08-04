@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:MultiLineText) < prototype(Wwwision.Neos.Form:FormElement) {
+prototype(Neos.Form.Builder:MultiLineText) < prototype(Neos.Form.Builder:FormElement) {
     formElementType = 'Neos.Form:MultiLineText'
     properties {
         placeholder = ${null}

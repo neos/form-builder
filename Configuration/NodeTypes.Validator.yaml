@@ -1,4 +1,4 @@
-'Wwwision.Neos.Form:AbstractValidator':
+'Neos.Form.Builder:AbstractValidator':
   abstract: TRUE
   superTypes:
     'Neos.Neos:Content': TRUE
@@ -20,9 +20,9 @@
       ui:
         inspector:
           editorOptions:
-            baseNodeType: 'Wwwision.Neos.Form:AbstractValidator'
+            baseNodeType: 'Neos.Form.Builder:AbstractValidator'
 
-'Wwwision.Neos.Form:ValidatorCollection':
+'Neos.Form.Builder:ValidatorCollection':
   ui:
     icon: 'icon-check-circle'
     inlineEditable: TRUE
@@ -34,9 +34,9 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Wwwision.Neos.Form:AbstractValidator': TRUE
+      'Neos.Form.Builder:AbstractValidator': TRUE
 
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'Wwwision.Neos.Form:AbstractValidator': FALSE
+      'Neos.Form.Builder:AbstractValidator': FALSE

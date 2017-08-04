@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:ConfirmationFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+prototype(Neos.Form.Builder:ConfirmationFinisher) < prototype(Neos.Form.Builder:Finisher) {
     formElementType = 'Neos.Form:Confirmation'
 
     options {

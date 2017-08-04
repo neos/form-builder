@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\Fusion;
+namespace Neos\Form\Builder\Fusion;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Http\Response;

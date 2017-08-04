@@ -1,4 +1,4 @@
-'Wwwision.Neos.Form:AbstractFinisher':
+'Neos.Form.Builder:AbstractFinisher':
   abstract: TRUE
   superTypes:
     'Neos.Neos:Content': TRUE
@@ -17,7 +17,7 @@
     fusion:
       prototypeGenerator: null
 
-'Wwwision.Neos.Form:FinisherCollection':
+'Neos.Form.Builder:FinisherCollection':
   label: '${"Form finishers"}'
   ui:
     icon: 'icon-share-square-o'
@@ -27,9 +27,9 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Wwwision.Neos.Form:AbstractFinisher': TRUE
+      'Neos.Form.Builder:AbstractFinisher': TRUE
 
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'Wwwision.Neos.Form:AbstractFinisher': FALSE
+      'Neos.Form.Builder:AbstractFinisher': FALSE

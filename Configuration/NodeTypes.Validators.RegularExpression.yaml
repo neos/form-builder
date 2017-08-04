@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:RegularExpressionValidator':
+'Neos.Form.Builder:RegularExpressionValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'Regular Expression validator'
     icon: 'icon-terminal'

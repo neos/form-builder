@@ -1,5 +1,5 @@
 # See Neos\Flow\Validation\Validator\CountValidator
-prototype(Wwwision.Neos.Form:CountValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:CountValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:Count'
     options {
         minimum = 0

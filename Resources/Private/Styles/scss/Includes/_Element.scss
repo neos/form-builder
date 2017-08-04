@@ -1,13 +1,13 @@
-#{select("Wwwision.Neos.Form:ElementCollection")} {
+#{select("Neos.Form.Builder:ElementCollection")} {
   margin-top: 30px;
 }
 
-#{select("Wwwision.Neos.Form:ElementCollection")} > #{$anyContentElement} {
+#{select("Neos.Form.Builder:ElementCollection")} > #{$anyContentElement} {
   position: relative;
   padding-top: 10px;
 }
 
-#{select("Wwwision.Neos.Form:ElementCollection")} > .neos-empty-contentcollection-overlay:before {
+#{select("Neos.Form.Builder:ElementCollection")} > .neos-empty-contentcollection-overlay:before {
   font: 18px FontAwesome;
   color: #bbb;
   display: inline-block;

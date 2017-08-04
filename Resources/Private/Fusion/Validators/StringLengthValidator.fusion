@@ -1,5 +1,5 @@
 # See Neos\Flow\Validation\Validator\StringLengthValidator
-prototype(Wwwision.Neos.Form:StringLengthValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:StringLengthValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:StringLength'
     options {
         minimum = 0

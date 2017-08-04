@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:RedirectFinisher':
+'Neos.Form.Builder:RedirectFinisher':
   superTypes:
-    'Wwwision.Neos.Form:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
     label: 'Redirect finisher'
     icon: 'icon-arrow-right'

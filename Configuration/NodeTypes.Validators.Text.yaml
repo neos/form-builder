@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:TextValidator':
+'Neos.Form.Builder:TextValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'Text validator'
     icon: 'icon-font'

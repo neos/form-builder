@@ -1,5 +1,5 @@
-prototype(Wwwision.Neos.Form:SelectOptionCollection) {
-    @class = 'Wwwision\\Neos\\Form\\Fusion\\SelectOptionCollectionImplementation'
+prototype(Neos.Form.Builder:SelectOptionCollection) {
+    @class = 'Neos\\Form\\Builder\\Fusion\\SelectOptionCollectionImplementation'
 
     valuePropertyPath = 'value'
     labelPropertyPath = 'label'

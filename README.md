@@ -10,7 +10,7 @@ prototypes that allow for dynamic Fusion based Form definitions.
 Install this package using the [Composer Dependency Manager](https://getcomposer.org/):
 
 ```
-composer require wwwision/neos-form
+composer require neos/form-builder
 ```
 
 **Note:** This package requires the `neos/neos` package in version 3.1 or higher
@@ -51,7 +51,7 @@ page.head.formBuilderStyles = Neos.Fusion:Tag {
     attributes {
         rel = 'stylesheet'
         href = Neos.Fusion:ResourceUri {
-            path = 'resource://Wwwision.Neos.Form/Public/Styles/Backend.css'
+            path = 'resource://Neos.Form.Builder/Public/Styles/Backend.css'
         }
     }
     @position = 'end'

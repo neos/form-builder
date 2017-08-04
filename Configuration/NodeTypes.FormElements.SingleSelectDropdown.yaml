@@ -1,8 +1,8 @@
-'Wwwision.Neos.Form:SingleSelectDropdown':
+'Neos.Form.Builder:SingleSelectDropdown':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:SelectionMixin': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:SelectionMixin': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'Single Select (Dropdown)'
     icon: 'icon-list-ol'

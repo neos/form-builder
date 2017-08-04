@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:ConfirmationFinisher':
+'Neos.Form.Builder:ConfirmationFinisher':
   superTypes:
-    'Wwwision.Neos.Form:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
     label: 'Confirmation finisher'
     icon: 'icon-comment'

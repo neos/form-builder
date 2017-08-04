@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\Fusion;
+namespace Neos\Form\Builder\Fusion;
 
 use Neos\Form\Core\Model\Renderable\AbstractRenderable;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;

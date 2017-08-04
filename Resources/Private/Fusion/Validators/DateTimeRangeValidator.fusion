@@ -1,5 +1,5 @@
 # See Neos\Flow\Validation\Validator\DateTimeRangeValidator
-prototype(Wwwision.Neos.Form:DateTimeRangeValidator) < prototype(Wwwision.Neos.Form:Validator) {
+prototype(Neos.Form.Builder:DateTimeRangeValidator) < prototype(Neos.Form.Builder:Validator) {
     formElementType = 'Neos.Flow:DateTimeRange'
     options {
         latestDate = ${null}

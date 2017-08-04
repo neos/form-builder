@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:SingleSelectRadiobuttons) < prototype(Wwwision.Neos.Form:SelectionFormElement) {
+prototype(Neos.Form.Builder:SingleSelectRadiobuttons) < prototype(Neos.Form.Builder:SelectionFormElement) {
     formElementType = 'Neos.Form:SingleSelectRadiobuttons'
 
 }

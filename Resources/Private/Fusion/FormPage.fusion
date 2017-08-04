@@ -1,5 +1,5 @@
-prototype(Wwwision.Neos.Form:FormPage) {
-    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormPageImplementation'
+prototype(Neos.Form.Builder:FormPage) {
+    @class = 'Neos\\Form\\Builder\\Fusion\\FormPageImplementation'
 
     identifier = 'page'
     formElementType = 'Neos.Form:Page'

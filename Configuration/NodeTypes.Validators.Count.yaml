@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:CountValidator':
+'Neos.Form.Builder:CountValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'Count validator'
     icon: 'icon-sort-amount-asc'

@@ -1,8 +1,8 @@
-'Wwwision.Neos.Form:MultipleSelectDropdown':
+'Neos.Form.Builder:MultipleSelectDropdown':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
-    'Wwwision.Neos.Form:SelectionMixin': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:SelectionMixin': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
     label: 'Multiple Select (Dropdown)'
     icon: 'icon-list-ol'

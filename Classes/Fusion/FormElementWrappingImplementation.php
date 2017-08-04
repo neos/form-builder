@@ -1,5 +1,5 @@
 <?php
-namespace Wwwision\Neos\Form\Fusion;
+namespace Neos\Form\Builder\Fusion;
 
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\Eel\FlowQuery\FlowQuery;
@@ -50,7 +50,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                     $output = $this->contentElementWrappingService->wrapContentObject($elementsNode, $output, $fusionPath);
                 }
                 // first page? add finisher collection and return the wrapped content
-                if ($node->getNodeType()->isOfType('Wwwision.Neos.Form:NodeBasedForm')) {
+                if ($node->getNodeType()->isOfType('Neos.Form.Builder:NodeBasedForm')) {
                     $finishersNode = $node->getNode('finishers');
                     if ($finishersNode !== null) {
                         $output = $this->wrapNodeRecursively($finishersNode, '', $fusionPath . '/finishers') . $output;
@@ -76,7 +76,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
     private function isLastPageNode(NodeInterface $node): bool
     {
         $flowQuery = new FlowQuery([$node]);
-        return $flowQuery->next('[instanceof Wwwision.Neos.Form:FormPage]')->get(0) === null;
+        return $flowQuery->next('[instanceof Neos.Form.Builder:FormPage]')->get(0) === null;
     }
 
     public function parentFusionPath(string $fusionPath): string

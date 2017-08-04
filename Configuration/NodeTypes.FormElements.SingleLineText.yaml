@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:SingleLineText':
+'Neos.Form.Builder:SingleLineText':
   superTypes:
-    'Wwwision.Neos.Form:FormElement': TRUE
+    'Neos.Form.Builder:FormElement': TRUE
   ui:
     label: 'Single-line text'
     icon: 'icon-pencil-square-o'

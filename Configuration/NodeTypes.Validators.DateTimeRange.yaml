@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:DateTimeRangeValidator':
+'Neos.Form.Builder:DateTimeRangeValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'DateTime range validator'
     icon: 'icon-calendar-check-o'

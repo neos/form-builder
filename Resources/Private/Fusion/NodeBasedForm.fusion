@@ -1,11 +1,11 @@
-prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form) {
-    @context.formNode = ${q(node).closest('[instanceof Wwwision.Neos.Form:NodeBasedForm]').get(0)}
+prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
+    @context.formNode = ${q(node).closest('[instanceof Neos.Form.Builder:NodeBasedForm]').get(0)}
     @context.formFusionPath = ${this.path}
     identifier = ${formNode.properties.identifier ? formNode.properties.identifier : 'form-' + formNode.identifier}
     presetName = ${formNode.properties.preset ? formNode.properties.preset : 'default'}
     formElementType = ${formNode.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
 
-    renderCallbacks.formElementWrapping = Wwwision.Neos.Form:FormElementWrapping {
+    renderCallbacks.formElementWrapping = Neos.Form.Builder:FormElementWrapping {
         @if.isInBackend = ${formNode.context.inBackend}
     }
 
@@ -13,14 +13,14 @@ prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form)
         label = ${formNode.properties.label}
         renderingOptions._node = ${formNode}
         renderingOptions._fusionPath = ${formFusionPath}
-        elements = Wwwision.Neos.Form:ElementCollection {
+        elements = Neos.Form.Builder:ElementCollection {
             collection = ${q(formNode).children('elements').children()}
         }
     }
-    furtherPages = Wwwision.Neos.Form:PageCollection {
+    furtherPages = Neos.Form.Builder:PageCollection {
         collection = ${q(formNode).children('furtherPages').children()}
     }
-    finishers = Wwwision.Neos.Form:FinisherCollection {
+    finishers = Neos.Form.Builder:FinisherCollection {
         collection = ${q(formNode).children('finishers').children()}
     }
 
@@ -50,7 +50,7 @@ prototype(Wwwision.Neos.Form:NodeBasedForm) < prototype(Wwwision.Neos.Form:Form)
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
 
-prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:Collection) {
 
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Renderer {
@@ -62,7 +62,7 @@ prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:Collecti
             required = ${elementNode.properties.required}
             defaultValue = ${elementNode.properties.defaultValue}
             properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
-            validators = Wwwision.Neos.Form:ValidatorCollection {
+            validators = Neos.Form.Builder:ValidatorCollection {
                 collection = ${q(elementNode).children('validators').children()}
             }
             renderingOptions._node = ${elementNode}
@@ -72,16 +72,16 @@ prototype(Wwwision.Neos.Form:ElementCollection) < prototype(Neos.Fusion:Collecti
                 collection = ${q(elementNode).children('options').children()}
                 valuePropertyPath = 'properties.value'
                 labelPropertyPath = 'properties.label'
-                @if.isSelectFormElement = ${q(elementNode).is('[instanceof Wwwision.Neos.Form:SelectionMixin]')}
+                @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
             }
         }
     }
 }
 
 
-prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'pageNode'
-    itemRenderer = Wwwision.Neos.Form:FormPage {
+    itemRenderer = Neos.Form.Builder:FormPage {
         @context.page = ${this}
         identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
         label = ${pageNode.properties.label}
@@ -89,13 +89,13 @@ prototype(Wwwision.Neos.Form:PageCollection) < prototype(Neos.Fusion:Collection)
         renderingOptions._node = ${pageNode}
         renderingOptions._fusionPath = ${page.path}
 
-        elements = Wwwision.Neos.Form:ElementCollection {
+        elements = Neos.Form.Builder:ElementCollection {
             collection = ${q(pageNode).children('elements').children()}
         }
     }
 }
 
-prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${finisherNode.nodeType.name}
@@ -105,7 +105,7 @@ prototype(Wwwision.Neos.Form:FinisherCollection) < prototype(Neos.Fusion:Collect
     }
 }
 
-prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:ValidatorCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${validatorNode.nodeType.name}
@@ -115,6 +115,6 @@ prototype(Wwwision.Neos.Form:ValidatorCollection) < prototype(Neos.Fusion:Collec
     }
 }
 
-prototype(Wwwision.Neos.Form:FormElementWrapping) {
-    @class = 'Wwwision\\Neos\\Form\\Fusion\\FormElementWrappingImplementation'
+prototype(Neos.Form.Builder:FormElementWrapping) {
+    @class = 'Neos\\Form\\Builder\\Fusion\\FormElementWrappingImplementation'
 }

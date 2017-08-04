@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:StaticText) < prototype(Wwwision.Neos.Form:FormElement) {
+prototype(Neos.Form.Builder:StaticText) < prototype(Neos.Form.Builder:FormElement) {
     formElementType = 'Neos.Form:StaticText'
 
     properties {

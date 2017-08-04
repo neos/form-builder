@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:ImageUpload) < prototype(Wwwision.Neos.Form:FormElement) {
+prototype(Neos.Form.Builder:ImageUpload) < prototype(Neos.Form.Builder:FormElement) {
     formElementType = 'Neos.Form:ImageUpload'
 
     properties {

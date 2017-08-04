@@ -1,15 +1,15 @@
-#{select("Wwwision.Neos.Form:PageCollection")} {
+#{select("Neos.Form.Builder:PageCollection")} {
   margin-top: 30px;
 }
 
-#{select("Wwwision.Neos.Form:PageCollection")} > #{$anyContentElement} {
+#{select("Neos.Form.Builder:PageCollection")} > #{$anyContentElement} {
   position: relative;
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #bbb;
 }
 
-#{select("Wwwision.Neos.Form:PageCollection")} > #{$anyContentElement}:before {
+#{select("Neos.Form.Builder:PageCollection")} > #{$anyContentElement}:before {
   font: 18px FontAwesome;
   color: #bbb;
   display: inline-block;
@@ -22,7 +22,7 @@
   content: "\F016";
 }
 
-#{select("Wwwision.Neos.Form:PageCollection")} > .neos-empty-contentcollection-overlay:before {
+#{select("Neos.Form.Builder:PageCollection")} > .neos-empty-contentcollection-overlay:before {
   font: 18px FontAwesome;
   color: #bbb;
   display: inline-block;

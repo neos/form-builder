@@ -1,4 +1,4 @@
-prototype(Wwwision.Neos.Form:RedirectFinisher) < prototype(Wwwision.Neos.Form:Finisher) {
+prototype(Neos.Form.Builder:RedirectFinisher) < prototype(Neos.Form.Builder:Finisher) {
     formElementType = 'Neos.Form:Redirect'
 
     options {

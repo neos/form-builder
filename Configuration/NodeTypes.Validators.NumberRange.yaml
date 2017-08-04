@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:NumberRangeValidator':
+'Neos.Form.Builder:NumberRangeValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'Number range validator'
     icon: 'icon-sort-numeric-asc'

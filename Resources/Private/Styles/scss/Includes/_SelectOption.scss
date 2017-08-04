@@ -1,4 +1,4 @@
-#{select("Wwwision.Neos.Form:SelectOptionCollection")}, #{select("Wwwision.Neos.Form:SelectOptionCollection")} .neos-empty-contentcollection-overlay {
+#{select("Neos.Form.Builder:SelectOptionCollection")}, #{select("Neos.Form.Builder:SelectOptionCollection")} .neos-empty-contentcollection-overlay {
   outline: none !important;
   text-align: right;
   margin-bottom: 10px;
@@ -6,7 +6,7 @@
 }
 
 
-#{select("Wwwision.Neos.Form:SelectOptionCollection")} .neos-empty-contentcollection-overlay:before {
+#{select("Neos.Form.Builder:SelectOptionCollection")} .neos-empty-contentcollection-overlay:before {
   font: 16px FontAwesome;
   color: #bbb;
   outline: none;
@@ -16,7 +16,7 @@
   content: "\F0CA";
 }
 
-#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyContentElement} {
+#{select("Neos.Form.Builder:SelectOptionCollection")} #{$anyContentElement} {
   display: inline-block;
   outline-offset: 1px !important;
   padding: 0 3px;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-#{select("Wwwision.Neos.Form:SelectOptionCollection")} #{$anyContentElement}:before {
+#{select("Neos.Form.Builder:SelectOptionCollection")} #{$anyContentElement}:before {
   font: 16px FontAwesome;
   color: #00adee;
   content: "\F28E";

@@ -1,6 +1,6 @@
-'Wwwision.Neos.Form:StringLengthValidator':
+'Neos.Form.Builder:StringLengthValidator':
   superTypes:
-    'Wwwision.Neos.Form:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
     label: 'String length validator'
     icon: 'icon-text-width'

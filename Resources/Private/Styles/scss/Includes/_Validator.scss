@@ -1,4 +1,4 @@
-#{select("Wwwision.Neos.Form:ValidatorCollection")}, #{select("Wwwision.Neos.Form:ValidatorCollection")} .neos-empty-contentcollection-overlay {
+#{select("Neos.Form.Builder:ValidatorCollection")}, #{select("Neos.Form.Builder:ValidatorCollection")} .neos-empty-contentcollection-overlay {
   padding-left: 20px;
   position: absolute;
   z-index: 110;
@@ -11,7 +11,7 @@
 }
 
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} .neos-empty-contentcollection-overlay:before {
+#{select("Neos.Form.Builder:ValidatorCollection")} .neos-empty-contentcollection-overlay:before {
   font: 16px FontAwesome;
   color: #bbb;
   outline: none;
@@ -24,7 +24,7 @@
   content: "\F058";
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyContentElement} {
+#{select("Neos.Form.Builder:ValidatorCollection")} #{$anyContentElement} {
   display: inline-block;
   outline-offset: 1px !important;
   padding: 0 3px;
@@ -32,35 +32,35 @@
   cursor: pointer;
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} #{$anyContentElement}:before {
+#{select("Neos.Form.Builder:ValidatorCollection")} #{$anyContentElement}:before {
   font: 16px FontAwesome;
   color: #00adee;
   content: "\F058";
 }
 
-#{select("Wwwision.Neos.Form:ValidatorCollection")} {
-  #{select("Wwwision.Neos.Form:AlphanumericValidator")}:before,
-  #{select("Wwwision.Neos.Form:TextValidator")}:before {
+#{select("Neos.Form.Builder:ValidatorCollection")} {
+  #{select("Neos.Form.Builder:AlphanumericValidator")}:before,
+  #{select("Neos.Form.Builder:TextValidator")}:before {
     content: "\F031";
   }
-  #{select("Wwwision.Neos.Form:CountValidator")}:before {
+  #{select("Neos.Form.Builder:CountValidator")}:before {
     content: "\F160";
   }
-  #{select("Wwwision.Neos.Form:DateTimeRangeValidator")}:before {
+  #{select("Neos.Form.Builder:DateTimeRangeValidator")}:before {
     content: "\F274";
   }
-  #{select("Wwwision.Neos.Form:EmailAddressValidator")}:before {
+  #{select("Neos.Form.Builder:EmailAddressValidator")}:before {
     content: "\F003";
   }
-  #{select("Wwwision.Neos.Form:FloatValidator")}:before,
-  #{select("Wwwision.Neos.Form:IntegerValidator")}:before,
-  #{select("Wwwision.Neos.Form:NumberRangeValidator")}:before {
+  #{select("Neos.Form.Builder:FloatValidator")}:before,
+  #{select("Neos.Form.Builder:IntegerValidator")}:before,
+  #{select("Neos.Form.Builder:NumberRangeValidator")}:before {
     content: "\F162";
   }
-  #{select("Wwwision.Neos.Form:RegularExpressionValidator")}:before {
+  #{select("Neos.Form.Builder:RegularExpressionValidator")}:before {
     content: "\F120";
   }
-  #{select("Wwwision.Neos.Form:StringLengthValidator")}:before {
+  #{select("Neos.Form.Builder:StringLengthValidator")}:before {
     content: "\F035";
   }
 }

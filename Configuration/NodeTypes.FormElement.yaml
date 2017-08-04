@@ -1,8 +1,8 @@
-'Wwwision.Neos.Form:FormElement':
+'Neos.Form.Builder:FormElement':
   abstract: TRUE
   superTypes:
     'Neos.Neos:Content': TRUE
-    'Wwwision.Neos.Form:DefaultValueMixin': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
@@ -27,13 +27,13 @@
       prototypeGenerator: null
   childNodes:
     'validators':
-      type: 'Wwwision.Neos.Form:ValidatorCollection'
+      type: 'Neos.Form.Builder:ValidatorCollection'
   properties:
     _nodeType:
       ui:
         inspector:
           editorOptions:
-            baseNodeType: 'Wwwision.Neos.Form:FormElement'
+            baseNodeType: 'Neos.Form.Builder:FormElement'
     'identifier':
       type: string
       ui:
@@ -63,7 +63,7 @@
         inspector:
           group: 'formElement'
 
-'Wwwision.Neos.Form:ElementCollection':
+'Neos.Form.Builder:ElementCollection':
   label: '${"Elements"}'
   ui:
     icon: 'icon-list'
@@ -76,9 +76,9 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Wwwision.Neos.Form:FormElement': TRUE
+      'Neos.Form.Builder:FormElement': TRUE
 
-'Wwwision.Neos.Form:SelectOption':
+'Neos.Form.Builder:SelectOption':
   superTypes:
     'Neos.Neos:Content': TRUE
   constraints:
@@ -119,7 +119,7 @@
         inspector:
           group: 'selectOption'
 
-'Wwwision.Neos.Form:SelectOptionCollection':
+'Neos.Form.Builder:SelectOptionCollection':
   label: '${"Select options"}'
   ui:
     icon: 'icon-list-ul'
@@ -132,10 +132,10 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Wwwision.Neos.Form:SelectOption': TRUE
+      'Neos.Form.Builder:SelectOption': TRUE
 
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'Wwwision.Neos.Form:FormElement': FALSE
-      'Wwwision.Neos.Form:SelectOption': FALSE
+      'Neos.Form.Builder:FormElement': FALSE
+      'Neos.Form.Builder:SelectOption': FALSE

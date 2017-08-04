@@ -1,3 +1,3 @@
-prototype(Wwwision.Neos.Form:Checkbox) < prototype(Wwwision.Neos.Form:FormElement) {
+prototype(Neos.Form.Builder:Checkbox) < prototype(Neos.Form.Builder:FormElement) {
     formElementType = 'Neos.Form:Checkbox'
 }

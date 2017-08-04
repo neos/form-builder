@@ -2,7 +2,7 @@ Neos:
   Neos:
     fusion:
       autoInclude:
-        'Wwwision.Neos.Form': true
+        'Neos.Form.Builder': true
 
     nodeTypes:
       groups:
