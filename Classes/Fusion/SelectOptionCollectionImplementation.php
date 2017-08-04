@@ -7,7 +7,7 @@ use Neos\Utility\ObjectAccess;
 class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
 {
 
-    protected $ignoreProperties = ['keyPropertyPath', 'valuePropertyPath'];
+    protected $ignoreProperties = ['labelPropertyPath', 'valuePropertyPath'];
 
     public function evaluate()
     {
