@@ -13,6 +13,12 @@ Install this package using GIT:
 git clone https://github.com/bwaidelich/form-builder.git Packages/Application/Neos.Form.Builder
 ```
 
+And make sure to rescan the installed packages so that it is properly installed:
+
+```
+./flow flow:package:rescan
+```
+
 **Note:** This package requires the `neos/neos` package in version 3.1 or higher
 
 In the Neos backend there's now a new Content Element type that can be
