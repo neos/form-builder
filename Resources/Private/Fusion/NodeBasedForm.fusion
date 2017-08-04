@@ -23,31 +23,14 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
     finishers = Neos.Form.Builder:FinisherCollection {
         collection = ${q(formNode).children('finishers').children()}
     }
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 
-
-    #    @cache {
-    #        mode = 'dynamic'
-    #        entryIdentifier {
-    #            node = ${node}
-    #        }
-    #        entryDiscriminator = ${request.httpRequest.methodSafe ? 'static' : false}
-    #        context {
-    #            1 = 'node'
-    #            2 = 'documentNode'
-    #        }
-    #        entryTags {
-    #            1 = ${'Node_' + node.identifier}
-    #            2 = ${'DescendantOf_' + node.identifier}
-    #        }
-    #    }
     @cache {
-        mode = 'uncached'
         context {
             1 = 'node'
             2 = 'documentNode'
         }
     }
-    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
 
 prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:Collection) {

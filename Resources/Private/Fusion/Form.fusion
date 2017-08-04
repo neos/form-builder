@@ -11,4 +11,13 @@ prototype(Neos.Form.Builder:Form) {
     }
     furtherPages = Neos.Fusion:RawArray
     finishers = Neos.Fusion:RawArray
+
+    @cache {
+        # By default Forms are not cached at all in order to avoid nasty bugs. If a form is "static" it should be cached for GET requests
+        mode = 'uncached'
+        context {
+            # Fusion currently requires a context field to be specified for cache mode "uncached", but it's not actually needed here
+            1 = 'none'
+        }
+    }
 }
