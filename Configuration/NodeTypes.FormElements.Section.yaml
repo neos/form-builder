@@ -1,0 +1,20 @@
+'Neos.Form.Builder:Section':
+  superTypes:
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:SectionMixin': TRUE
+    'Neos.Form.Builder:IdentifierMixin': FALSE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:RequiredCheckboxMixin': FALSE
+    'Neos.Form.Builder:ValidatorsMixin': FALSE
+  ui:
+    label: 'Section'
+    icon: 'icon-folder-open'
+    inspector:
+      groups:
+        'formElement':
+          icon: 'icon-folder-open'
+    group: 'form.container'
+    position: 10
+  options:
+    form:
+      formElementType: 'Neos.Form:Section'

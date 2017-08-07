@@ -56,3 +56,8 @@
   childNodes:
     'validators':
       type: 'Neos.Form.Builder:ValidatorCollection'
+
+'Neos.Form.Builder:SectionMixin':
+  childNodes:
+    'elements':
+      type: 'Neos.Form.Builder:ElementCollection'

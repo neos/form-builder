@@ -34,7 +34,6 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
 }
 
 prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:Collection) {
-
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Renderer {
         type = ${elementNode.nodeType.name}
@@ -56,6 +55,11 @@ prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:Collectio
                 valuePropertyPath = 'properties.value'
                 labelPropertyPath = 'properties.label'
                 @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
+            }
+
+            elements = Neos.Form.Builder:ElementCollection {
+                collection = ${q(elementNode).children('elements').children()}
+                @if.isSectionFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
             }
         }
     }

@@ -1,0 +1,3 @@
+prototype(Neos.Form.Builder:Section) < prototype(Neos.Form.Builder:SectionFormElement) {
+    formElementType = 'Neos.Form:Section'
+}
