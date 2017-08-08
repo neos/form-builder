@@ -31,6 +31,7 @@ class FormImplementation extends AbstractFusionObject
         } catch (PresetNotFoundException $exception) {
             return $exception->getMessage();
         }
+        $formDefinition->setRenderingOption('__fusionRuntime', $this->runtime);
         $controllerContext = $this->runtime->getControllerContext();
 
         $response = new Response($controllerContext->getResponse());
@@ -52,20 +53,20 @@ class FormImplementation extends AbstractFusionObject
         $presetName = $this->getPresetName();
         $formDefaults = $this->getPresetConfiguration($presetName);
 
-        $form = new FormDefinition($this->getIdentifier(), $formDefaults, $this->getFormElementType());
+        $formDefinition = new FormDefinition($this->getIdentifier(), $formDefaults, $this->getFormElementType());
 
-        $this->runtime->pushContext('form', $form);
+        $this->runtime->pushContext('form', $formDefinition);
         $this->runtime->evaluate($this->path . '/firstPage');
         $this->runtime->evaluate($this->path . '/furtherPages');
         $this->runtime->evaluate($this->path . '/finishers');
         $this->runtime->popContext();
 
         /** @var RenderableInterface $renderable */
-        foreach ($form->getRenderablesRecursively() as $renderable) {
+        foreach ($formDefinition->getRenderablesRecursively() as $renderable) {
             $renderable->onBuildingFinished();
         }
 
-        return $form;
+        return $formDefinition;
     }
 
     private function getPresetConfiguration(string $presetName): array
