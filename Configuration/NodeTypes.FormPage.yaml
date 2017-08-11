@@ -44,8 +44,8 @@
           group: 'formPage'
 
 'Neos.Form.Builder:PageCollection':
-  label: '${"Further form pages"}'
   ui:
+    label: 'Further pages'
     inlineEditable: TRUE
   options:
     fusion:

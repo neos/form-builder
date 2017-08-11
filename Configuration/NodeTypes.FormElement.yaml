@@ -37,8 +37,8 @@
             baseNodeType: 'Neos.Form.Builder:FormElement'
 
 'Neos.Form.Builder:ElementCollection':
-  label: '${"Elements"}'
   ui:
+    label: 'Elements'
     icon: 'icon-list'
     inlineEditable: TRUE
   options:
@@ -93,8 +93,8 @@
           group: 'selectOption'
 
 'Neos.Form.Builder:SelectOptionCollection':
-  label: '${"Select options"}'
   ui:
+    label: 'Options'
     icon: 'icon-list-ul'
     inlineEditable: TRUE
   options:

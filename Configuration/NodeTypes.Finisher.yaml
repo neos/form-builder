@@ -18,8 +18,8 @@
       prototypeGenerator: null
 
 'Neos.Form.Builder:FinisherCollection':
-  label: '${"Form finishers"}'
   ui:
+    label: 'Finishers'
     icon: 'icon-share-square-o'
     inlineEditable: TRUE
   superTypes:
