@@ -31,7 +31,7 @@ class FormImplementation extends AbstractFusionObject
         } catch (PresetNotFoundException $exception) {
             return $exception->getMessage();
         }
-        $formDefinition->setRenderingOption('__fusionRuntime', $this->runtime);
+        $formDefinition->setRenderingOption('_fusionRuntime', $this->runtime);
         $controllerContext = $this->runtime->getControllerContext();
 
         $response = new Response($controllerContext->getResponse());
