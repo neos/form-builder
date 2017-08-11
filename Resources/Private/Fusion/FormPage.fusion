@@ -5,5 +5,8 @@ prototype(Neos.Form.Builder:FormPage.Definition) {
     formElementType = 'Neos.Form:Page'
     renderingOptions = Neos.Fusion:RawArray
     label = ${null}
-    elements = Neos.Fusion:RawArray
+    elements = Neos.Form.Builder:ElementCollection
+}
+
+prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:RawArray) {
 }

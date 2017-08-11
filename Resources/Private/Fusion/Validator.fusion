@@ -5,3 +5,6 @@ prototype(Neos.Form.Builder:Validator.Definition) {
 
     options = Neos.Fusion:RawArray
 }
+
+prototype(Neos.Form.Builder:ValidatorCollection) < prototype(Neos.Fusion:RawArray) {
+}

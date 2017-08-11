@@ -1,0 +1,55 @@
+prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Renderer) {
+    element {
+        @context.element = ${this}
+        identifier = ${elementNode.properties.identifier ? elementNode.properties.identifier : elementNode.identifier}
+        label = ${elementNode.properties.label}
+        required = ${elementNode.properties.required}
+        defaultValue = ${elementNode.properties.defaultValue}
+        properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
+        validators = Neos.Form.Builder:NodeBasedValidatorCollection {
+            collection = ${q(elementNode).children('validators').children()}
+        }
+        renderingOptions._node = ${elementNode}
+        renderingOptions._fusionPath = ${element.path}
+
+        properties.options {
+            collection = ${q(elementNode).children('options').children()}
+            valuePropertyPath = 'properties.value'
+            labelPropertyPath = 'properties.label'
+            @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
+        }
+    }
+}
+
+prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:Collection) {
+    itemName = 'elementNode'
+    itemRenderer = Neos.Fusion:Case {
+        formElementTypeFromNodeType {
+            condition = ${!elementNode.nodeType.options.form.formElementType}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = ${elementNode.nodeType.name + '.Definition'}
+            }
+        }
+
+        section {
+            condition = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = 'Neos.Form.Builder:SectionFormElement.Definition'
+                element {
+                    formElementType = ${elementNode.nodeType.options.form.formElementType}
+                    elements = Neos.Form.Builder:ElementCollection {
+                        collection = ${q(elementNode).children('elements').children()}
+                    }
+                }
+            }
+        }
+
+        default {
+            condition = ${true}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = 'Neos.Form.Builder:FormElement.Definition'
+                element.formElementType = ${elementNode.nodeType.options.form.formElementType}
+            }
+        }
+    }
+}

@@ -10,9 +10,12 @@ prototype(Neos.Form.Builder:FormElement.Definition) {
     rendererClassName = ${null}
     renderingOptions = Neos.Fusion:RawArray
 
-    validators = Neos.Fusion:RawArray
+    validators = Neos.Form.Builder:ValidatorCollection
 }
 
 prototype(Neos.Form.Builder:SelectionFormElement.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     properties.options = Neos.Form.Builder:SelectOptionCollection
+}
+
+prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:RawArray) {
 }

@@ -4,3 +4,6 @@ prototype(Neos.Form.Builder:Finisher.Definition) {
     formElementType = ${null}
     options = Neos.Fusion:RawArray
 }
+
+prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:RawArray) {
+}

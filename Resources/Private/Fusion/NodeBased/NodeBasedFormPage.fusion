@@ -1,0 +1,33 @@
+prototype(Neos.Form.Builder:NodeBasedFormPage) < prototype(Neos.Fusion:Renderer) {
+    element {
+        @context.page = ${this}
+        identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+        label = ${pageNode.properties.label}
+        renderingOptions._node = ${pageNode}
+        renderingOptions._fusionPath = ${page.path}
+
+        elements = Neos.Form.Builder:NodeBasedElementCollection {
+            collection = ${q(pageNode).children('elements').children()}
+        }
+    }
+}
+
+prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Collection) {
+    itemName = 'pageNode'
+    itemRenderer = Neos.Fusion:Case {
+        formElementTypeFromNodeType {
+            condition = ${!pageNode.nodeType.options.form.formElementType}
+            renderer = Neos.Form.Builder:NodeBasedFormPage {
+                type = ${pageNode.nodeType.name + '.Definition'}
+            }
+        }
+
+        default {
+            condition = ${true}
+            renderer = Neos.Form.Builder:NodeBasedFormPage {
+                type = 'Neos.Form.Builder:FormPage.Definition'
+                element.formElementType = ${pageNode.nodeType.options.form.formElementType}
+            }
+        }
+    }
+}

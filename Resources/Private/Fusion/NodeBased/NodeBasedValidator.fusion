@@ -1,0 +1,26 @@
+prototype(Neos.Form.Builder:NodeBasedValidator) < prototype(Neos.Fusion:Renderer) {
+    element {
+        @context.validator = ${this}
+        options.@process.addNodeProperties = ${Array.concat(value, validatorNode.properties)}
+    }
+}
+
+prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusion:Collection) {
+    itemName = 'validatorNode'
+    itemRenderer = Neos.Fusion:Case {
+        formElementTypeFromNodeType {
+            condition = ${!validatorNode.nodeType.options.form.formElementType}
+            renderer = Neos.Form.Builder:NodeBasedValidator {
+                type = ${validatorNode.nodeType.name + '.Definition'}
+            }
+        }
+
+        default {
+            condition = ${true}
+            renderer = Neos.Form.Builder:NodeBasedValidator {
+                type = 'Neos.Form.Builder:Validator.Definition'
+                element.formElementType = ${validatorNode.nodeType.options.form.formElementType}
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+prototype(Neos.Form.Builder:NodeBasedFinisher) < prototype(Neos.Fusion:Renderer) {
+    element {
+        @context.finisher = ${this}
+        options.@process.addNodeProperties = ${Array.concat(value, finisherNode.properties)}
+    }
+}
+
+prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion:Collection) {
+    itemName = 'finisherNode'
+    itemRenderer = Neos.Fusion:Case {
+        formElementTypeFromNodeType {
+            condition = ${!finisherNode.nodeType.options.form.formElementType}
+            renderer = Neos.Form.Builder:NodeBasedFinisher {
+                type = ${finisherNode.nodeType.name + '.Definition'}
+            }
+        }
+
+        default {
+            condition = ${true}
+            renderer = Neos.Form.Builder:NodeBasedFinisher {
+                type = 'Neos.Form.Builder:Finisher.Definition'
+                element.formElementType = ${finisherNode.nodeType.options.form.formElementType}
+            }
+        }
+    }
+}

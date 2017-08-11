@@ -8,10 +8,10 @@ prototype(Neos.Form.Builder:Form) {
     renderingOptions = Neos.Fusion:RawArray
     renderCallbacks = Neos.Fusion:RawArray
     firstPage = Neos.Form.Builder:FormPage.Definition {
-        elements = Neos.Fusion:RawArray
+        elements = Neos.Form.Builder:ElementCollection
     }
-    furtherPages = Neos.Fusion:RawArray
-    finishers = Neos.Fusion:RawArray
+    furtherPages = Neos.Form.Builder:PageCollection
+    finishers = Neos.Form.Builder:FinisherCollection
 
     @cache {
         # By default Forms are not cached at all in order to avoid nasty bugs. If a form is "static" it should be cached for GET requests
