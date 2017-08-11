@@ -15,6 +15,3 @@
           icon: 'icon-folder-open'
     group: 'form.container'
     position: 10
-  options:
-    form:
-      formElementType: 'Neos.Form:Section'
