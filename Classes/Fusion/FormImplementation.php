@@ -7,6 +7,7 @@ use Neos\Flow\Mvc\ActionRequest;
 use Neos\Form\Core\Model\FormDefinition;
 use Neos\Form\Core\Model\Renderable\RenderableInterface;
 use Neos\Form\Exception\PresetNotFoundException;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 use Neos\Utility\Arrays;
 
@@ -98,7 +99,11 @@ class FormImplementation extends AbstractFusionObject
 
     private function getFormElementType(): string
     {
-        return $this->fusionValue('formElementType');
+        $formElementType = $this->fusionValue('formElementType');
+        if ($formElementType === null) {
+            throw new FusionException(sprintf('Missing formElementType for Form Finisher Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1502465830);
+        }
+        return $formElementType;
     }
 
     private function getRenderingOptions(): array

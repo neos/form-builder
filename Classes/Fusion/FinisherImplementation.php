@@ -2,6 +2,7 @@
 namespace Neos\Form\Builder\Fusion;
 
 use Neos\Form\Core\Model\FormDefinition;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class FinisherImplementation extends AbstractFusionObject
@@ -19,7 +20,11 @@ class FinisherImplementation extends AbstractFusionObject
 
     private function getFormElementType(): string
     {
-        return $this->fusionValue('formElementType');
+        $formElementType = $this->fusionValue('formElementType');
+        if ($formElementType === null) {
+            throw new FusionException(sprintf('Missing formElementType for Form Finisher Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1502465820);
+        }
+        return $formElementType;
     }
 
     private function getOptions(): array

@@ -4,6 +4,7 @@ namespace Neos\Form\Builder\Fusion;
 use Neos\Flow\Validation\Validator\NotEmptyValidator;
 use Neos\Form\Core\Model\Page;
 use Neos\Form\FormElements\Section;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class SectionImplementation extends AbstractFusionObject
@@ -47,7 +48,11 @@ class SectionImplementation extends AbstractFusionObject
 
     private function getFormElementType(): string
     {
-        return $this->fusionValue('formElementType');
+        $formElementType = $this->fusionValue('formElementType');
+        if ($formElementType === null) {
+            throw new FusionException(sprintf('Missing formElementType for Form Section Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1502465850);
+        }
+        return $formElementType;
     }
 
     private function getIdentifier(): string

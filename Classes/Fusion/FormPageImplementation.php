@@ -3,6 +3,7 @@
 namespace Neos\Form\Builder\Fusion;
 
 use Neos\Form\Core\Model\FormDefinition;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class FormPageImplementation extends AbstractFusionObject
@@ -41,7 +42,11 @@ class FormPageImplementation extends AbstractFusionObject
 
     private function getFormElementType(): string
     {
-        return $this->fusionValue('formElementType');
+        $formElementType = $this->fusionValue('formElementType');
+        if ($formElementType === null) {
+            throw new FusionException(sprintf('Missing formElementType for Form Page Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1502465840);
+        }
+        return $formElementType;
     }
 
     /**

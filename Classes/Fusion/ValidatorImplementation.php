@@ -2,6 +2,7 @@
 namespace Neos\Form\Builder\Fusion;
 
 use Neos\Form\Core\Model\Renderable\AbstractRenderable;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class ValidatorImplementation extends AbstractFusionObject
@@ -18,7 +19,11 @@ class ValidatorImplementation extends AbstractFusionObject
 
     private function getFormElementType(): string
     {
-        return $this->fusionValue('formElementType');
+        $formElementType = $this->fusionValue('formElementType');
+        if ($formElementType === null) {
+            throw new FusionException(sprintf('Missing formElementType for Validator Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1502465855);
+        }
+        return $formElementType;
     }
 
     private function getOptions(): array
