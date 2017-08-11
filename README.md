@@ -89,23 +89,23 @@ prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
     presetName = 'bootstrap'
     firstPage {
         elements {
-            name = Neos.Form.Builder:SingleLineText {
+            name = Neos.Form.Builder:SingleLineText.Definition {
                 label = 'Name'
                 validators {
-                    stringLength = Neos.Form.Builder:StringLengthValidator {
+                    stringLength = Neos.Form.Builder:StringLengthValidator.Definition {
                         options.minimum = 5
                     }
                 }
                 properties.placeholder = 'Your name'
             }
-            email = Neos.Form.Builder:SingleLineText {
+            email = Neos.Form.Builder:SingleLineText.Definition {
                 label = 'Email'
                 validators {
-                    emailAddress = Neos.Form.Builder:EmailAddressValidator
+                    emailAddress = Neos.Form.Builder:EmailAddressValidator.Definition
                 }
                 properties.placeholder = 'Your email address'
             }
-            interests = Neos.Form.Builder:MultipleSelectCheckboxes {
+            interests = Neos.Form.Builder:MultipleSelectCheckboxes.Definition {
                 label = 'Interests'
                 required = ${false}
                 properties.options {
@@ -114,14 +114,14 @@ prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
                     chicken = 'Chickens'
                 }
             }
-            comment = Neos.Form.Builder:MultiLineText {
+            comment = Neos.Form.Builder:MultiLineText.Definition {
                 label = 'Message'
                 properties.placeholder = 'Your Comment'
             }
         }
     }
     finishers {
-        confirmationFinisher = Neos.Form.Builder:ConfirmationFinisher {
+        confirmationFinisher = Neos.Form.Builder:ConfirmationFinisher.Definition {
             options {
                 message = 'Thank you for your comment, {name}!'
             }
@@ -140,7 +140,7 @@ For example Form fields could be pre-filled with the authenticated user's data:
 
 ```fusion
 // ...
-    someFormField = Neos.Form.Builder:SingleLineText {
+    someFormField = Neos.Form.Builder:SingleLineText.Definition {
         defaultValue = ${Security.account.accountIdentifier}
         // ...
 ```
