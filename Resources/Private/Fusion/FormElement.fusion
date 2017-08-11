@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:FormElement) {
+prototype(Neos.Form.Builder:FormElement.Definition) {
     @class = 'Neos\\Form\\Builder\\Fusion\\FormElementImplementation'
 
     formElementType = ${null}
@@ -13,6 +13,6 @@ prototype(Neos.Form.Builder:FormElement) {
     validators = Neos.Fusion:RawArray
 }
 
-prototype(Neos.Form.Builder:SelectionFormElement) < prototype(Neos.Form.Builder:FormElement) {
+prototype(Neos.Form.Builder:SelectionFormElement.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     properties.options = Neos.Form.Builder:SelectOptionCollection
 }

@@ -1,4 +1,4 @@
 # See Neos\Flow\Validation\Validator\IntegerValidator
-prototype(Neos.Form.Builder:IntegerValidator) < prototype(Neos.Form.Builder:Validator) {
+prototype(Neos.Form.Builder:IntegerValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
     formElementType = 'Neos.Flow:Integer'
 }

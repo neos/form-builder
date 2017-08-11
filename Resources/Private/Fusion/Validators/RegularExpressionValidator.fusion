@@ -1,5 +1,5 @@
 # See Neos\Flow\Validation\Validator\RegularExpressionValidator
-prototype(Neos.Form.Builder:RegularExpressionValidator) < prototype(Neos.Form.Builder:Validator) {
+prototype(Neos.Form.Builder:RegularExpressionValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
     formElementType = 'Neos.Flow:RegularExpression'
     options {
         regularExpression = ''

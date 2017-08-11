@@ -13,9 +13,6 @@
       groups:
         'formElement':
           icon: 'icon-align-left'
-  options:
-    form:
-      formElementType: 'Neos.Form:StaticText'
   properties:
     'text':
       type: string

@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:FlashMessageFinisher) < prototype(Neos.Form.Builder:Finisher) {
+prototype(Neos.Form.Builder:FlashMessageFinisher.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
     formElementType = 'Neos.Form:FlashMessage'
 
     options {

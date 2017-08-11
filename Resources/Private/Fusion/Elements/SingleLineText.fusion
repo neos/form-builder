@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:SingleLineText) < prototype(Neos.Form.Builder:FormElement) {
+prototype(Neos.Form.Builder:SingleLineText.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     formElementType = 'Neos.Form:SingleLineText'
     properties {
         placeholder = ${null}

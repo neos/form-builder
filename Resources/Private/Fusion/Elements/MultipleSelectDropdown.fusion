@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:MultipleSelectDropdown) < prototype(Neos.Form.Builder:SelectionFormElement) {
+prototype(Neos.Form.Builder:MultipleSelectDropdown.Definition) < prototype(Neos.Form.Builder:SelectionFormElement.Definition) {
     formElementType = 'Neos.Form:MultipleSelectDropdown'
 
 }

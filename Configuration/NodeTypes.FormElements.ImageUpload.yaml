@@ -10,9 +10,6 @@
       groups:
         'formElement':
           icon: 'icon-picture-o'
-  options:
-    form:
-      formElementType: 'Neos.Form:ImageUpload'
   properties:
     'allowedTypes':
       type: array

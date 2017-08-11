@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:EmailFinisher) < prototype(Neos.Form.Builder:Finisher) {
+prototype(Neos.Form.Builder:EmailFinisher.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
     formElementType = 'Neos.Form:Email'
 
     options {

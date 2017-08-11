@@ -8,9 +8,6 @@
       groups:
         'finisher':
           icon: 'icon-arrow-right'
-  options:
-    form:
-      formElementType: 'Neos.Form:Redirect'
   properties:
     'package':
       type: string

@@ -10,6 +10,3 @@
       groups:
         'formElement':
           icon: 'icon-calendar'
-  options:
-    form:
-      formElementType: 'Neos.Form:DatePicker'

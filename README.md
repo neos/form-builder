@@ -174,3 +174,58 @@ With that in place, the initial Form rendering is cached and the mode is
 changed to "uncached" when the Form is submitted (= unsafe request).
 
 **Note:** The `dynamic` Cache mode only works reliably with Neos versions 2.3.15+ and 3.1.5+
+
+## Custom Form Elements
+
+The Form Elements defined in the `default` preset (and available in this package) are
+meant as a quickstart to simple Forms.
+The main strength of the Flow Form Framework comes with it's easy creation of
+custom Form Elements, Validators and Finishers (see [documentation](https://flow-form-framework.readthedocs.io/en/latest/adjusting-form-output.html#creating-a-new-form-element)).
+
+To allow custom Form Elements to be used in the Form Builder, a corresponding
+`NodeType` has to be defined:
+
+```yaml
+'Some.Package:SomeFormElementNodeType':
+  superTypes:
+    'Neos.Form.Builder:FormElement': TRUE
+  ui:
+    label: 'Some label'
+    # add the new item in the "Custom Form Elements" section. Other options are form.elements, form.select and form.container
+    group: 'form.custom'
+```
+
+### Form Element Mapping
+
+For the Form Element nodes, a corresponding Fusion Prototype named `<NodeType>.Definition`
+is assumed to define the Form Element. (The `.Definition` suffix is used in order to
+prevent naming conflicts with prototypes that *render* the Form Element).
+
+The corresponding Fusion Prototype for the Node Type specified above could look
+something like this:
+
+```fusion
+prototype(Some.Package:SomeFormElementNodeType.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
+    formElementType = 'Some.Package:SomeFormElement'
+}
+```
+
+Alternatively the mapping to a Form Element Type can be specified via the `options.form.formElementType`
+setting in the Node Type configuration if no custom Fusion Prototype is required:
+
+```yaml
+'Some.Package:SomeFormElementNodeType':
+  // ...
+
+  options:
+    form:
+      formElementType: 'Some.Package:SomeFormElement'
+
+```
+
+If that option is set, the regular `Neos.Form.Builder:FormElement.Definition` Fusion Prototype
+is used to evaluate the definition of that Form Element.
+
+In any case that Form Element must be existent in the configured Form Preset
+in order to be rendered correctly.
+

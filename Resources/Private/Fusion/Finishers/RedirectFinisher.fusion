@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:RedirectFinisher) < prototype(Neos.Form.Builder:Finisher) {
+prototype(Neos.Form.Builder:RedirectFinisher.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
     formElementType = 'Neos.Form:Redirect'
 
     options {

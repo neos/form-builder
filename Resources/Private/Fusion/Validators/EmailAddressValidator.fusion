@@ -1,4 +1,4 @@
 # See Neos\Flow\Validation\Validator\EmailAddressValidator
-prototype(Neos.Form.Builder:EmailAddressValidator) < prototype(Neos.Form.Builder:Validator) {
+prototype(Neos.Form.Builder:EmailAddressValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
     formElementType = 'Neos.Flow:EmailAddress'
 }

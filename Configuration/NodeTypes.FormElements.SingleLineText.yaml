@@ -9,9 +9,6 @@
         'formElement':
           icon: 'icon-pencil-square-o'
     position: 10
-  options:
-    form:
-      formElementType: 'Neos.Form:SingleLineText'
   properties:
     'placeholder':
       type: string

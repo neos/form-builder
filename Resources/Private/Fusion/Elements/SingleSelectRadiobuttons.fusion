@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:SingleSelectRadiobuttons) < prototype(Neos.Form.Builder:SelectionFormElement) {
+prototype(Neos.Form.Builder:SingleSelectRadiobuttons.Definition) < prototype(Neos.Form.Builder:SelectionFormElement.Definition) {
     formElementType = 'Neos.Form:SingleSelectRadiobuttons'
 
 }

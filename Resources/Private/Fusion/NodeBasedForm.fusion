@@ -33,42 +33,66 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
     }
 }
 
+prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Renderer) {
+    element {
+        @context.element = ${this}
+        identifier = ${elementNode.properties.identifier ? elementNode.properties.identifier : elementNode.identifier}
+        label = ${elementNode.properties.label}
+        required = ${elementNode.properties.required}
+        defaultValue = ${elementNode.properties.defaultValue}
+        properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
+        validators = Neos.Form.Builder:ValidatorCollection {
+            collection = ${q(elementNode).children('validators').children()}
+        }
+        renderingOptions._node = ${elementNode}
+        renderingOptions._fusionPath = ${element.path}
+
+        properties.options {
+            collection = ${q(elementNode).children('options').children()}
+            valuePropertyPath = 'properties.value'
+            labelPropertyPath = 'properties.label'
+            @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
+        }
+
+    }
+}
+
 prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'elementNode'
-    itemRenderer = Neos.Fusion:Renderer {
-        type = ${elementNode.nodeType.name}
-        element {
-            @context.element = ${this}
-            identifier = ${elementNode.properties.identifier ? elementNode.properties.identifier : elementNode.identifier}
-            label = ${elementNode.properties.label}
-            required = ${elementNode.properties.required}
-            defaultValue = ${elementNode.properties.defaultValue}
-            properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
-            validators = Neos.Form.Builder:ValidatorCollection {
-                collection = ${q(elementNode).children('validators').children()}
+    itemRenderer = Neos.Fusion:Case {
+        formElementTypeFromNodeType {
+            condition = ${!elementNode.nodeType.options.form.formElementType}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = ${elementNode.nodeType.name + '.Definition'}
             }
-            renderingOptions._node = ${elementNode}
-            renderingOptions._fusionPath = ${element.path}
+        }
 
-            properties.options {
-                collection = ${q(elementNode).children('options').children()}
-                valuePropertyPath = 'properties.value'
-                labelPropertyPath = 'properties.label'
-                @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
+        section {
+            condition = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = 'Neos.Form.Builder:SectionFormElement.Definition'
+                element {
+                    formElementType = ${elementNode.nodeType.options.form.formElementType}
+                    elements = Neos.Form.Builder:ElementCollection {
+                        collection = ${q(elementNode).children('elements').children()}
+                    }
+                }
             }
+        }
 
-            elements = Neos.Form.Builder:ElementCollection {
-                collection = ${q(elementNode).children('elements').children()}
-                @if.isSectionFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
+        default {
+            condition = ${true}
+            renderer = Neos.Form.Builder:NodeBasedFormElement {
+                type = 'Neos.Form.Builder:NodeBasedFormElement'
+                element.formElementType = ${elementNode.nodeType.options.form.formElementType}
             }
         }
     }
 }
 
-
 prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'pageNode'
-    itemRenderer = Neos.Form.Builder:FormPage {
+    itemRenderer = Neos.Form.Builder:FormPage.Definition {
         @context.page = ${this}
         identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
         label = ${pageNode.properties.label}
@@ -85,7 +109,7 @@ prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:Collection) 
 prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Renderer {
-        type = ${finisherNode.nodeType.name}
+        type = ${finisherNode.nodeType.name + '.Definition'}
         element {
             options.@process.addNodeProperties = ${Array.concat(value, finisherNode.properties)}
         }
@@ -95,7 +119,7 @@ prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:Collecti
 prototype(Neos.Form.Builder:ValidatorCollection) < prototype(Neos.Fusion:Collection) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Renderer {
-        type = ${validatorNode.nodeType.name}
+        type = ${validatorNode.nodeType.name + '.Definition'}
         element {
             options.@process.addNodeProperties = ${Array.concat(value, validatorNode.properties)}
         }

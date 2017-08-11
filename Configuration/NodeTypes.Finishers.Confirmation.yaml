@@ -8,9 +8,6 @@
       groups:
         'finisher':
           icon: 'icon-comment'
-  options:
-    form:
-      formElementType: 'Neos.Form:Confirmation'
   properties:
     'message':
       type: string

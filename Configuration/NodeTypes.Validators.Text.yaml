@@ -8,6 +8,3 @@
       groups:
         'validator':
           icon: 'icon-font'
-  options:
-    form:
-      formElementType: 'Neos.Flow:Text'

@@ -11,6 +11,3 @@
         'formElement':
           icon: 'icon-list-ol'
     position: 35
-  options:
-    form:
-      formElementType: 'Neos.Form:MultipleSelectCheckboxes'

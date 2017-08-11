@@ -8,8 +8,5 @@
       groups:
         'formPage':
           icon: 'icon-file-text-o'
-  options:
-    form:
-      formElementType: 'Neos.Form:PreviewPage'
   childNodes:
     'elements': ~

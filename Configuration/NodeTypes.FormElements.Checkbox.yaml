@@ -11,6 +11,3 @@
           icon: 'icon-check-square-o'
     group: 'form.select'
     position: 10
-  options:
-    form:
-      formElementType: 'Neos.Form:Checkbox'

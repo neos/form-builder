@@ -8,9 +8,6 @@
       groups:
         'validator':
           icon: 'icon-calendar-check-o'
-  options:
-    form:
-      formElementType: 'Neos.Flow:DateTimeRange'
   properties:
     'earliestDate':
       type: string

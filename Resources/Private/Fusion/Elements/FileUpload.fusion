@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:FileUpload) < prototype(Neos.Form.Builder:FormElement) {
+prototype(Neos.Form.Builder:FileUpload.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     formElementType = 'Neos.Form:FileUpload'
 
     properties {

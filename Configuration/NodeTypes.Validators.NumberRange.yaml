@@ -8,9 +8,6 @@
       groups:
         'validator':
           icon: 'icon-sort-numeric-asc'
-  options:
-    form:
-      formElementType: 'Neos.Flow:NumberRange'
   properties:
     'minimum':
       type: integer

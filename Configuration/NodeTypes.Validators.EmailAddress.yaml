@@ -8,6 +8,3 @@
       groups:
         'validator':
           icon: 'icon-envelope-o'
-  options:
-    form:
-      formElementType: 'Neos.Flow:EmailAddress'

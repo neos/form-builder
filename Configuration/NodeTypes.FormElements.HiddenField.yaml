@@ -9,6 +9,3 @@
         'formElement':
           icon: 'icon-eye-slash'
     group: 'form.custom'
-  options:
-    form:
-      formElementType: 'Neos.Form:HiddenField'

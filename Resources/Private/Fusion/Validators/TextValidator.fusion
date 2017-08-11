@@ -1,4 +1,4 @@
 # See Neos\Flow\Validation\Validator\TextValidator
-prototype(Neos.Form.Builder:TextValidator) < prototype(Neos.Form.Builder:Validator) {
+prototype(Neos.Form.Builder:TextValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
     formElementType = 'Neos.Flow:Text'
 }

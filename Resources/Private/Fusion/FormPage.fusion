@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:FormPage) {
+prototype(Neos.Form.Builder:FormPage.Definition) {
     @class = 'Neos\\Form\\Builder\\Fusion\\FormPageImplementation'
 
     identifier = 'page'

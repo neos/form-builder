@@ -1,4 +1,4 @@
-prototype(Neos.Form.Builder:HiddenField) < prototype(Neos.Form.Builder:FormElement) {
+prototype(Neos.Form.Builder:HiddenField.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     formElementType = 'Neos.Form:HiddenField'
 
 }

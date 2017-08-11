@@ -11,6 +11,3 @@
         'formElement':
           icon: 'icon-list-ol'
     position: 25
-  options:
-    form:
-      formElementType: 'Neos.Form:SingleSelectRadiobuttons'

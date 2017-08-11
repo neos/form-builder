@@ -7,7 +7,7 @@ prototype(Neos.Form.Builder:Form) {
 
     renderingOptions = Neos.Fusion:RawArray
     renderCallbacks = Neos.Fusion:RawArray
-    firstPage = Neos.Form.Builder:FormPage {
+    firstPage = Neos.Form.Builder:FormPage.Definition {
         elements = Neos.Fusion:RawArray
     }
     furtherPages = Neos.Fusion:RawArray

@@ -8,9 +8,6 @@
       groups:
         'finisher':
           icon: 'icon-envelope-o'
-  options:
-    form:
-      formElementType: 'Neos.Form:Email'
   properties:
     'subject':
       type: string
