@@ -54,6 +54,9 @@ class FormImplementation extends AbstractFusionObject
         $formDefaults = $this->getPresetConfiguration($presetName);
 
         $formDefinition = new FormDefinition($this->getIdentifier(), $formDefaults, $this->getFormElementType());
+        foreach ($this->getRenderingOptions() as $optionName => $optionValue) {
+            $formDefinition->setRenderingOption($optionName, $optionValue);
+        }
 
         $this->runtime->pushContext('form', $formDefinition);
         $this->runtime->evaluate($this->path . '/firstPage');
@@ -96,5 +99,10 @@ class FormImplementation extends AbstractFusionObject
     private function getFormElementType(): string
     {
         return $this->fusionValue('formElementType');
+    }
+
+    private function getRenderingOptions(): array
+    {
+        return $this->fusionValue('renderingOptions');
     }
 }
