@@ -1,6 +1,7 @@
 'Neos.Form.Builder:SingleLineText':
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:TextValidatorsMixin': TRUE
   ui:
     label: 'Single-line text'
     icon: 'icon-pencil-square-o'

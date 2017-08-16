@@ -34,7 +34,6 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'Neos.Form.Builder:AbstractValidator': TRUE
 
 'Neos.Neos:ContentCollection':
   constraints:

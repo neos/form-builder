@@ -2,6 +2,7 @@
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:ValidatorsMixin': TRUE
   ui:
     label: 'Date picker'
     icon: 'icon-calendar'
@@ -10,3 +11,8 @@
       groups:
         'formElement':
           icon: 'icon-calendar'
+  childNodes:
+    'validators':
+      constraints:
+        nodeTypes:
+          'Neos.Form.Builder:DateTimeRangeValidator': TRUE

@@ -1,6 +1,7 @@
 'Neos.Form.Builder:MultiLineText':
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:TextValidatorsMixin': TRUE
   ui:
     label: 'Multi-line Text'
     icon: 'icon-pencil-square-o'

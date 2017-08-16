@@ -57,6 +57,22 @@
     'validators':
       type: 'Neos.Form.Builder:ValidatorCollection'
 
+'Neos.Form.Builder:TextValidatorsMixin':
+  superTypes:
+    'Neos.Form.Builder:ValidatorsMixin': TRUE
+  childNodes:
+    'validators':
+      constraints:
+        nodeTypes:
+          'Neos.Form.Builder:AlphanumericValidator': TRUE
+          'Neos.Form.Builder:EmailAddressValidator': TRUE
+          'Neos.Form.Builder:FloatValidator': TRUE
+          'Neos.Form.Builder:IntegerValidator': TRUE
+          'Neos.Form.Builder:NumberRangeValidator': TRUE
+          'Neos.Form.Builder:RegularExpressionValidator': TRUE
+          'Neos.Form.Builder:StringLengthValidator': TRUE
+          'Neos.Form.Builder:TextValidator': TRUE
+
 'Neos.Form.Builder:SectionMixin':
   childNodes:
     'elements':

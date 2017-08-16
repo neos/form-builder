@@ -6,7 +6,6 @@
     'Neos.Form.Builder:LabelMixin': TRUE
     'Neos.Form.Builder:DefaultValueMixin': TRUE
     'Neos.Form.Builder:RequiredCheckboxMixin': TRUE
-    'Neos.Form.Builder:ValidatorsMixin': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
