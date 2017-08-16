@@ -42,8 +42,13 @@ class SectionImplementation extends AbstractFusionObject
         $this->runtime->popContext();
 
         $this->runtime->pushContext('parentRenderable', $sectionElement);
-        $this->runtime->evaluate($this->path . '/elements');
+        $this->evaluateChildElements();
         $this->runtime->popContext();
+    }
+
+    protected function evaluateChildElements()
+    {
+        $this->runtime->evaluate($this->path . '/elements');
     }
 
     private function getFormElementType(): string
