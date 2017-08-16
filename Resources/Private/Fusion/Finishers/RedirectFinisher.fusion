@@ -11,3 +11,20 @@ prototype(Neos.Form.Builder:RedirectFinisher.Definition) < prototype(Neos.Form.B
         statusCode = 303
     }
 }
+
+prototype(Neos.Form.Builder:NodeBasedFinisherCollection) {
+    itemRenderer {
+        redirectFinisher {
+            @position = 'start'
+            condition = ${q(finisherNode).is('[instanceof Neos.Form.Builder:RedirectFinisher]')}
+            renderer = Neos.Form.Builder:NodeBasedFinisher {
+                type = 'Neos.Form.Builder:RedirectFinisher.Definition'
+                element.options {
+                    uri = ${finisherNode.properties.uri}
+                    uri.@process.convertNodeUris = Neos.Neos:ConvertUris
+                    @process.addNodeProperties >
+                }
+            }
+        }
+    }
+}

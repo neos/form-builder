@@ -9,47 +9,13 @@
         'finisher':
           icon: 'icon-arrow-right'
   properties:
-    'package':
+    'uri':
       type: string
       ui:
-        label: 'Redirect package'
+        label: 'Redirection target (node or URL)'
+        reloadPageIfChanged: TRUE
         inspector:
           group: 'finisher'
-    'messageBody':
-      type: string
-      ui:
-        label: 'FlashMessage body'
-        inspector:
-          group: 'finisher'
-          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
           editorOptions:
-            rows: 2
-    'messageCode':
-      type: string
-      ui:
-        label: 'FlashMessage code'
-        inspector:
-          group: 'finisher'
-      validation:
-        'Neos.Neos/Validation/IntegerValidator': TRUE
-    'severity':
-      type: string
-      ui:
-        label: 'Confirmation message'
-        inspector:
-          group: 'finisher'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            values:
-              'OK':
-                label: 'OK'
-                icon: 'icon-check-circle'
-              'Notice':
-                label: 'Notice'
-                icon: 'icon-info-circle'
-              'Warning':
-                label: 'Warning'
-                icon: 'icon-exclamation-circle'
-              'Error':
-                label: 'Error'
-                icon: 'icon-exclamation-triangle'
+            assets: FALSE
