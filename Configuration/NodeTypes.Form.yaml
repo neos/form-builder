@@ -42,10 +42,10 @@
   properties:
     'preset':
       type: string
+      defaultValue: 'default'
       ui:
         label: 'Form Preset'
         reloadIfChanged: TRUE
-        defaultValue: 'default'
         inspector:
           group: 'form'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
