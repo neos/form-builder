@@ -27,6 +27,5 @@
                 label: 'PNG'
               'gif':
                 label: 'GIF'
-                icon: 'icon-file-excel-o'
               'tiff':
                 label: 'TIFF'
