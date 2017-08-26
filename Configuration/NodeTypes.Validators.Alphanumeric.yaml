@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'Alphanumeric validator'
+    label: i18n
     icon: 'icon-font'
     inspector:
       groups:

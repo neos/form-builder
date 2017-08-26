@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'Number range validator'
+    label: i18n
     icon: 'icon-sort-numeric-asc'
     inspector:
       groups:
@@ -13,13 +13,13 @@
       type: integer
       defaultValue: 0
       ui:
-        label: 'Minimum value'
+        label: i18n
         inspector:
           group: 'validator'
     'maximum':
       type: integer
       defaultValue: 100
       ui:
-        label: 'Maximum value'
+        label: i18n
         inspector:
           group: 'validator'

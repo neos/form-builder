@@ -3,7 +3,7 @@
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
-    label: 'Checkbox'
+    label: i18n
     icon: 'icon-check-square-o'
     inspector:
       groups:

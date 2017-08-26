@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'Email address validator'
+    label: i18n
     icon: 'icon-envelope-o'
     inspector:
       groups:

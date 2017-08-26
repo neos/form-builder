@@ -12,17 +12,17 @@
   label: "${q(node).property('identifier') || q(node).property('label') || ((node.nodeType.label || node.nodeType.name) + ' (' + node.name + ')')}"
   ui:
     inlineEditable: TRUE
-    label: 'Form element'
+    label: i18n
     icon: 'icon-square-o'
     group: 'form.elements'
     inspector:
       groups:
         'formElement':
-          label: 'Form Element options'
+          label: i18n
           position: 45
           icon: 'icon-square-o'
         'formElementMore':
-          label: 'Form Element options'
+          label: i18n
           position: 100
           icon: 'icon-square-o'
   options:
@@ -37,7 +37,7 @@
 
 'Neos.Form.Builder:ElementCollection':
   ui:
-    label: 'Elements'
+    label: i18n
     icon: 'icon-list'
     inlineEditable: TRUE
   options:
@@ -59,13 +59,13 @@
   label: "${q(node).property('label') || q(node).property('value') || '[not set]'}"
   ui:
     inlineEditable: TRUE
-    label: 'Select option'
+    label: i18n
     icon: 'icon-stop-circle-o'
     group: 'form.selectOptions'
     inspector:
       groups:
         'selectOption':
-          label: 'Select option'
+          label: i18n
           position: 45
           icon: 'icon-stop-circle-o'
   options:
@@ -75,7 +75,7 @@
     'value':
       type: string
       ui:
-        label: 'Value'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'selectOption'
@@ -86,14 +86,14 @@
     'label':
       type: string
       ui:
-        label: 'Label (optional)'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'selectOption'
 
 'Neos.Form.Builder:SelectOptionCollection':
   ui:
-    label: 'Options'
+    label: i18n
     icon: 'icon-list-ul'
     inlineEditable: TRUE
   options:

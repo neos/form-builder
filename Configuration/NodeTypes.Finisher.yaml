@@ -3,14 +3,13 @@
   superTypes:
     'Neos.Neos:Content': TRUE
   ui:
-    label: 'Form finisher'
     icon: 'icon-sign-out'
     group: 'form.finisher'
     inlineEditable: TRUE
     inspector:
       groups:
         'finisher':
-          label: 'Finisher options'
+          label: i18n
           position: 35
           icon: 'icon-sign-out'
   options:
@@ -19,7 +18,7 @@
 
 'Neos.Form.Builder:FinisherCollection':
   ui:
-    label: 'Finishers'
+    label: i18n
     icon: 'icon-share-square-o'
     inlineEditable: TRUE
   superTypes:

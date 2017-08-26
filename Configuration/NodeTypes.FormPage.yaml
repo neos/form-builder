@@ -5,14 +5,14 @@
     nodeTypes:
       '*': FALSE
   ui:
-    label: 'Form page'
+    label: i18n
     icon: 'icon-file-o'
     group: 'form.pages'
     inlineEditable: TRUE
     inspector:
       groups:
         'formPage':
-          label: 'Form Page options'
+          label: i18n
           position: 35
           icon: 'icon-file-o'
   options:
@@ -25,7 +25,7 @@
     'identifier':
       type: string
       ui:
-        label: 'Identifier (optional)'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'formPage'
@@ -38,14 +38,14 @@
     'label':
       type: string
       ui:
-        label: 'Page Label'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'formPage'
 
 'Neos.Form.Builder:PageCollection':
   ui:
-    label: 'Further pages'
+    label: i18n
     inlineEditable: TRUE
   options:
     fusion:

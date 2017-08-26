@@ -8,14 +8,14 @@
         skipPresets:
           'neos.setup': TRUE
   ui:
-    label: 'Form (node based)'
+    label: i18n
     icon: 'icon-list-alt'
     position: 600
     inlineEditable: TRUE
     inspector:
       groups:
         'form':
-          label: 'Form options'
+          label: i18n
           position: 30
           icon: 'icon-list-alt'
 # Preparation for the "new Neos UI":
@@ -25,7 +25,7 @@
 #        'preset':
 #          type: string
 #          ui:
-#            label: 'Form Preset'
+#            label: i18n
 #            editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
 #          validation:
 #            'Neos.Neos/Validation/NotEmptyValidator': []
@@ -44,7 +44,7 @@
       type: string
       defaultValue: 'default'
       ui:
-        label: 'Form Preset'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'form'
@@ -54,7 +54,7 @@
     'identifier':
       type: string
       ui:
-        label: 'Identifier (optional)'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'form'
@@ -67,7 +67,7 @@
     'label':
       type: string
       ui:
-        label: 'Form Label'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'form'

@@ -2,17 +2,21 @@
   superTypes:
     'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
-    label: 'Email finisher'
+    label: i18n
     icon: 'icon-envelope-o'
     inspector:
       groups:
         'finisher':
           icon: 'icon-envelope-o'
+        'finisher-attachments':
+          label: i18n
+          position: 40
+          icon: 'icon-paperclip'
   properties:
     'subject':
       type: string
       ui:
-        label: 'Email subject'
+        label: i18n
         inspector:
           group: 'finisher'
           editorOptions:
@@ -22,7 +26,7 @@
     'recipientAddress':
       type: string
       ui:
-        label: 'Recipient email address'
+        label: i18n
         inspector:
           group: 'finisher'
           editorOptions:
@@ -32,13 +36,13 @@
     'recipientName':
       type: string
       ui:
-        label: 'Recipient name'
+        label: i18n
         inspector:
           group: 'finisher'
     'senderAddress':
       type: string
       ui:
-        label: 'Sender email address'
+        label: i18n
         inspector:
           group: 'finisher'
           editorOptions:
@@ -48,45 +52,45 @@
     'senderName':
       type: string
       ui:
-        label: 'Sender name'
+        label: i18n
         inspector:
           group: 'finisher'
     'replyToAddress':
       type: string
       ui:
-        label: 'ReplyTo email address'
+        label: i18n
         inspector:
           group: 'finisher'
     'carbonCopyAddress':
       type: string
       ui:
-        label: 'CC email address'
+        label: i18n
         inspector:
           group: 'finisher'
     'blindCarbonCopyAddress':
       type: string
       ui:
-        label: 'BCC email address'
+        label: i18n
         inspector:
           group: 'finisher'
     'format':
       type: string
       ui:
-        label: 'Email format'
+        label: i18n
         inspector:
           group: 'finisher'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               'html':
-                label: 'HTML'
+                label: i18n
                 icon: 'icon-code'
               'plaintext':
-                label: 'Plaintext'
+                label: i18n
                 icon: 'icon-font'
-    'testMode':
+    'attachAllPersistentResources':
       type: boolean
       ui:
-        label: 'Test mode (do not send)'
+        label: i18n
         inspector:
-          group: 'finisher'
+          group: 'finisher-attachments'

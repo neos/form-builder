@@ -13,13 +13,13 @@
       type: integer
       defaultValue: 0
       ui:
-        label: 'Minimum count'
+        label: i18n
         inspector:
           group: 'validator'
     'maximum':
       type: integer
       defaultValue: 100
       ui:
-        label: 'Maximum count'
+        label: i18n
         inspector:
           group: 'validator'

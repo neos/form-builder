@@ -5,7 +5,7 @@
     'Neos.Form.Builder:DefaultValueMixin': FALSE
     'Neos.Form.Builder:RequiredCheckboxMixin': FALSE
   ui:
-    label: 'Static Text'
+    label: i18n
     icon: 'icon-align-left'
     group: 'form.custom'
     inspector:
@@ -16,10 +16,10 @@
     'text':
       type: string
       ui:
-        label: 'Text'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'formElement'
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
-            buttonLabel: 'edit text'
+            buttonLabel: i18n

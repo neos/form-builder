@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
-    label: 'Confirmation finisher'
+    label: i18n
     icon: 'icon-comment'
     inspector:
       groups:
@@ -12,9 +12,9 @@
     'message':
       type: string
       ui:
-        label: 'Confirmation message'
+        label: i18n
         inspector:
           group: 'finisher'
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
-            buttonLabel: 'edit confirmation message'
+            buttonLabel: i18n

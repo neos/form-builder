@@ -3,6 +3,11 @@ Neos:
     fusion:
       autoInclude:
         'Neos.Form.Builder': true
+    userInterface:
+      translation:
+        autoInclude:
+          'Neos.Form.Builder':
+            - 'NodeTypes/*'
 
     nodeTypes:
       groups:

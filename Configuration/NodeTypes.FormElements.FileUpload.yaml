@@ -3,7 +3,7 @@
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
-    label: 'File upload'
+    label: i18n
     icon: 'icon-upload'
     group: 'form.custom'
     inspector:
@@ -14,7 +14,7 @@
     'allowedExtensions':
       type: array
       ui:
-        label: 'Allowed file types'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'formElement'

@@ -2,19 +2,12 @@
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:TextValidatorsMixin': TRUE
+    'Neos.Form.Builder:PlaceholderMixin': TRUE
   ui:
-    label: 'Single-line text'
+    label: i18n
     icon: 'icon-pencil-square-o'
     inspector:
       groups:
         'formElement':
           icon: 'icon-pencil-square-o'
     position: 10
-  properties:
-    'placeholder':
-      type: string
-      ui:
-        label: 'Placeholder text'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formElement'

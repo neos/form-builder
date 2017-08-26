@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'DateTime range validator'
+    label: i18n
     icon: 'icon-calendar-check-o'
     inspector:
       groups:
@@ -12,7 +12,7 @@
     'earliestDate':
       type: string
       ui:
-        label: 'Earliest date'
+        label: i18n
         inspector:
           group: 'validator'
           editor: 'Neos.Neos/Inspector/Editors/DateTimeEditor'
@@ -21,7 +21,7 @@
     'latestDate':
       type: string
       ui:
-        label: 'Latest date'
+        label: i18n
         inspector:
           group: 'validator'
           editor: 'Neos.Neos/Inspector/Editors/DateTimeEditor'

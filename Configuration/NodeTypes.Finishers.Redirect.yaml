@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractFinisher': TRUE
   ui:
-    label: 'Redirect finisher'
+    label: i18n
     icon: 'icon-arrow-right'
     inspector:
       groups:
@@ -12,7 +12,7 @@
     'uri':
       type: string
       ui:
-        label: 'Redirection target (node or URL)'
+        label: i18n
         reloadPageIfChanged: TRUE
         inspector:
           group: 'finisher'

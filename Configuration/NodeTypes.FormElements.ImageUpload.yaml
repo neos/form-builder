@@ -3,7 +3,7 @@
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
-    label: 'Image Upload'
+    label: i18n
     icon: 'icon-picture-o'
     group: 'form.custom'
     inspector:
@@ -14,7 +14,7 @@
     'allowedTypes':
       type: array
       ui:
-        label: 'Allowed image types'
+        label: i18n
         reloadIfChanged: TRUE
         inspector:
           group: 'formElement'

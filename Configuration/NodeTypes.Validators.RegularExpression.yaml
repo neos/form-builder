@@ -12,7 +12,7 @@
     'regularExpression':
       type: string
       ui:
-        label: 'Regular expression'
+        label: i18n
         inspector:
           group: 'validator'
           editorOptions:

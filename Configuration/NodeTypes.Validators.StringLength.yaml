@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'String length validator'
+    label: i18n
     icon: 'icon-text-width'
     inspector:
       groups:
@@ -13,13 +13,13 @@
       type: integer
       defaultValue: 0
       ui:
-        label: 'Minimum length'
+        label: i18n
         inspector:
           group: 'validator'
     'maximum':
       type: integer
       defaultValue: 100
       ui:
-        label: 'Maximum length'
+        label: i18n
         inspector:
           group: 'validator'
