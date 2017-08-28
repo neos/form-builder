@@ -7,26 +7,20 @@ prototypes that allow for dynamic Fusion based Form definitions.
 
 ## Usage
 
-Install this package using GIT:
+Install this package using [composer](https://getcomposer.org/):
 
 ```
-git clone https://github.com/bwaidelich/form-builder.git Packages/Application/Neos.Form.Builder
+composer require neos/form-builder
 ```
 
-And make sure to rescan the installed packages so that it is properly installed:
-
-```
-./flow flow:package:rescan
-```
-
-**Note:** This package requires the `neos/neos` package in version 3.1 or higher
+> **Note:** This package requires the `neos/neos` package in version 3.1 or higher
 
 In the Neos backend there's now a new Content Element type that can be
 used:
 
 ![Create Wizard](Documentation/Images/CreateWizard.png "New \"Form\" Content Element")
 
-**Note:** If you have the `Neos.NodeTypes` package installed, there are two types of Forms that
+> **Note:** If you have the `Neos.NodeTypes` package installed, there are two types of Forms that
 can be inserted. The following snippet can be added to the sites `NodeTypes.yaml` in order
 to disable the Neos.NodeTypes Form:
 ```yaml
@@ -54,25 +48,26 @@ the Form Builder more accessible:
 
 This package provides some CSS that can be included in order to adjust the
 styling of the Form Builder within the Neos Backend.
-Considering the `Neos.Neos:Page` Fusion object is defined as `page`, the
-following Fusion snippet can be added in order to include the custom CSS
-when in the Neos Backend:
+The following Fusion snippet can be added in order to include the custom CSS
+when in the Neos Backend (as long as the page Fusion prototype extends from `Neos.Neos:Page`):
 
 ```fusion
-page.head.formBuilderStyles = Neos.Fusion:Tag {
-    tagName = 'link'
-    attributes {
-        rel = 'stylesheet'
-        href = Neos.Fusion:ResourceUri {
-            path = 'resource://Neos.Form.Builder/Public/Styles/Backend.css'
+prototype(Neos.Neos:Page) {
+    head.formBuilderStyles = Neos.Fusion:Tag {
+        tagName = 'link'
+        attributes {
+            rel = 'stylesheet'
+            href = Neos.Fusion:ResourceUri {
+                path = 'resource://Neos.Form.Builder/Public/Styles/Backend.css'
+            }
         }
+        @position = 'end'
+        @if.isInBackend = ${documentNode.context.inBackend}
     }
-    @position = 'end'
-    @if.isInBackend = ${documentNode.context.inBackend}
 }
 ```
 
-(Note: There's also a version for the "new" Neos UI, but it's not yet supported)
+> **Note:** There's also a version for the "new" Neos UI, but it's not yet fully supported
 
 As a result the form will look something like this in the Backend:
 
@@ -130,6 +125,24 @@ prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
 }
 ```
 
+To create multi-page forms the `furtherPages` field can be used:
+
+```fusion
+prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
+    // ...
+    furtherPages {
+        page2 = Neos.Form.Builder:FormPage.Definition {
+            elements {
+                elementOnPage2 = Neos.Form.Builder:SingleLineText.Definition {
+                    label = 'Element on page 2'
+                }
+            }
+        }
+        preview = Neos.Form.Builder:PreviewPage.Definition
+    }
+}
+```
+
 Now the `Some.Package:ContactForm` prototype can be used just like any other
 Content Element (or even as Document).
 
@@ -173,7 +186,7 @@ prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
 With that in place, the initial Form rendering is cached and the mode is
 changed to "uncached" when the Form is submitted (= unsafe request).
 
-**Note:** The `dynamic` Cache mode only works reliably with Neos versions 2.3.15+ and 3.1.5+
+> **Note:** The `dynamic` Cache mode only works reliably with Neos versions 2.3.15+ and 3.1.5+
 
 ## Custom Form Elements
 
