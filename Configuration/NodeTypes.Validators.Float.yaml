@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: i18n
+    label: 'Floating-point number Validator'
     icon: 'icon-sort-numeric-asc'
     inspector:
       groups:

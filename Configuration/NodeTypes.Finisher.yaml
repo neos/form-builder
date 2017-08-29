@@ -18,7 +18,7 @@
 
 'Neos.Form.Builder:FinisherCollection':
   ui:
-    label: i18n
+    label: 'Finishers'
     icon: 'icon-share-square-o'
     inlineEditable: TRUE
   superTypes:
