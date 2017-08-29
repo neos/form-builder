@@ -5,6 +5,10 @@ to the [Neos CMS](https://neos.io) backend.
 It also comes with [Fusion](https://neos.readthedocs.io/en/stable/CreatingASite/Fusion/index.html)
 prototypes that allow for dynamic Fusion based Form definitions.
 
+## Related Packages
+
+Make sure to have a look at the other Flow Form Framework [Related Packages](https://github.com/neos/form/#related-packages)
+
 ## Usage
 
 Install this package using [composer](https://getcomposer.org/):
