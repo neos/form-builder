@@ -4,7 +4,7 @@
     'Neos.Form.Builder:SelectionMixin': TRUE
     'Neos.Form.Builder:DefaultValueMixin': FALSE
   ui:
-    label: i18n
+    label: 'Multiple Select (Dropdown)'
     icon: 'icon-list-ol'
     inspector:
       groups:

@@ -12,7 +12,7 @@
   label: "${q(node).property('identifier') || q(node).property('label') || ((node.nodeType.label || node.nodeType.name) + ' (' + node.name + ')')}"
   ui:
     inlineEditable: TRUE
-    label: i18n
+    label: 'Form Element'
     icon: 'icon-square-o'
     group: 'form.elements'
     inspector:
@@ -37,7 +37,7 @@
 
 'Neos.Form.Builder:ElementCollection':
   ui:
-    label: i18n
+    label: 'Elements'
     icon: 'icon-list'
     inlineEditable: TRUE
   options:
@@ -59,7 +59,7 @@
   label: "${q(node).property('label') || q(node).property('value') || '[not set]'}"
   ui:
     inlineEditable: TRUE
-    label: i18n
+    label: 'Select option'
     icon: 'icon-stop-circle-o'
     group: 'form.selectOptions'
     inspector:
@@ -93,7 +93,7 @@
 
 'Neos.Form.Builder:SelectOptionCollection':
   ui:
-    label: i18n
+    label: 'Options'
     icon: 'icon-list-ul'
     inlineEditable: TRUE
   options:

@@ -3,7 +3,7 @@
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:PlaceholderMixin': TRUE
   ui:
-    label: i18n
+    label: 'Multi-line text'
     icon: 'icon-pencil-square-o'
     inspector:
       groups:

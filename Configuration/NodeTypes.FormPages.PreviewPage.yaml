@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:FormPage': TRUE
   ui:
-    label: i18n
+    label: 'Preview Page'
     icon: 'icon-file-text-o'
     inspector:
       groups:
