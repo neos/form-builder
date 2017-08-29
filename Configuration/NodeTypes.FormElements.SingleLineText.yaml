@@ -4,7 +4,7 @@
     'Neos.Form.Builder:TextValidatorsMixin': TRUE
     'Neos.Form.Builder:PlaceholderMixin': TRUE
   ui:
-    label: i18n
+    label: 'Single-line text'
     icon: 'icon-pencil-square-o'
     inspector:
       groups:

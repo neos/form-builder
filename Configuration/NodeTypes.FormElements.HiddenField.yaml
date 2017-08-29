@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:FormElement': TRUE
   ui:
-    label: i18n
+    label: 'Hidden value'
     icon: 'icon-eye-slash'
     inspector:
       groups:

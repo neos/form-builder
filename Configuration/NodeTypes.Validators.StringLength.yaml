@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: i18n
+    label: 'String length Validator'
     icon: 'icon-text-width'
     inspector:
       groups:

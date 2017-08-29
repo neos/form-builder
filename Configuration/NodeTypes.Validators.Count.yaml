@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': TRUE
   ui:
-    label: 'Count validator'
+    label: 'Count Validator'
     icon: 'icon-sort-amount-asc'
     inspector:
       groups:
