@@ -1,3 +1,0 @@
-Neos_Form_Builder_DefinitionCache:
-  frontend: Neos\Cache\Frontend\VariableFrontend
-  backend: Neos\Cache\Backend\FileBackend

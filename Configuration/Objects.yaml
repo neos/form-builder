@@ -1,9 +1,0 @@
-Neos\Form\Builder\Fusion\FormImplementation:
-  properties:
-    'definitionCache':
-      object:
-        factoryObjectName: Neos\Flow\Cache\CacheManager
-        factoryMethodName: getCache
-        arguments:
-          1:
-            value: Neos_Form_Builder_DefinitionCache
