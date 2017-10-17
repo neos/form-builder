@@ -68,7 +68,24 @@
           label: i18n
           position: 45
           icon: 'icon-stop-circle-o'
+    creationDialog:
+      elements:
+        'value':
+          type: string
+          ui:
+            label: 'Value'
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+          validation:
+            'Neos.Neos/Validation/NotEmptyValidator': []
+        'label':
+          type: string
+          ui:
+            label: 'Label (optional)'
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
   options:
+    nodeCreationHandlers:
+      documentTitle:
+        nodeCreationHandler: 'Neos\Form\Builder\NodeType\SelectOptionsCreationHandler'
     fusion:
       prototypeGenerator: null
   properties:
