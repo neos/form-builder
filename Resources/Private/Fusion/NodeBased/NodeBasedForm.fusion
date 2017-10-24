@@ -29,6 +29,7 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
         context {
             1 = 'node'
             2 = 'documentNode'
+            3 = 'site'
         }
     }
 }
