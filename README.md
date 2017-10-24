@@ -246,3 +246,113 @@ is used to evaluate the definition of that Form Element.
 In any case that Form Element must be existent in the configured Form Preset
 in order to be rendered correctly.
 
+### Example: Custom "title" selector
+
+A `title` selector is a common requirement for contact forms.
+Instead of adding a generic select element and having to add the options
+manually for every instance, we can easily create a custom element for that.
+
+First, a new NodeType is required:
+
+`NodeTypes.yaml`:
+
+```yaml
+'Some.Package:Title':
+  superTypes:
+    'Neos.Form.Builder:FormElement': TRUE
+  ui:
+    label: 'Title'
+    group: 'form.custom'
+```
+
+The corresponding Fusion maps the Form Element and specifies the selectable
+options:
+
+`Title.fusion`:
+
+```fusion
+prototype(Some.Package:Title.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
+    # we map this to the existing SingleSelectDropdown Form Element
+    formElementType = 'Neos.Form:SingleSelectDropdown'
+    properties {
+        options = Neos.Form.Builder:SelectOptionCollection {
+            mrs = 'Mrs.'
+            mr = 'Mr.'
+            miss = 'Miss'
+            ms = 'Ms.'
+            dr = 'Dr.'
+            prof = 'Prof.'
+        }
+    }
+}
+```
+
+> **Note:** In this case we map the new Element to the `SingleSelectDropdown`
+  Form Element from the Neos.Form package. We could use `SingleSelectRadioButtons` instead,
+  or to a custom element. Or have a dynamic mapping like in the following example
+
+### Example: Custom selector with dynamic Form Element type mapping
+
+In this example we create a selector for Newsletter categories.
+It's pretty similar to the previous example. But in this case we want
+to give the editor a bit more control and allow them to specify whether
+*multiple* categories can be selected.
+So we create the NodeType with a property `multiple`:
+
+`NodeTypes.yaml`:
+
+```yaml
+'Some.Package:NewsletterCategories':
+  superTypes:
+    'Neos.Form.Builder:FormElement': TRUE
+    'Neos.Form.Builder:DefaultValueMixin': FALSE
+  ui:
+    label: 'Newsletter Category Selector'
+    group: 'form.select'
+  properties:
+    'multiple':
+      type: boolean
+      ui:
+        label: 'Allow multiple'
+        inspector:
+          group: 'formElement'
+```
+
+..and map the Form Element depending on that property in the Fusion prototype:
+
+`NewsletterCategories.fusion`:
+
+```fusion
+prototype(Some.Package:NewsletterCategories.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
+    # depending on the "multiple" property this will render checkboxes or radio buttons
+    formElementType = ${this.properties.multiple ? 'Neos.Form:MultipleSelectCheckboxes' : 'Neos.Form:SingleSelectRadiobuttons'}
+    properties {
+        options = Neos.Form.Builder:SelectOptionCollection {
+            events = 'Events'
+            corporate = 'Corporate'
+            marketing = 'Marketing'
+        }
+    }
+}
+
+```
+
+#### Dynamic options
+
+Instead of hard-coding the options in the fusion prototype, we can use
+`FlowQuery` to retrieve them from the Content Repository.
+The following snippet will for example make any `NewsletterCategory` node
+selectable:
+
+`NewsletterCategories.fusion`:
+
+```fusion
+    // ...
+    properties {
+        options = Neos.Form.Builder:SelectOptionCollection {
+            collection = ${q(site).children('[instanceof Some.Package:NewsletterCategory]')}
+            # we use the node identifier as value, we could use "name" or "label" instead for example
+            valuePropertyPath = 'identifier'
+        }
+    }
+```
