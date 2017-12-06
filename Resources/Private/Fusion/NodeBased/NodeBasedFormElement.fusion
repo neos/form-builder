@@ -12,14 +12,14 @@ prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Render
         renderingOptions._node = ${elementNode}
         renderingOptions._fusionPath = ${element.path}
 
-        properties.options {
+        properties.options.@process.overrideFromNode = Neos.Form.Builder:SelectOptionCollection {
             collection = ${q(elementNode).children('options').children()}
             valuePropertyPath = 'properties.value'
             labelPropertyPath = 'properties.label'
             @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
         }
 
-        elements = Neos.Form.Builder:NodeBasedElementCollection {
+        elements.@process.overrideFromNode = Neos.Form.Builder:NodeBasedElementCollection {
             collection = ${q(elementNode).children('elements').children()}
             @if.isSectionFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
         }
