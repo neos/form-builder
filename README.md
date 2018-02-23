@@ -85,7 +85,7 @@ But in some cases it can be very useful to define Forms in pure Fusion:
 
 ```fusion
 prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
-    presetName = 'bootstrap'
+    presetName = 'default'
     firstPage {
         elements {
             name = Neos.Form.Builder:SingleLineText.Definition {
