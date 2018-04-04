@@ -17,9 +17,8 @@ class FormPageImplementation extends AbstractFusionObject
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
-        // TODO error handling if "form" is not available
         if (!isset($context['form'])) {
-            return '';
+            throw new FusionException(sprintf('Missing "form" in context for Form Page Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1522829233);
         }
         /** @var FormDefinition $formDefinition */
         $formDefinition = $context['form'];

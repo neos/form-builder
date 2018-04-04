@@ -11,6 +11,9 @@ class FinisherImplementation extends AbstractFusionObject
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
+        if (!isset($context['form'])) {
+            throw new FusionException(sprintf('Missing "form" in context for Finisher Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1522829109);
+        }
         // TODO error handling if "form" is not available
         /** @var FormDefinition $formDefinition */
         $formDefinition = $context['form'];
