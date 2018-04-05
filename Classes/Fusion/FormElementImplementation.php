@@ -18,7 +18,9 @@ class FormElementImplementation extends AbstractFusionObject
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
-        // TODO error handling if "parentRenderable" is not available
+        if (!isset($context['parentRenderable'])) {
+            throw new FusionException(sprintf('Missing "parentRenderable" in context for Form Element Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1522828967);
+        }
         /** @var Page $renderable */
         $renderable = $context['parentRenderable'];
 

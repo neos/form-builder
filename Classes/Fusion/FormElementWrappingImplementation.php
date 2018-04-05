@@ -7,6 +7,7 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Form\Core\Model\Page;
 use Neos\Form\Core\Model\Renderable\RootRenderableInterface;
 use Neos\Form\Core\Runtime\FormRuntime;
+use Neos\Fusion\Exception as FusionException;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 use Neos\Neos\Service\ContentElementWrappingService;
 
@@ -30,7 +31,9 @@ class FormElementWrappingImplementation extends AbstractFusionObject
     {
         $context = $this->runtime->getCurrentContext();
 
-        // TODO error handling if "formRuntime" is not available
+        if (!isset($context['formRuntime'])) {
+            throw new FusionException(sprintf('Missing "formRuntime" in context for Form Element Wrapping Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1522829151);
+        }
         /** @var FormRuntime $formRuntime */
         $formRuntime = $context['formRuntime'];
         $formRuntime->registerRenderCallback(function (string $output, RootRenderableInterface $renderable) {
