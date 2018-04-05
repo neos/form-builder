@@ -91,6 +91,7 @@
   properties:
     'value':
       type: string
+      defaultValue: 'value'
       ui:
         label: i18n
         reloadIfChanged: TRUE

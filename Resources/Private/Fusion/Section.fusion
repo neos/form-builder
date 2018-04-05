@@ -1,5 +1,7 @@
 prototype(Neos.Form.Builder:SectionFormElement.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
     @class = 'Neos\\Form\\Builder\\Fusion\\SectionImplementation'
+    
+    required = ${false}
 
     elements = Neos.Form.Builder:ElementCollection
 }

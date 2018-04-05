@@ -10,7 +10,9 @@ class ValidatorImplementation extends AbstractFusionObject
     public function evaluate()
     {
         $context = $this->runtime->getCurrentContext();
-        // TODO error handling if "element" is not available
+        if (!isset($context['element'])) {
+            throw new FusionException(sprintf('Missing "element" in context for Validator Fusion object "%s" at "%s"', $this->fusionObjectName, $this->path), 1522829281);
+        }
         /** @var AbstractRenderable $element */
         $element = $context['element'];
 
