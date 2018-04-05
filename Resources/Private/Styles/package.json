@@ -4,9 +4,8 @@
   "description": "Neos Backend Styles for the Form Builder",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build-old-ui && yarn build-new-ui",
-    "build-old-ui": "node-sass scss/Backend.scss ../../Public/Styles/Backend.css",
-    "build-new-ui": "node-sass scss/BackendReact.scss ../../Public/Styles/BackendReact.css --output-style compressed"
+    "build": "node-sass scss/Backend.scss ../../Public/Styles/Backend.css --output-style compressed",
+    "watch": "yarn build --watch"
   },
   "dependencies": {
     "node-sass": "^4.5.3"

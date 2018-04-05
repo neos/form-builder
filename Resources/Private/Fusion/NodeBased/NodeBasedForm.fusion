@@ -23,7 +23,11 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
     finishers = Neos.Form.Builder:NodeBasedFinisherCollection {
         collection = ${q(formNode).children('finishers').children()}
     }
-    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping {
+        additionalAttributes {
+            'data-_neos-form-builder-type' = ${formNode.nodeType.name}
+        }
+    }
 
     @cache {
         context {

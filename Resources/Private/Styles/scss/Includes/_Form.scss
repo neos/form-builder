@@ -1,4 +1,4 @@
-#{select("Neos.Form.Builder:NodeBasedForm")} {
-  position: relative;
-  padding-top: 20px;
+[data-_neos-form-builder-type="Neos.Form.Builder:NodeBasedForm"] {
+    position: relative;
+    padding-top: 20px;
 }

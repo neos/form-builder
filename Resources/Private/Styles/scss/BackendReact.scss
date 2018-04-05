@@ -1,6 +1,0 @@
-$anyContentElement: "[data-__neos-node-type]";
-@function select($nodeType) {
-  @return "[data-__neos-node-type=\"#{$nodeType}\"]"
-}
-
-@import "Includes/All";
