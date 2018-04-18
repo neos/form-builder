@@ -30,7 +30,11 @@ class Package extends BasePackage
             $possibleIdentifier = $initialIdentifier = $newValue;
             $i = 1;
             /** @noinspection PhpUndefinedMethodInspection */
-            while ($flowQuery->closest('[instanceof Neos.Form.Builder:NodeBasedForm]')->find(sprintf('[instanceof Neos.Form.Builder:IdentifierMixin][%s="%s"]', 'identifier', $possibleIdentifier))->count() > 0) {
+            while ($flowQuery
+                    ->closest('[instanceof Neos.Form.Builder:NodeBasedForm]')
+                    // [identifier=".."] matches the Form Element identifier, [_identiier!="..."] excludes the current node
+                    ->find(sprintf('[instanceof Neos.Form.Builder:IdentifierMixin][identifier="%s"][_identifier!="%s"]', $possibleIdentifier, $node->getIdentifier()))
+                    ->count() > 0) {
                 $possibleIdentifier = $initialIdentifier . '-' . $i++;
             }
             $node->setProperty('identifier', $possibleIdentifier);
