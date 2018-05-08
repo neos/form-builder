@@ -1,49 +1,45 @@
-#{select("Neos.Form.Builder:FinisherCollection")}, #{select("Neos.Form.Builder:FinisherCollection")}  .neos-empty-contentcollection-overlay {
-  padding-left: 20px;
-  position: absolute;
-  z-index: 100;
-  right: 0;
-  height: 20px;
-  outline: none !important;
-  background: #fff;
-  vertical-align: middle;
-}
+[data-_neos-form-builder-type="Neos.Form.Builder:FinisherCollection"] {
+    padding-left: 20px;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    height: 20px;
+    outline: none !important;
+    background: #fff;
+    vertical-align: middle;
 
-#{select("Neos.Form.Builder:FinisherCollection")} .neos-empty-contentcollection-overlay:before {
-  font: 18px FontAwesome;
-  color: #bbb;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 3px;
-  left: 2px;
-  vertical-align: middle;
-  content: "\F045";
-}
+    & > [data-_neos-form-builder-type] {
+        display: inline-block;
+        outline-offset: 1px !important;
+        padding: 0 3px;
+        margin: 0 1px;
+        cursor: pointer;
+        &:before {
+            font: 16px FontAwesome;
+            color: #00adee;
+            content: "\F045";
+        }
+        &[data-_neos-form-builder-type="Neos.Form.Builder:ConfirmationFinisher"]:before {
+            content: "\F075";
+        }
+        &[data-_neos-form-builder-type="Neos.Form.Builder:EmailFinisher"]:before {
+            content: "\F003";
+        }
+        &[data-_neos-form-builder-type="Neos.Form.Builder:RedirectFinisher"]:before {
+            content: "\F061";
+        }
+    }
 
-#{select("Neos.Form.Builder:FinisherCollection")} > #{$anyContentElement} {
-  display: inline-block;
-  outline-offset: 1px !important;
-  padding: 0 3px;
-  margin: 0 1px;
-  cursor: pointer;
-}
-
-#{select("Neos.Form.Builder:FinisherCollection")} > #{$anyContentElement}:before {
-  font: 16px FontAwesome;
-  color: #00adee;
-  content: "\F045";
-}
-
-#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:ConfirmationFinisher")}:before {
-  content: "\F075";
-}
-
-#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:EmailFinisher")}:before {
-  content: "\F003";
-}
-
-#{select("Neos.Form.Builder:FinisherCollection")} > #{select("Neos.Form.Builder:RedirectFinisher")}:before {
-  content: "\F061";
+    &[data-_neos-form-builder-empty-collection]:before {
+        font: 18px FontAwesome;
+        color: #bbb;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        vertical-align: middle;
+        content: "\F045";
+    }
 }

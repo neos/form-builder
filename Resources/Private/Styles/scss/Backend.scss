@@ -1,6 +1,6 @@
-$anyContentElement: "[data-node-_node-type]";
-@function select($nodeType) {
-  @return "[data-node-_node-type=\"#{$nodeType}\"]"
-}
-
-@import "Includes/All";
+@import "Includes/Form";
+@import "Includes/Finisher";
+@import "Includes/Page";
+@import "Includes/Element";
+@import "Includes/SelectOption";
+@import "Includes/Validator";

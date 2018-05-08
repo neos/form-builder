@@ -1,18 +1,16 @@
-#{select("Neos.Form.Builder:ElementCollection")} {
-  margin-top: 30px;
-}
-
-#{select("Neos.Form.Builder:ElementCollection")} > #{$anyContentElement} {
-  position: relative;
-  padding-top: 10px;
-}
-
-#{select("Neos.Form.Builder:ElementCollection")} > .neos-empty-contentcollection-overlay:before {
-  font: 18px FontAwesome;
-  color: #bbb;
-  display: inline-block;
-  margin-top: 2px;
-  width: 20px;
-  height: 20px;
-  content: "\F03A";
+[data-_neos-form-builder-type="Neos.Form.Builder:ElementCollection"] {
+    margin-top: 30px;
+    & > [data-_neos-form-builder-type] {
+        position: relative;
+        padding-top: 10px;
+    }
+    &[data-_neos-form-builder-empty-collection]:before {
+        font: 18px FontAwesome;
+        color: #bbb;
+        display: inline-block;
+        margin-top: 2px;
+        width: 20px;
+        height: 20px;
+        content: "\F03A";
+    }
 }

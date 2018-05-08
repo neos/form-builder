@@ -1,31 +1,27 @@
-#{select("Neos.Form.Builder:SelectOptionCollection")}, #{select("Neos.Form.Builder:SelectOptionCollection")} .neos-empty-contentcollection-overlay {
-  outline: none !important;
-  text-align: right;
-  margin-bottom: 10px;
-  vertical-align: middle;
-}
-
-
-#{select("Neos.Form.Builder:SelectOptionCollection")} .neos-empty-contentcollection-overlay:before {
-  font: 16px FontAwesome;
-  color: #bbb;
-  outline: none;
-  display: inline-block;
-  height: 18px;
-  vertical-align: middle;
-  content: "\F0CA";
-}
-
-#{select("Neos.Form.Builder:SelectOptionCollection")} #{$anyContentElement} {
-  display: inline-block;
-  outline-offset: 1px !important;
-  padding: 0 3px;
-  margin: 0 1px;
-  cursor: pointer;
-}
-
-#{select("Neos.Form.Builder:SelectOptionCollection")} #{$anyContentElement}:before {
-  font: 16px FontAwesome;
-  color: #00adee;
-  content: "\F28E";
+[data-_neos-form-builder-type="Neos.Form.Builder:SelectOptionCollection"] {
+    outline: none !important;
+    text-align: right;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    & > [data-_neos-form-builder-type] {
+        display: inline-block;
+        outline-offset: 1px !important;
+        padding: 0 3px;
+        margin: 0 1px;
+        cursor: pointer;
+        &:before {
+            font: 16px FontAwesome;
+            color: #00adee;
+            content: "\F28E";
+        }
+    }
+    &[data-_neos-form-builder-empty-collection]:before {
+        font: 16px FontAwesome;
+        color: #bbb;
+        outline: none;
+        display: inline-block;
+        height: 18px;
+        vertical-align: middle;
+        content: "\F0CA";
+    }
 }

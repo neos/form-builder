@@ -50,7 +50,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
             if ($renderable instanceof Page) {
                 $elementsNode = $node->getNode('elements');
                 if ($elementsNode !== null) {
-                    $output = $this->contentElementWrappingService->wrapContentObject($elementsNode, $output, $fusionPath);
+                    $output = $this->wrapNode($elementsNode, $output, $fusionPath);
                 }
                 // first page? add finisher collection and return the wrapped content
                 if ($node->getNodeType()->isOfType('Neos.Form.Builder:NodeBasedForm')) {
@@ -59,17 +59,17 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                         $output = $this->wrapNodeRecursively($finishersNode, '', $fusionPath . '/finishers') . $output;
                     }
                     if (!$renderable->getRootForm()->hasPageWithIndex(1)) {
-                        $output = $output . $this->contentElementWrappingService->wrapContentObject($node->getNode('furtherPages'), '', $fusionPath . '/furtherPages');
+                        $output = $output . $this->wrapNode($node->getNode('furtherPages'), '', $fusionPath . '/furtherPages');
                     }
                     return $output;
                 }
 
                 // otherwise store wrapped page content until last page
-                $this->pendingOutput .= $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath);
+                $this->pendingOutput .= $this->wrapNode($node, $output, $fusionPath);
                 if (!$this->isLastPageNode($node)) {
                     return '';
                 }
-                return $this->contentElementWrappingService->wrapContentObject($node->getParent(), $this->pendingOutput, $this->parentFusionPath($fusionPath));
+                return $this->wrapNode($node, $this->pendingOutput, $this->parentFusionPath($fusionPath));
             }
             return $this->wrapNodeRecursively($node, $output, $fusionPath);
         });
@@ -79,6 +79,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
     private function isLastPageNode(NodeInterface $node): bool
     {
         $flowQuery = new FlowQuery([$node]);
+        /** @noinspection PhpUndefinedMethodInspection */
         return $flowQuery->next('[instanceof Neos.Form.Builder:FormPage]')->get(0) === null;
     }
 
@@ -93,7 +94,18 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         foreach ($node->getChildNodes() as $childNode) {
             $output .= $this->wrapNodeRecursively($childNode, '', $fusionPath . '/' . $childNode->getIdentifier());
         }
-        return $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath);
+        return $this->wrapNode($node, $output, $fusionPath);
+    }
+
+    private function wrapNode(NodeInterface $node, string $output, string $fusionPath): string
+    {
+        $additionalAttributes = [
+            'data-_neos-form-builder-type' => $node->getNodeType()->getName()
+        ];
+        if ($node->getNodeType()->isOfType('Neos.Neos:ContentCollection') && count($node->getChildNodes()) === 0) {
+            $additionalAttributes['data-_neos-form-builder-empty-collection'] = true;
+        }
+        return $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath, $additionalAttributes);
     }
 
 }

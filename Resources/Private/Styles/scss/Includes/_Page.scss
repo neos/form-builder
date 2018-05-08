@@ -1,33 +1,30 @@
-#{select("Neos.Form.Builder:PageCollection")} {
-  margin-top: 30px;
-}
-
-#{select("Neos.Form.Builder:PageCollection")} > #{$anyContentElement} {
-  position: relative;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #bbb;
-}
-
-#{select("Neos.Form.Builder:PageCollection")} > #{$anyContentElement}:before {
-  font: 18px FontAwesome;
-  color: #bbb;
-  display: inline-block;
-  position: absolute;
-  top: -10px;
-  background-color: white;
-  left: 0;
-  width: 23px;
-  height: 20px;
-  content: "\F016";
-}
-
-#{select("Neos.Form.Builder:PageCollection")} > .neos-empty-contentcollection-overlay:before {
-  font: 18px FontAwesome;
-  color: #bbb;
-  display: inline-block;
-  margin-top: 2px;
-  width: 20px;
-  height: 20px;
-  content: "\F07C";
+[data-_neos-form-builder-type="Neos.Form.Builder:PageCollection"] {
+    margin-top: 30px;
+    & > [data-_neos-form-builder-type] {
+        position: relative;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #bbb;
+        &:before {
+            font: 18px FontAwesome;
+            color: #bbb;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            left: 0;
+            width: 23px;
+            height: 20px;
+            content: "\F016";
+        }
+    }
+    &[data-_neos-form-builder-empty-collection]:before {
+        font: 18px FontAwesome;
+        color: #bbb;
+        display: inline-block;
+        margin-top: 2px;
+        width: 20px;
+        height: 20px;
+        content: "\F07C";
+    }
 }

@@ -71,8 +71,6 @@ prototype(Neos.Neos:Page) {
 }
 ```
 
-> **Note:** There's also a version for the "new" Neos UI, but it's not yet fully supported
-
 As a result the form will look something like this in the Backend:
 
 ![Custom Styles](Documentation/Images/CustomStyles.png "Form Builder with custom styles")
