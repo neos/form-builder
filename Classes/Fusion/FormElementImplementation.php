@@ -27,7 +27,12 @@ class FormElementImplementation extends AbstractFusionObject
         /** @var AbstractFormElement $element */
         $element = $renderable->createElement($this->getIdentifier(), $this->getFormElementType());
         $element->setLabel($this->getLabel());
-        $element->setDefaultValue($this->getDefaultValue());
+
+        if(isset($_GET[$this->getIdentifier()])) {
+            $element->setDefaultValue($_GET[$this->getIdentifier()]);
+        } else {
+            $element->setDefaultValue($this->getDefaultValue());
+        }
 
         foreach ($this->getProperties() as $propertyName => $propertyValue) {
             $element->setProperty($propertyName, $propertyValue);
