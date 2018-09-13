@@ -3,6 +3,7 @@
     'Neos.Form.Builder:FormElement': TRUE
     'Neos.Form.Builder:TextValidatorsMixin': TRUE
     'Neos.Form.Builder:PlaceholderMixin': TRUE
+    'Neos.Form.Builder:MaxlengthMixin': TRUE
   ui:
     label: 'Single-line text'
     icon: 'icon-pencil-square-o'

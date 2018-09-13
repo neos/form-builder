@@ -87,3 +87,13 @@
   childNodes:
     'elements':
       type: 'Neos.Form.Builder:ElementCollection'
+
+'Neos.Form.Builder:MaxlengthMixin':
+  properties:
+    'maxlength':
+      type: integer
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
