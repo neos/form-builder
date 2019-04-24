@@ -1,7 +1,7 @@
 prototype(Neos.Form.Builder:NodeBasedFinisher) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.finisher = ${this}
-        options.@process.addNodeProperties = ${Array.concat(value, finisherNode.properties)}
+        options.@process.addNodeProperties = ${Neos.Form.Builder.Node.mergeProperties(value, finisherNode)}
     }
 }
 
