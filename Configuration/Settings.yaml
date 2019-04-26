@@ -1,4 +1,7 @@
 Neos:
+  Fusion:
+    defaultContext:
+      Neos.Form.Builder.Node: 'Neos\Form\Builder\Fusion\Helper\NodeHelper'
   Neos:
     fusion:
       autoInclude:

@@ -5,7 +5,7 @@ prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Render
         label = ${elementNode.properties.label}
         required = ${elementNode.properties.required}
         defaultValue = ${elementNode.properties.defaultValue}
-        properties.@process.addNodeProperties = ${Array.concat(value, elementNode.properties)}
+        properties.@process.addNodeProperties = ${Neos.Form.Builder.Node.mergeProperties(value, elementNode)}
         validators = Neos.Form.Builder:NodeBasedValidatorCollection {
             collection = ${q(elementNode).children('validators').children()}
         }

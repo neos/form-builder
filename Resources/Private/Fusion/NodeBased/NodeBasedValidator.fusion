@@ -1,7 +1,7 @@
 prototype(Neos.Form.Builder:NodeBasedValidator) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.validator = ${this}
-        options.@process.addNodeProperties = ${Array.concat(value, validatorNode.properties)}
+        options.@process.addNodeProperties = ${Neos.Form.Builder.Node.mergeProperties(value, validatorNode)}
     }
 }
 
