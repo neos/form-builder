@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Neos.Form.Builder" source-language="en" target-language="da" datatype="plaintext">
+		<body>
+			<trans-unit id="groups.finisher-attachments" xml:space="preserve">
+				<source>Attachments</source>
+				<target>Vedhæftninger</target>
+			</trans-unit>
+			<trans-unit id="properties.subject" xml:space="preserve">
+				<source>Email subject</source>
+				<target>Emne</target>
+			</trans-unit>
+			<trans-unit id="properties.templateSource" xml:space="preserve">
+				<source>Email body (Fluid)</source>
+				<target>Emailindhold (Fluid)</target>
+			</trans-unit>
+			<trans-unit id="properties.templateSource.codeEditor.buttonLabel" xml:space="preserve">
+				<source>Edit Email body</source>
+				<target>Ret emailindhold</target>
+			</trans-unit>
+			<trans-unit id="properties.recipientAddress" xml:space="preserve">
+				<source>Recipient email address</source>
+				<target>Modtager emailadresse</target>
+			</trans-unit>
+			<trans-unit id="properties.recipientName" xml:space="preserve">
+				<source>Recipient name</source>
+				<target>Modtagernavn</target>
+			</trans-unit>
+			<trans-unit id="properties.senderAddress" xml:space="preserve">
+				<source>Sender email address</source>
+				<target>Afsender emailadresse</target>
+			</trans-unit>
+			<trans-unit id="properties.senderName" xml:space="preserve">
+				<source>Sender name</source>
+				<target>Afsendernavn</target>
+			</trans-unit>
+			<trans-unit id="properties.replyToAddress" xml:space="preserve">
+				<source>ReplyTo email address</source>
+				<target>Svar-til adresse</target>
+			</trans-unit>
+			<trans-unit id="properties.carbonCopyAddress" xml:space="preserve">
+				<source>CC email address</source>
+				<target>CC emailadresse</target>
+			</trans-unit>
+			<trans-unit id="properties.blindCarbonCopyAddress" xml:space="preserve">
+				<source>BCC email address</source>
+				<target>BCC emailadresse</target>
+			</trans-unit>
+			<trans-unit id="properties.format" xml:space="preserve">
+				<source>Email format</source>
+				<target>Emailformat</target>
+			</trans-unit>
+			<trans-unit id="properties.format.selectBoxEditor.values.html" xml:space="preserve">
+				<source>HTML</source>
+				<target>HTML</target>
+			</trans-unit>
+			<trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
+				<source>Plaintext</source>
+				<target>Klar tekst</target>
+			</trans-unit>
+			<trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
+				<source>Attach all uploaded files</source>
+				<target>Vedhæft alle uploadede filer</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

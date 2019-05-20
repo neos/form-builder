@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Neos.Form.Builder" source-language="en" target-language="da" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.message" xml:space="preserve">
+				<source>Confirmation message</source>
+				<target>Bekræftelsesmeddelelse</target>
+			</trans-unit>
+			<trans-unit id="properties.message.codeEditor.buttonLabel" xml:space="preserve">
+				<source>Edit confirmation message</source>
+				<target>Ret bekræftelsesmeddelelse</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
