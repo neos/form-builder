@@ -160,6 +160,30 @@ For example Form fields could be pre-filled with the authenticated user's data:
         // ...
 ```
 
+In order to set options based on the current Fusion context, the values have to be
+added to the Forms context explicitly in order to make them available in the elements/finisher
+configuration:
+
+```fusion
+prototype(Some.ContactForm:Contact) < prototype(Neos.Form.Builder:Form) {
+
+    // Redirect to the first child node of type "Some.Target:NodeType" upon form submission
+    @context.redirectUri = Neos.Neos:NodeUri {
+        node = ${q(documentNode).children('[instanceof Some.Target:NodeType]').get(0)}
+    }
+
+    // ...
+
+    finishers {
+        redirectFinisher = Neos.Form.Builder:RedirectFinisher.Definition {
+            options {
+                uri = ${redirectUri}
+            }
+        }
+    }
+}
+```
+
 ## Caching
 
 By default, all `Neos.Form.Builder:Form` implementations are *not cached*.
