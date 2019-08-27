@@ -18,3 +18,10 @@
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
             buttonLabel: i18n
+          # Alternatively enable a rich text editor:
+          # editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+          # editorOptions:
+          #   formatting:
+          #     placeholderInsert: true
+          #     strong: true
+          #     em: true

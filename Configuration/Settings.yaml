@@ -38,3 +38,9 @@ Neos:
         'form.selectOptions':
           label: 'Select options'
           collapsed: false
+
+    Ui:
+      resources:
+        javascript:
+          "Neos.Form.Builder:PlaceholderInsert":
+            resource: '${"resource://Neos.Form.Builder/Public/JavaScript/PlaceholderInsert/Plugin.js"}'
