@@ -2,8 +2,6 @@
 namespace Neos\Form\Builder\Fusion;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Http\Response;
-use Neos\Flow\Mvc\ActionRequest;
 use Neos\Form\Core\Model\FormDefinition;
 use Neos\Form\Core\Model\Renderable\RenderableInterface;
 use Neos\Form\Exception\PresetNotFoundException;
@@ -35,12 +33,9 @@ class FormImplementation extends AbstractFusionObject
         $formDefinition->setRenderingOption('_fusionRuntime', $this->runtime);
         $controllerContext = $this->runtime->getControllerContext();
 
-        $response = new Response($controllerContext->getResponse());
+        $actionResponse = $controllerContext->getResponse();
         $actionRequest = $controllerContext->getRequest();
-        if (!$actionRequest instanceof ActionRequest) {
-            throw new \RuntimeException(sprintf('The Form ControllerContext requires an instance of ActionRequest, instance of "%s" given', get_class($controllerContext->getRequest())), 1499345873);
-        }
-        $formRuntime = $formDefinition->bind($actionRequest, $response);
+        $formRuntime = $formDefinition->bind($actionRequest, $actionResponse);
 
         $this->runtime->pushContext('formRuntime', $formRuntime);
         $this->runtime->evaluate($this->path . '/renderCallbacks');
