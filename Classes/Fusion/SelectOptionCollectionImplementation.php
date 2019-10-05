@@ -7,12 +7,15 @@ use Neos\Utility\ObjectAccess;
 class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
 {
 
-    protected $ignoreProperties = ['labelPropertyPath', 'valuePropertyPath'];
+    protected $ignoreProperties = ['prependOptionLabel', 'prependOptionValue', 'labelPropertyPath', 'valuePropertyPath'];
 
     public function evaluate()
     {
         $collection = $this->getCollection();
         $options = [];
+        if (!empty($prependLabel = $this->getPrependOptionLabel())) {
+            $options[$this->getPrependOptionValue()] = $prependLabel;
+        }
         if ($collection === null) {
             foreach ($this->properties as $propertyName => $propertyValue) {
                 if (in_array($propertyName, $this->ignoreProperties)) {
@@ -49,5 +52,15 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
     private function getLabelPropertyPath(): string
     {
         return $this->fusionValue('labelPropertyPath');
+    }
+
+    private function getPrependOptionLabel(): string
+    {
+        return $this->fusionValue('prependOptionLabel') ?? '';
+    }
+
+    private function getPrependOptionValue(): string
+    {
+        return $this->fusionValue('prependOptionValue') ?? '';
     }
 }

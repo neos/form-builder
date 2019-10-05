@@ -1,6 +1,8 @@
 prototype(Neos.Form.Builder:SelectOptionCollection) {
     @class = 'Neos\\Form\\Builder\\Fusion\\SelectOptionCollectionImplementation'
 
+    prependOptionLabel = ${null}
+    prependOptionValue = ${null}
     valuePropertyPath = 'value'
     labelPropertyPath = 'label'
 }
