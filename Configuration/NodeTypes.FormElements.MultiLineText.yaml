@@ -11,3 +11,18 @@
         'formElement':
           icon: 'icon-pencil-square-o'
     position: 20
+  properties:
+    'rows':
+      type: integer
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
+    'cols':
+      type: integer
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formElement'
