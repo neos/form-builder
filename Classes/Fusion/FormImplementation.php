@@ -1,8 +1,19 @@
 <?php
+declare(strict_types=1);
+
 namespace Neos\Form\Builder\Fusion;
 
+/*
+ * This file is part of the Neos.Form.Builder package.
+ *
+ * (c) Contributors of the Neos Project - www.neos.io
+ *
+ * This package is Open Source Software. For the full copyright and license
+ * information, please view the LICENSE file which was distributed with this
+ * source code.
+ */
+
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Http\Response;
 use Neos\Flow\Mvc\ActionRequest;
 use Neos\Form\Core\Model\FormDefinition;
 use Neos\Form\Core\Model\Renderable\RenderableInterface;
@@ -35,12 +46,11 @@ class FormImplementation extends AbstractFusionObject
         $formDefinition->setRenderingOption('_fusionRuntime', $this->runtime);
         $controllerContext = $this->runtime->getControllerContext();
 
-        $response = new Response($controllerContext->getResponse());
         $actionRequest = $controllerContext->getRequest();
         if (!$actionRequest instanceof ActionRequest) {
             throw new \RuntimeException(sprintf('The Form ControllerContext requires an instance of ActionRequest, instance of "%s" given', get_class($controllerContext->getRequest())), 1499345873);
         }
-        $formRuntime = $formDefinition->bind($actionRequest, $response);
+        $formRuntime = $formDefinition->bind($actionRequest, $controllerContext->getResponse());
 
         $this->runtime->pushContext('formRuntime', $formRuntime);
         $this->runtime->evaluate($this->path . '/renderCallbacks');
@@ -49,6 +59,12 @@ class FormImplementation extends AbstractFusionObject
         return $formRuntime->render();
     }
 
+    /**
+     * @return FormDefinition
+     * @throws FusionException
+     * @throws PresetNotFoundException
+     * @throws \Neos\Form\Exception\IdentifierNotValidException
+     */
     protected function buildFormDefinition(): FormDefinition
     {
         $presetName = $this->getPresetName();
@@ -73,6 +89,11 @@ class FormImplementation extends AbstractFusionObject
         return $formDefinition;
     }
 
+    /**
+     * @param string $presetName
+     * @return array
+     * @throws PresetNotFoundException
+     */
     private function getPresetConfiguration(string $presetName): array
     {
         if (!isset($this->formSettings['presets'][$presetName])) {
