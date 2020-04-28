@@ -26,6 +26,7 @@
   ui:
     icon: 'icon-check-circle'
     inlineEditable: TRUE
+    label: 'Validators'
   options:
     fusion:
       prototypeGenerator: null
