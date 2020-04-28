@@ -1,0 +1,9 @@
+'Neos.Form.Builder:RequiredCheckboxMixin':
+  properties:
+    'required':
+      type: boolean
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: 'formElement'

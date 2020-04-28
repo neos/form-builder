@@ -1,0 +1,14 @@
+'Neos.Form.Builder:ElementCollection':
+  ui:
+    label: 'Elements'
+    icon: 'icon-list'
+    inlineEditable: true
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.Form.Builder:FormElement': true

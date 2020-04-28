@@ -1,6 +1,6 @@
 'Neos.Form.Builder:RedirectFinisher':
   superTypes:
-    'Neos.Form.Builder:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': true
   ui:
     label: 'Redirect Finisher'
     icon: 'icon-arrow-right'
@@ -13,9 +13,9 @@
       type: string
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
+        reloadPageIfChanged: true
         inspector:
           group: 'finisher'
           editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
           editorOptions:
-            assets: FALSE
+            assets: false

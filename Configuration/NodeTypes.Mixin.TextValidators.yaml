@@ -1,0 +1,15 @@
+'Neos.Form.Builder:TextValidatorsMixin':
+  superTypes:
+    'Neos.Form.Builder:ValidatorsMixin': true
+  childNodes:
+    'validators':
+      constraints:
+        nodeTypes:
+          'Neos.Form.Builder:AlphanumericValidator': true
+          'Neos.Form.Builder:EmailAddressValidator': true
+          'Neos.Form.Builder:FloatValidator': true
+          'Neos.Form.Builder:IntegerValidator': true
+          'Neos.Form.Builder:NumberRangeValidator': true
+          'Neos.Form.Builder:RegularExpressionValidator': true
+          'Neos.Form.Builder:StringLengthValidator': true
+          'Neos.Form.Builder:TextValidator': true

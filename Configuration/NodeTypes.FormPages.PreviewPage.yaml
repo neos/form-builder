@@ -1,6 +1,6 @@
 'Neos.Form.Builder:PreviewPage':
   superTypes:
-    'Neos.Form.Builder:FormPage': TRUE
+    'Neos.Form.Builder:FormPage': true
   ui:
     label: 'Preview Page'
     icon: 'icon-file-text-o'

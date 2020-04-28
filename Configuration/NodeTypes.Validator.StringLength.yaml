@@ -1,13 +1,13 @@
-'Neos.Form.Builder:NumberRangeValidator':
+'Neos.Form.Builder:StringLengthValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'Number range Validator'
-    icon: 'icon-sort-numeric-asc'
+    label: 'String length Validator'
+    icon: 'icon-text-width'
     inspector:
       groups:
         'validator':
-          icon: 'icon-sort-numeric-asc'
+          icon: 'icon-text-width'
   properties:
     'minimum':
       type: integer

@@ -1,0 +1,14 @@
+'Neos.Form.Builder:SelectOptionCollection':
+  ui:
+    label: 'Options'
+    icon: 'icon-list-ul'
+    inlineEditable: true
+  options:
+    fusion:
+      prototypeGenerator: null
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.Form.Builder:SelectOption': true

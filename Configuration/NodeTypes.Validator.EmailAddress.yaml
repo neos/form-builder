@@ -1,6 +1,6 @@
 'Neos.Form.Builder:EmailAddressValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'Email address Validator'
     icon: 'icon-envelope-o'

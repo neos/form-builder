@@ -1,6 +1,6 @@
 'Neos.Form.Builder:ConfirmationFinisher':
   superTypes:
-    'Neos.Form.Builder:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': true
   ui:
     label: 'Confirmation Finisher'
     icon: 'icon-comment'
