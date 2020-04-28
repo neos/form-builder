@@ -1,11 +1,11 @@
 'Neos.Form.Builder:AbstractValidator':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   ui:
     label: 'Form Validator'
     icon: 'icon-check'
-    inlineEditable: TRUE
+    inlineEditable: true
     inspector:
       groups:
         'validator':
@@ -25,18 +25,14 @@
 'Neos.Form.Builder:ValidatorCollection':
   ui:
     icon: 'icon-check-circle'
-    inlineEditable: TRUE
     label: 'Validators'
+    inlineEditable: true
   options:
     fusion:
       prototypeGenerator: null
   superTypes:
-    'Neos.Neos:ContentCollection': TRUE
+    'Neos.Neos:ContentCollection': true
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
 
-'Neos.Neos:ContentCollection':
-  constraints:
-    nodeTypes:
-      'Neos.Form.Builder:AbstractValidator': FALSE

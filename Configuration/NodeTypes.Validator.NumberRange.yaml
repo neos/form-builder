@@ -1,13 +1,13 @@
-'Neos.Form.Builder:CountValidator':
+'Neos.Form.Builder:NumberRangeValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'Count Validator'
-    icon: 'icon-sort-amount-asc'
+    label: 'Number range Validator'
+    icon: 'icon-sort-numeric-asc'
     inspector:
       groups:
         'validator':
-          icon: 'icon-sort-amount-asc'
+          icon: 'icon-sort-numeric-asc'
   properties:
     'minimum':
       type: integer

@@ -1,7 +1,7 @@
 'Neos.Form.Builder:ImageUpload':
   superTypes:
-    'Neos.Form.Builder:FormElement': TRUE
-    'Neos.Form.Builder:DefaultValueMixin': FALSE
+    'Neos.Form.Builder:FormElement': true
+    'Neos.Form.Builder:DefaultValueMixin': false
   ui:
     label: 'Image upload'
     icon: 'icon-picture-o'
@@ -15,7 +15,7 @@
       type: array
       ui:
         label: i18n
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: 'formElement'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'

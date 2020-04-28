@@ -1,6 +1,6 @@
 'Neos.Form.Builder:IntegerValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'Integer validator'
     icon: 'icon-sort-numeric-asc'

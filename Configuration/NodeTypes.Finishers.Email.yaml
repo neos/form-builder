@@ -1,6 +1,6 @@
 'Neos.Form.Builder:EmailFinisher':
   superTypes:
-    'Neos.Form.Builder:AbstractFinisher': TRUE
+    'Neos.Form.Builder:AbstractFinisher': true
   ui:
     label: 'Email Finisher'
     icon: 'icon-envelope-o'

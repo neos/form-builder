@@ -1,11 +1,11 @@
 'Neos.Form.Builder:AbstractFinisher':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   ui:
     icon: 'icon-sign-out'
     group: 'form.finisher'
-    inlineEditable: TRUE
+    inlineEditable: true
     inspector:
       groups:
         'finisher':
@@ -20,15 +20,10 @@
   ui:
     label: 'Finishers'
     icon: 'icon-share-square-o'
-    inlineEditable: TRUE
+    inlineEditable: true
   superTypes:
-    'Neos.Neos:ContentCollection': TRUE
+    'Neos.Neos:ContentCollection': true
   constraints:
     nodeTypes:
-      '*': FALSE
-      'Neos.Form.Builder:AbstractFinisher': TRUE
-
-'Neos.Neos:ContentCollection':
-  constraints:
-    nodeTypes:
-      'Neos.Form.Builder:AbstractFinisher': FALSE
+      '*': false
+      'Neos.Form.Builder:AbstractFinisher': true

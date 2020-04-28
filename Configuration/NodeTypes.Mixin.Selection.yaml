@@ -1,0 +1,6 @@
+'Neos.Form.Builder:SelectionMixin':
+  ui:
+    group: 'form.select'
+  childNodes:
+    'options':
+      type: 'Neos.Form.Builder:SelectOptionCollection'

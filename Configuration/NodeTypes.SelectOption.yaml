@@ -1,0 +1,58 @@
+'Neos.Form.Builder:SelectOption':
+  superTypes:
+    'Neos.Neos:Content': true
+  constraints:
+    nodeTypes:
+      '*': false
+  label: "${q(node).property('label') || q(node).property('value') || '[not set]'}"
+  ui:
+    inlineEditable: true
+    label: 'Select option'
+    icon: 'icon-stop-circle-o'
+    group: 'form.selectOptions'
+    inspector:
+      groups:
+        'selectOption':
+          label: i18n
+          position: 45
+          icon: 'icon-stop-circle-o'
+    creationDialog:
+      elements:
+        'value':
+          type: string
+          ui:
+            label: 'Value'
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+          validation:
+            'Neos.Neos/Validation/NotEmptyValidator': []
+        'label':
+          type: string
+          ui:
+            label: 'Label (optional)'
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+  options:
+    nodeCreationHandlers:
+      documentTitle:
+        nodeCreationHandler: 'Neos\Form\Builder\NodeType\SelectOptionsCreationHandler'
+    fusion:
+      prototypeGenerator: null
+  properties:
+    'value':
+      type: string
+      defaultValue: 'value'
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: 'selectOption'
+          editorOptions:
+            requried: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'label':
+      type: string
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: 'selectOption'

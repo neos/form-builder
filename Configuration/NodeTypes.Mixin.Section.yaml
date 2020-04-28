@@ -1,0 +1,4 @@
+'Neos.Form.Builder:SectionMixin':
+  childNodes:
+    'elements':
+      type: 'Neos.Form.Builder:ElementCollection'

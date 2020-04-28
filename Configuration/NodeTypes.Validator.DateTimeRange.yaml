@@ -1,6 +1,6 @@
 'Neos.Form.Builder:DateTimeRangeValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'DateTime range Validator'
     icon: 'icon-calendar-check-o'

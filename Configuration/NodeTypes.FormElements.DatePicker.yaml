@@ -1,8 +1,8 @@
 'Neos.Form.Builder:DatePicker':
   superTypes:
-    'Neos.Form.Builder:FormElement': TRUE
-    'Neos.Form.Builder:DefaultValueMixin': FALSE
-    'Neos.Form.Builder:ValidatorsMixin': TRUE
+    'Neos.Form.Builder:FormElement': true
+    'Neos.Form.Builder:DefaultValueMixin': false
+    'Neos.Form.Builder:ValidatorsMixin': true
   ui:
     label: 'Date picker'
     icon: 'icon-calendar'
@@ -15,4 +15,4 @@
     'validators':
       constraints:
         nodeTypes:
-          'Neos.Form.Builder:DateTimeRangeValidator': TRUE
+          'Neos.Form.Builder:DateTimeRangeValidator': true

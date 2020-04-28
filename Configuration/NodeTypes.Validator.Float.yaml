@@ -1,6 +1,6 @@
 'Neos.Form.Builder:FloatValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'Floating-point number Validator'
     icon: 'icon-sort-numeric-asc'

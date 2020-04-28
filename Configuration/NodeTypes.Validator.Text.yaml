@@ -1,6 +1,6 @@
 'Neos.Form.Builder:TextValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'Text Validator'
     icon: 'icon-font'

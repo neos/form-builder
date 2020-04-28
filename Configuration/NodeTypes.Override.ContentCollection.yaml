@@ -1,0 +1,8 @@
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Neos.Form.Builder:FormElement': false
+      'Neos.Form.Builder:SelectOption': false
+      'Neos.Form.Builder:AbstractValidator': false
+      'Neos.Form.Builder:AbstractFinisher': false
+

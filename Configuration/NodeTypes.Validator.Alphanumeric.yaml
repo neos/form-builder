@@ -1,6 +1,6 @@
 'Neos.Form.Builder:AlphanumericValidator':
   superTypes:
-    'Neos.Form.Builder:AbstractValidator': TRUE
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'Alphanumeric Validator'
     icon: 'icon-font'

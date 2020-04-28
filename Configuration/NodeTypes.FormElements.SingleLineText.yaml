@@ -1,9 +1,9 @@
 'Neos.Form.Builder:SingleLineText':
   superTypes:
-    'Neos.Form.Builder:FormElement': TRUE
-    'Neos.Form.Builder:TextValidatorsMixin': TRUE
-    'Neos.Form.Builder:PlaceholderMixin': TRUE
-    'Neos.Form.Builder:MaxlengthMixin': TRUE
+    'Neos.Form.Builder:FormElement': true
+    'Neos.Form.Builder:TextValidatorsMixin': true
+    'Neos.Form.Builder:PlaceholderMixin': true
+    'Neos.Form.Builder:MaxlengthMixin': true
   ui:
     label: 'Single-line text'
     icon: 'icon-pencil-square-o'
