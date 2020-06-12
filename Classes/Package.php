@@ -30,18 +30,18 @@ class Package extends BasePackage
             $this->setUniqueFormElementIdentifier($node, $newValue);
         });
 
-        $dispatcher->connect(Node::class, 'afterNodeCopy', function (NodeInterface $copiedNode, NodeInterface $targetParentNode) use ($bootstrap) {
+        $dispatcher->connect(Node::class, 'nodeAdded', function (NodeInterface $node) use ($bootstrap) {
             try {
-                $identifier = $copiedNode->getProperty('identifier');
+                $identifier = $node->getProperty('identifier');
 
-                if (empty($identifier) || !$copiedNode->getNodeType()->isOfType(self::NODE_TYPE_IDENTIFIER_MIXIN)) {
+                if (empty($identifier) || !$node->getNodeType()->isOfType(self::NODE_TYPE_IDENTIFIER_MIXIN)) {
                     return;
                 }
             } catch (\Neos\ContentRepository\Exception\NodeException $e) {
                 return;
             }
 
-            $this->setUniqueFormElementIdentifier($copiedNode, $identifier);
+            $this->setUniqueFormElementIdentifier($node, $identifier);
         });
     }
 
