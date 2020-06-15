@@ -22,7 +22,7 @@ class Package extends BasePackage
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
 
-        $dispatcher->connect(Node::class, 'nodePropertyChanged', function (NodeInterface $node, $propertyName, $_, $newValue) use ($bootstrap) {
+        $dispatcher->connect(Node::class, 'nodePropertyChanged', function (NodeInterface $node, $propertyName, $_, $newValue) {
             if ($propertyName !== 'identifier' || empty($newValue) || !$node->getNodeType()->isOfType(self::NODE_TYPE_IDENTIFIER_MIXIN)) {
                 return;
             }
@@ -30,7 +30,7 @@ class Package extends BasePackage
             $this->setUniqueFormElementIdentifier($node, $newValue);
         });
 
-        $dispatcher->connect(Node::class, 'nodeAdded', function (NodeInterface $node) use ($bootstrap) {
+        $dispatcher->connect(Node::class, 'nodeAdded', function (NodeInterface $node) {
             try {
                 $identifier = $node->getProperty('identifier');
 
@@ -50,7 +50,7 @@ class Package extends BasePackage
      * @param string $identifier
      * @throws \Neos\Eel\Exception
      */
-    protected function setUniqueFormElementIdentifier(NodeInterface $node, string $identifier): void
+    private function setUniqueFormElementIdentifier(NodeInterface $node, string $identifier): void
     {
         /** @noinspection PhpUndefinedMethodInspection */
         $flowQuery = (new FlowQuery([$node]))->context([
