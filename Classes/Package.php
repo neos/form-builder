@@ -12,7 +12,7 @@ use Neos\Flow\Package\Package as BasePackage;
  */
 class Package extends BasePackage
 {
-    const NODE_TYPE_IDENTIFIER_MIXIN = 'Neos.Form.Builder:IdentifierMixin';
+    private const NODE_TYPE_IDENTIFIER_MIXIN = 'Neos.Form.Builder:IdentifierMixin';
 
     /**
      * @param Bootstrap $bootstrap The current bootstrap
