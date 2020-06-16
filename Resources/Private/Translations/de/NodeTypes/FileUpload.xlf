@@ -5,6 +5,9 @@
       <trans-unit id="properties.allowedExtensions" xml:space="preserve">
 				<source>Allowed file types</source>
 			<target xml:lang="de" state="translated">Erlaubte Dateitypen</target></trans-unit>
+      <trans-unit id="properties.resourceCollection" xml:space="preserve">
+				<source>Target Resource Collection</source>
+			<target xml:lang="de" state="translated">Ziel "Resource Collection"</target></trans-unit>
     </body>
   </file>
 </xliff>
