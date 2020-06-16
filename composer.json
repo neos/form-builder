@@ -5,7 +5,7 @@
     "license": "GPL-3.0+",
     "require": {
         "neos/neos": "^3.1 || ^4.0",
-        "neos/form": "^4.1"
+        "neos/form": "^4.3"
     },
     "autoload": {
         "psr-4": {
