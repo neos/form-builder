@@ -97,6 +97,9 @@
               'plaintext':
                 label: i18n
                 icon: 'icon-font'
+              'multipart':
+                label: i18n
+                icon: 'icon-puzzle-piece'
     'attachAllPersistentResources':
       type: boolean
       ui:

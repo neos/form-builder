@@ -44,6 +44,9 @@
 			<trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
 				<source>Plaintext</source>
 			</trans-unit>
+			<trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
+				<source>Multipart</source>
+			</trans-unit>
 			<trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
 				<source>Attach all uploaded files</source>
 			</trans-unit>

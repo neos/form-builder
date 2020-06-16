@@ -44,6 +44,9 @@
       <trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
 				<source>Plaintext</source>
 			<target xml:lang="de" state="translated">Klartext</target></trans-unit>
+      <trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
+				<source>Multipart</source>
+			<target xml:lang="de" state="translated">Multipart</target></trans-unit>
       <trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
 				<source>Attach all uploaded files</source>
 			<target xml:lang="de" state="translated">Alle hochgeladene Dateien anhängen</target></trans-unit>

@@ -58,6 +58,10 @@
 				<source>Plaintext</source>
 				<target>Klar tekst</target>
 			</trans-unit>
+			<trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
+				<source>Multipart</source>
+				<target>Multipart</target>
+			</trans-unit>
 			<trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
 				<source>Attach all uploaded files</source>
 				<target>Vedhæft alle uploadede filer</target>
