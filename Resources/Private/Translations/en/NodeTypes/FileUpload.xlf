@@ -5,6 +5,9 @@
 			<trans-unit id="properties.allowedExtensions" xml:space="preserve">
 				<source>Allowed file types</source>
 			</trans-unit>
+			<trans-unit id="properties.resourceCollection" xml:space="preserve">
+				<source>Target Resource Collection</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
