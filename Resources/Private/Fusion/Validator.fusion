@@ -3,8 +3,8 @@ prototype(Neos.Form.Builder:Validator.Definition) {
 
     formElementType = ${null}
 
-    options = Neos.Fusion:RawArray
+    options = Neos.Fusion:DataStructure
 }
 
-prototype(Neos.Form.Builder:ValidatorCollection) < prototype(Neos.Fusion:RawArray) {
+prototype(Neos.Form.Builder:ValidatorCollection) < prototype(Neos.Fusion:DataStructure) {
 }

@@ -5,7 +5,7 @@ prototype(Neos.Form.Builder:RedirectFinisher.Definition) < prototype(Neos.Form.B
         package = ${null}
         controller = ${null}
         action = ''
-        arguments = Neos.Fusion:RawArray
+        arguments = Neos.Fusion:DataStructure
         uri = ''
         delay = 0
         statusCode = 303

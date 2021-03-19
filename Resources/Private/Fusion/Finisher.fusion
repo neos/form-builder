@@ -2,8 +2,8 @@ prototype(Neos.Form.Builder:Finisher.Definition) {
     @class = 'Neos\\Form\\Builder\\Fusion\\FinisherImplementation'
 
     formElementType = ${null}
-    options = Neos.Fusion:RawArray
+    options = Neos.Fusion:DataStructure
 }
 
-prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:RawArray) {
+prototype(Neos.Form.Builder:FinisherCollection) < prototype(Neos.Fusion:DataStructure) {
 }

@@ -2,6 +2,6 @@ prototype(Neos.Form.Builder:FileUpload.Definition) < prototype(Neos.Form.Builder
     formElementType = 'Neos.Form:FileUpload'
 
     properties {
-        allowedExtensions = Neos.Fusion:RawArray
+        allowedExtensions = Neos.Fusion:DataStructure
     }
 }
