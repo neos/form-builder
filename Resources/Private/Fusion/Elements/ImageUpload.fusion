@@ -2,6 +2,6 @@ prototype(Neos.Form.Builder:ImageUpload.Definition) < prototype(Neos.Form.Builde
     formElementType = 'Neos.Form:ImageUpload'
 
     properties {
-        allowedTypes = Neos.Fusion:RawArray
+        allowedTypes = Neos.Fusion:DataStructure
     }
 }

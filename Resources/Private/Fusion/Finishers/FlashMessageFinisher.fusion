@@ -4,7 +4,7 @@ prototype(Neos.Form.Builder:FlashMessageFinisher.Definition) < prototype(Neos.Fo
     options {
         messageBody = ${null}
         messageTitle = ''
-        messageArguments = Neos.Fusion:RawArray
+        messageArguments = Neos.Fusion:DataStructure
         messageCode = ${null}
         severity = 'OK'
     }

@@ -5,10 +5,10 @@ prototype(Neos.Form.Builder:FormElement.Definition) {
     required = ${true}
     label = ${null}
     defaultValue = ${null}
-    properties = Neos.Fusion:RawArray
+    properties = Neos.Fusion:DataStructure
 
     rendererClassName = ${null}
-    renderingOptions = Neos.Fusion:RawArray
+    renderingOptions = Neos.Fusion:DataStructure
 
     validators = Neos.Form.Builder:ValidatorCollection
 }
@@ -17,5 +17,5 @@ prototype(Neos.Form.Builder:SelectionFormElement.Definition) < prototype(Neos.Fo
     properties.options = Neos.Form.Builder:SelectOptionCollection
 }
 
-prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:RawArray) {
+prototype(Neos.Form.Builder:ElementCollection) < prototype(Neos.Fusion:DataStructure) {
 }
