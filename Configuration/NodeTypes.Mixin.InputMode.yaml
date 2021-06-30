@@ -1,0 +1,30 @@
+'Neos.Form.Builder:InputModeMixin':
+  ui:
+    position: end
+  properties:
+    'inputMode':
+      type: string
+      defaultValue: 'text'
+      ui:
+        label: i18n
+        inspector:
+          group: 'formElement'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              text:
+                label: i18n
+              decimal:
+                label: i18n
+              numeric:
+                label: i18n
+              tel:
+                label: i18n
+              search:
+                label: i18n
+              email:
+                label: i18n
+              url:
+                label: i18n
+              none:
+                label: i18n

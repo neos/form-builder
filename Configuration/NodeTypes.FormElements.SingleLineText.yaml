@@ -4,6 +4,8 @@
     'Neos.Form.Builder:TextValidatorsMixin': true
     'Neos.Form.Builder:PlaceholderMixin': true
     'Neos.Form.Builder:MaxlengthMixin': true
+    'Neos.Form.Builder:AutoCapitalizeMixin': true
+    'Neos.Form.Builder:InputModeMixin': true
   ui:
     label: 'Single-line text'
     icon: 'icon-pencil-square-o'

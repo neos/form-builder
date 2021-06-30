@@ -1,0 +1,22 @@
+'Neos.Form.Builder:AutoCapitalizeMixin':
+  ui:
+    position: end
+  properties:
+    'autoCapitalize':
+      type: string
+      defaultValue: 'sentences'
+      ui:
+        label: i18n
+        inspector:
+          group: 'formElement'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              off:
+                label: i18n
+              characters:
+                label: i18n
+              words:
+                label: i18n
+              sentences:
+                label: i18n

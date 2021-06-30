@@ -3,6 +3,7 @@
     'Neos.Form.Builder:FormElement': true
     'Neos.Form.Builder:PlaceholderMixin': true
     'Neos.Form.Builder:MaxlengthMixin': true
+    'Neos.Form.Builder:AutoCapitalizeMixin': true
   ui:
     label: 'Multi-line text'
     icon: 'icon-pencil-square-o'
