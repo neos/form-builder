@@ -71,34 +71,34 @@ export default class PlaceholderInsertDropdown extends PureComponent {
 
   getOptionsRecursively(elements) {
     const returnValues = [];
-    const excludeSettings = this.props.inlineEditorOptions.excludeNodeTypes;
+    const nodeTypesSettings = this.props.inlineEditorOptions.nodeTypes;
 
     elements.forEach((childNode) => {
       const currentNode = this.props.nodesByContextPath[childNode.contextPath];
       const childChildNodes = this.props.nodesByContextPath[childNode.contextPath].children;
       let skipMode = 'includeAll';
 
-      if (excludeSettings) {
-        if (excludeSettings.hasOwnProperty(childNode.nodeType)) {
-          const nodeTypeSettings = excludeSettings[childNode.nodeType];
+      if (nodeTypesSettings) {
+        if (nodeTypesSettings.hasOwnProperty(childNode.nodeType)) {
+          const nodeTypeSettings = nodeTypesSettings[childNode.nodeType];
 
           if (typeof nodeTypeSettings === 'boolean') {
-            if (nodeTypeSettings) {
+            if (!nodeTypeSettings) {
               // exclude all
               return;
             }
           }
-          else if (nodeTypeSettings.hasOwnProperty('exclude') || nodeTypeSettings.hasOwnProperty('excludeChildren')) {
-            if (nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
+          else if (nodeTypeSettings.hasOwnProperty('includeNodeType') || nodeTypeSettings.hasOwnProperty('includeChildNodes')) {
+            if (!nodeTypeSettings.includeNodeType && !nodeTypeSettings.includeChildNodes) {
               // exclude all
               return;
             }
-            else if (nodeTypeSettings.exclude && !nodeTypeSettings.excludeChildren) {
-              // exclude only current element, not children
+            else if (!nodeTypeSettings.includeNodeType && nodeTypeSettings.includeChildNodes) {
+              // include only the child-nodes, the NodeType will be excluded
               skipMode = 'includeChildren'
             }
-            else if (!nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
-              // exclude only children
+            else if (nodeTypeSettings.includeNodeType && !nodeTypeSettings.includeChildNodes) {
+              // include only the NodeType
               skipMode = 'includeParent'
             }
           }

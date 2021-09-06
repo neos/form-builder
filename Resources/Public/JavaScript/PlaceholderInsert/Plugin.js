@@ -925,7 +925,7 @@ function __importDefault(mod) {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = exports.parentNodeContextPath = undefined;
 
@@ -958,140 +958,140 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var parentNodeContextPath = exports.parentNodeContextPath = function parentNodeContextPath(contextPath) {
-    if (typeof contextPath !== "string") {
-        console.error("`contextPath` must be a string!"); // tslint:disable-line
-        return null;
-    }
+  if (typeof contextPath !== "string") {
+    console.error("`contextPath` must be a string!"); // tslint:disable-line
+    return null;
+  }
 
-    var _contextPath$split = contextPath.split("@"),
-        _contextPath$split2 = _slicedToArray(_contextPath$split, 2),
-        path = _contextPath$split2[0],
-        context = _contextPath$split2[1];
+  var _contextPath$split = contextPath.split("@"),
+      _contextPath$split2 = _slicedToArray(_contextPath$split, 2),
+      path = _contextPath$split2[0],
+      context = _contextPath$split2[1];
 
-    if (path.length === 0) {
-        // We are at top level; so there is no parent anymore!
-        return null;
-    }
+  if (path.length === 0) {
+    // We are at top level; so there is no parent anymore!
+    return null;
+  }
 
-    return path.substr(0, path.lastIndexOf("/")) + "@" + context;
+  return path.substr(0, path.lastIndexOf("/")) + "@" + context;
 };
 
 var PlaceholderInsertDropdown = (_dec = (0, _reactRedux.connect)((0, _plowJs.$transform)({
-    nodesByContextPath: _neosUiReduxStore.selectors.CR.Nodes.nodesByContextPathSelector,
-    focusedNode: _neosUiReduxStore.selectors.CR.Nodes.focusedSelector
+  nodesByContextPath: _neosUiReduxStore.selectors.CR.Nodes.nodesByContextPathSelector,
+  focusedNode: _neosUiReduxStore.selectors.CR.Nodes.focusedSelector
 })), _dec2 = (0, _neosUiDecorators.neos)(function (globalRegistry) {
-    return {
-        i18nRegistry: globalRegistry.get("i18n"),
-        nodeTypeRegistry: globalRegistry.get("@neos-project/neos-ui-contentrepository")
-    };
+  return {
+    i18nRegistry: globalRegistry.get("i18n"),
+    nodeTypeRegistry: globalRegistry.get("@neos-project/neos-ui-contentrepository")
+  };
 }), _dec(_class = _dec2(_class = function (_PureComponent) {
-    _inherits(PlaceholderInsertDropdown, _PureComponent);
+  _inherits(PlaceholderInsertDropdown, _PureComponent);
 
-    function PlaceholderInsertDropdown() {
-        var _ref;
+  function PlaceholderInsertDropdown() {
+    var _ref;
 
-        var _temp, _this, _ret;
+    var _temp, _this, _ret;
 
-        _classCallCheck(this, PlaceholderInsertDropdown);
+    _classCallCheck(this, PlaceholderInsertDropdown);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PlaceholderInsertDropdown.__proto__ || Object.getPrototypeOf(PlaceholderInsertDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.handleOnSelect = function (value) {
-            _this.props.executeCommand("placeholderInsert", value);
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _createClass(PlaceholderInsertDropdown, [{
-        key: "render",
-        value: function render() {
-            var _parentNodeContextPat = parentNodeContextPath(parentNodeContextPath(this.props.focusedNode.contextPath)).split("@"),
-                _parentNodeContextPat2 = _slicedToArray(_parentNodeContextPat, 2),
-                formPath = _parentNodeContextPat2[0],
-                workspace = _parentNodeContextPat2[1];
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PlaceholderInsertDropdown.__proto__ || Object.getPrototypeOf(PlaceholderInsertDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.handleOnSelect = function (value) {
+      _this.props.executeCommand("placeholderInsert", value);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
 
-            var elementsPath = formPath + "/elements@" + workspace;
+  _createClass(PlaceholderInsertDropdown, [{
+    key: "render",
+    value: function render() {
+      var _parentNodeContextPat = parentNodeContextPath(parentNodeContextPath(this.props.focusedNode.contextPath)).split("@"),
+          _parentNodeContextPat2 = _slicedToArray(_parentNodeContextPat, 2),
+          formPath = _parentNodeContextPat2[0],
+          workspace = _parentNodeContextPat2[1];
 
-            var elementsNode = this.props.nodesByContextPath[elementsPath];
-            if (!elementsNode) {
-                return null;
+      var elementsPath = formPath + "/elements@" + workspace;
+
+      var elementsNode = this.props.nodesByContextPath[elementsPath];
+      if (!elementsNode) {
+        return null;
+      }
+      var options = this.getOptionsRecursively(elementsNode.children);
+
+      if (options.length === 0) {
+        return null;
+      }
+
+      var placeholderLabel = this.props.i18nRegistry.translate("Neos.Form.Builder:Main:placeholder", "Insert placeholder");
+
+      return _react2.default.createElement(_reactUiComponents.SelectBox, {
+        placeholder: placeholderLabel,
+        options: options,
+        onValueChange: this.handleOnSelect,
+        value: null
+      });
+    }
+  }, {
+    key: "getOptionsRecursively",
+    value: function getOptionsRecursively(elements) {
+      var _this2 = this;
+
+      var returnValues = [];
+      var nodeTypesSettings = this.props.inlineEditorOptions.nodeTypes;
+
+      elements.forEach(function (childNode) {
+        var currentNode = _this2.props.nodesByContextPath[childNode.contextPath];
+        var childChildNodes = _this2.props.nodesByContextPath[childNode.contextPath].children;
+        var skipMode = 'includeAll';
+
+        if (nodeTypesSettings) {
+          if (nodeTypesSettings.hasOwnProperty(childNode.nodeType)) {
+            var nodeTypeSettings = nodeTypesSettings[childNode.nodeType];
+
+            if (typeof nodeTypeSettings === 'boolean') {
+              if (!nodeTypeSettings) {
+                // exclude all
+                return;
+              }
+            } else if (nodeTypeSettings.hasOwnProperty('includeNodeType') || nodeTypeSettings.hasOwnProperty('includeChildNodes')) {
+              if (!nodeTypeSettings.includeNodeType && !nodeTypeSettings.includeChildNodes) {
+                // exclude all
+                return;
+              } else if (!nodeTypeSettings.includeNodeType && nodeTypeSettings.includeChildNodes) {
+                // include only the child-nodes, the NodeType will be excluded
+                skipMode = 'includeChildren';
+              } else if (nodeTypeSettings.includeNodeType && !nodeTypeSettings.includeChildNodes) {
+                // include only the NodeType
+                skipMode = 'includeParent';
+              }
             }
-            var options = this.getOptionsRecursively(elementsNode.children);
-
-            if (options.length === 0) {
-                return null;
-            }
-
-            var placeholderLabel = this.props.i18nRegistry.translate("Neos.Form.Builder:Main:placeholder", "Insert placeholder");
-
-            return _react2.default.createElement(_reactUiComponents.SelectBox, {
-                placeholder: placeholderLabel,
-                options: options,
-                onValueChange: this.handleOnSelect,
-                value: null
-            });
+          }
         }
-    }, {
-        key: "getOptionsRecursively",
-        value: function getOptionsRecursively(elements) {
-            var _this2 = this;
 
-            var returnValues = [];
-            var excludeSettings = this.props.inlineEditorOptions.excludeNodeTypes;
-
-            elements.forEach(function (childNode) {
-                var currentNode = _this2.props.nodesByContextPath[childNode.contextPath];
-                var childChildNodes = _this2.props.nodesByContextPath[childNode.contextPath].children;
-                var skipMode = 'includeAll';
-
-                if (excludeSettings) {
-                    if (excludeSettings.hasOwnProperty(childNode.nodeType)) {
-                        var nodeTypeSettings = excludeSettings[childNode.nodeType];
-
-                        if (typeof nodeTypeSettings === 'boolean') {
-                            if (nodeTypeSettings) {
-                                // exclude all
-                                return;
-                            }
-                        } else if (nodeTypeSettings.hasOwnProperty('exclude') || nodeTypeSettings.hasOwnProperty('excludeChildren')) {
-                            if (nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
-                                // exclude all
-                                return;
-                            } else if (nodeTypeSettings.exclude && !nodeTypeSettings.excludeChildren) {
-                                // exclude only current element, not children
-                                skipMode = 'includeChildren';
-                            } else if (!nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
-                                // exclude only children
-                                skipMode = 'includeParent';
-                            }
-                        }
-                    }
-                }
-
-                if (skipMode === 'includeAll' || skipMode === 'includeParent') {
-                    returnValues.push({
-                        value: currentNode.properties.identifier || currentNode.identifier,
-                        label: currentNode.properties.label || currentNode.properties.identifier || currentNode.identifier
-                    });
-                }
-
-                if (skipMode === 'includeAll' || skipMode === 'includeChildren') {
-                    var childOptions = _this2.getOptionsRecursively(childChildNodes);
-
-                    if (Array.isArray(childOptions)) {
-                        childOptions.forEach(function (childOption) {
-                            returnValues.push(childOption);
-                        });
-                    }
-                }
-            });
-
-            return returnValues;
+        if (skipMode === 'includeAll' || skipMode === 'includeParent') {
+          returnValues.push({
+            value: currentNode.properties.identifier || currentNode.identifier,
+            label: currentNode.properties.label || currentNode.properties.identifier || currentNode.identifier
+          });
         }
-    }]);
 
-    return PlaceholderInsertDropdown;
+        if (skipMode === 'includeAll' || skipMode === 'includeChildren') {
+          var childOptions = _this2.getOptionsRecursively(childChildNodes);
+
+          if (Array.isArray(childOptions)) {
+            childOptions.forEach(function (childOption) {
+              returnValues.push(childOption);
+            });
+          }
+        }
+      });
+
+      return returnValues;
+    }
+  }]);
+
+  return PlaceholderInsertDropdown;
 }(_react.PureComponent)) || _class) || _class);
 exports.default = PlaceholderInsertDropdown;
 
