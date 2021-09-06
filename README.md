@@ -378,3 +378,45 @@ selectable:
         }
     }
 ```
+
+## Example: Exclude NodeTypes from the Placeholder-Insert
+
+If you do not want that some of your own NodeTypes are visible in the `Placeholder-Insert`-Dropdown then you can hide them easily.
+
+This option requires the RichText-Editor.
+
+Edit the YAML-Configuration of the Confirmation or Email-Finisher:
+
+```yaml
+'Neos.Form.Builder:EmailFinisher':
+  properties:
+    'templateSource':
+      ui:
+        inspector:
+          editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+          editorOptions:
+            excludeNodeTypes:
+              'Foo.Bar:GridCollection':
+                exclude: true # excludes only the element
+                excludeChildren: false # includes all child-elements
+              'Neos.Form.Builder:ValidatorCollection': true # excludes the element and all child-elements
+```
+
+At the path `templateSource.ui.inspector.editorOption.excludeNodeTypes` you can hide or show specific NodeTypes.
+
+If you use the NodeType-Name as the key and a boolean value as the value, these settings has an effekt on the whole element and his child-elements.<br>
+```yaml
+excludeNodeTypes:
+  'Foo.Bar:GridCollection': true # hides the element and all child-elements
+```
+
+If you want only hide the element and not the child-elements (or the opposite) you can specify the setting a little more:<br>
+`exclude`: hides or shows the element, has no effect on the child-elements
+`excludeChildren`: hides or shows the child-elements, has no effect on the parent-element
+
+```yaml
+excludeNodeTypes:
+  'Foo.Bar:GridCollection':
+    exclude: true # excludes only the element
+    excludeChildren: false # includes all child-elements
+```

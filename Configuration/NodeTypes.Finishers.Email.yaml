@@ -35,6 +35,11 @@
           # Alternatively enable a rich text editor:
           # editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
           # editorOptions:
+          #   excludeNodeTypes:
+          #     'Neos.Form.Builder:ElementCollection':
+          #       exclude: true # excludes only the element
+          #       excludeChildren: false # includes all child-elements
+          #     'Neos.Form.Builder:ValidatorCollection': true # excludes the element and all child-elements
           #   formatting:
           #     placeholderInsert: true
           #     strong: true

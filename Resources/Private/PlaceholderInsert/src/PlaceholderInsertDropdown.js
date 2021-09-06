@@ -48,13 +48,7 @@ export default class PlaceholderInsertDropdown extends PureComponent {
     if (!elementsNode) {
       return null;
     }
-    const options = elementsNode.children
-      .map(node => this.props.nodesByContextPath[node.contextPath])
-      .map(node => ({
-        value: node.properties.identifier || node.identifier,
-        label:
-          node.properties.label || node.properties.identifier || node.identifier
-      }));
+    const options = this.getOptionsRecursively(elementsNode.children);
 
     if (options.length === 0) {
       return null;
@@ -73,5 +67,63 @@ export default class PlaceholderInsertDropdown extends PureComponent {
         value={null}
       />
     );
+  }
+
+  getOptionsRecursively(elements) {
+    const returnValues = [];
+    const excludeSettings = this.props.inlineEditorOptions.excludeNodeTypes;
+
+    elements.forEach((childNode) => {
+      const currentNode = this.props.nodesByContextPath[childNode.contextPath];
+      const childChildNodes = this.props.nodesByContextPath[childNode.contextPath].children;
+      let skipMode = 'includeAll';
+
+      if (excludeSettings) {
+        if (excludeSettings.hasOwnProperty(childNode.nodeType)) {
+          const nodeTypeSettings = excludeSettings[childNode.nodeType];
+
+          if (typeof nodeTypeSettings === 'boolean') {
+            if (nodeTypeSettings) {
+              // exclude all
+              return;
+            }
+          }
+          else if (nodeTypeSettings.hasOwnProperty('exclude') || nodeTypeSettings.hasOwnProperty('excludeChildren')) {
+            if (nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
+              // exclude all
+              return;
+            }
+            else if (nodeTypeSettings.exclude && !nodeTypeSettings.excludeChildren) {
+              // exclude only current element, not children
+              skipMode = 'includeChildren'
+            }
+            else if (!nodeTypeSettings.exclude && nodeTypeSettings.excludeChildren) {
+              // exclude only children
+              skipMode = 'includeParent'
+            }
+          }
+        }
+      }
+
+      if (skipMode === 'includeAll' || skipMode === 'includeParent') {
+        returnValues.push({
+          value: currentNode.properties.identifier || currentNode.identifier,
+          label:
+              currentNode.properties.label || currentNode.properties.identifier || currentNode.identifier
+        });
+      }
+
+      if (skipMode === 'includeAll' || skipMode === 'includeChildren') {
+        const childOptions = this.getOptionsRecursively(childChildNodes);
+
+        if (Array.isArray(childOptions)) {
+          childOptions.forEach(childOption => {
+            returnValues.push(childOption);
+          });
+        }
+      }
+    });
+
+    return returnValues;
   }
 }
