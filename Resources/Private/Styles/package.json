@@ -8,6 +8,6 @@
     "watch": "yarn build --watch"
   },
   "dependencies": {
-    "node-sass": "^4.5"
+    "node-sass": "^7.0"
   }
 }
