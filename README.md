@@ -200,6 +200,9 @@ prototype(Some.Package:ContactForm) < prototype(Neos.Form.Builder:Form) {
         entryIdentifier {
             node = ${node}
         }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+        }
         entryDiscriminator = ${request.httpRequest.methodSafe ? 'static' : false}
         context {
             1 = 'node'
