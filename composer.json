@@ -4,7 +4,7 @@
     "description": "Flow Form Framework integration into Neos CMS",
     "license": "GPL-3.0+",
     "require": {
-        "neos/neos": "^5.0 || ^7.0",
+        "neos/neos": "^5.0 || ^7.0 || ^8.0",
         "neos/form": "^5.0"
     },
     "autoload": {
