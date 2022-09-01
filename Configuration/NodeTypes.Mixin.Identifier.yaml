@@ -1,4 +1,5 @@
 'Neos.Form.Builder:IdentifierMixin':
+  abstract: true
   properties:
     'identifier':
       type: string

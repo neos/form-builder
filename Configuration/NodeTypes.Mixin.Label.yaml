@@ -1,4 +1,5 @@
 'Neos.Form.Builder:LabelMixin':
+  abstract: true
   properties:
     'label':
       type: string
