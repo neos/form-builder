@@ -1,4 +1,5 @@
 'Neos.Form.Builder:DefaultValueMixin':
+  abstract: true
   properties:
     'defaultValue':
       type: string

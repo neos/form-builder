@@ -1,4 +1,5 @@
 'Neos.Form.Builder:RequiredCheckboxMixin':
+  abstract: true
   properties:
     'required':
       type: boolean

@@ -1,4 +1,5 @@
 'Neos.Form.Builder:MaxlengthMixin':
+  abstract: true
   properties:
     'maxlength':
       type: integer

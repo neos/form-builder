@@ -1,4 +1,5 @@
 'Neos.Form.Builder:TextValidatorsMixin':
+  abstract: true
   superTypes:
     'Neos.Form.Builder:ValidatorsMixin': true
   childNodes:

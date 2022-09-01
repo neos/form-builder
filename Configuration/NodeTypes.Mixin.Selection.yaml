@@ -1,4 +1,5 @@
 'Neos.Form.Builder:SelectionMixin':
+  abstract: true
   ui:
     group: 'form.select'
   childNodes:

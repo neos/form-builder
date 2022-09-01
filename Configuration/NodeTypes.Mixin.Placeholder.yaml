@@ -1,4 +1,5 @@
 'Neos.Form.Builder:PlaceholderMixin':
+  abstract: true
   properties:
     'placeholder':
       type: string

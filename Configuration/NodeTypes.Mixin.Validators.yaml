@@ -1,4 +1,5 @@
 'Neos.Form.Builder:ValidatorsMixin':
+  abstract: true
   childNodes:
     'validators':
       type: 'Neos.Form.Builder:ValidatorCollection'
