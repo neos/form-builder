@@ -20,7 +20,7 @@
         inspector:
           group: 'finisher'
           editorOptions:
-            requried: true
+            required: true
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
     'templateSource':
