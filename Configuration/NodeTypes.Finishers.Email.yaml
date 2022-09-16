@@ -46,7 +46,7 @@
         inspector:
           group: 'finisher'
           editorOptions:
-            requried: true
+            required: true
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
     'recipientName':
@@ -62,7 +62,7 @@
         inspector:
           group: 'finisher'
           editorOptions:
-            requried: true
+            required: true
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
     'senderName':
