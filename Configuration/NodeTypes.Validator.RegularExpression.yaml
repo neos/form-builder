@@ -16,6 +16,6 @@
         inspector:
           group: 'validator'
           editorOptions:
-            requried: true
+            required: true
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
