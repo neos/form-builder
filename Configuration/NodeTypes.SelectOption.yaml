@@ -46,7 +46,7 @@
         inspector:
           group: 'selectOption'
           editorOptions:
-            requried: true
+            required: true
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
     'label':
