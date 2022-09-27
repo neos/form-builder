@@ -12,7 +12,7 @@
   label: "${q(node).property('identifier') || q(node).property('label') || ((node.nodeType.label || node.nodeType.name) + ' (' + node.name + ')')}"
   ui:
     inlineEditable: true
-    label: 'Form Element'
+    label: i18n
     icon: 'icon-square-o'
     group: 'form.elements'
     inspector:

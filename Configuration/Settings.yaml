@@ -10,33 +10,34 @@ Neos:
       translation:
         autoInclude:
           'Neos.Form.Builder':
+            - Main
             - 'NodeTypes/*'
 
     nodeTypes:
       groups:
         'form.elements':
-          label: 'Input Form Elements'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formElements'
           collapsed: false
         'form.select':
-          label: 'Select Form Elements'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formSelect'
           collapsed: false
         'form.custom':
-          label: 'Custom Form Elements'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formCustom'
           collapsed: false
         'form.container':
-          label: 'Container Form Elements'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formContainer'
           collapsed: false
         'form.pages':
-          label: 'Form Pages'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formPages'
           collapsed: false
         'form.finisher':
-          label: 'Form Finisher'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formFinisher'
           collapsed: false
         'form.validator':
-          label: 'Form Validators'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formValidator'
           collapsed: false
         'form.selectOptions':
-          label: 'Select options'
+          label: 'Neos.Form.Builder:Main:nodeTypes.groups.formSelectOptions'
           collapsed: false
 
     Ui:

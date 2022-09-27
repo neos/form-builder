@@ -1,6 +1,6 @@
 'Neos.Form.Builder:SelectOptionCollection':
   ui:
-    label: 'Options'
+    label: i18n
     icon: 'icon-list-ul'
     inlineEditable: true
   options:

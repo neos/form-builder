@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="groups.validator" xml:space="preserve">
-				<source>Validator options</source>
-			<target xml:lang="de" state="translated">Validator-Optionen</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Form Validator</source>
+                <target xml:lang="de" state="translated">Formularvalidierung</target>
+            </trans-unit>
+            <trans-unit id="groups.validator" xml:space="preserve">
+                <source>Validator options</source>
+                <target xml:lang="de" state="translated">Validator-Optionen</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

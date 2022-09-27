@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'Integer validator'
+    label: i18n
     icon: 'icon-sort-numeric-asc'
     inspector:
       groups:

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="groups.formElement" xml:space="preserve">
-				<source>Form Element options</source>
-			<target xml:lang="de" state="translated">Formular-Element Optionen</target></trans-unit>
-      <trans-unit id="groups.formElementMore" xml:space="preserve">
-				<source>More Element options</source>
-			<target xml:lang="de" state="translated">Weitere Optionen</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Form Element</source>
+                <target xml:lang="de" state="translated">Formular-Element</target>
+            </trans-unit>
+            <trans-unit id="groups.formElement" xml:space="preserve">
+                <source>Form Element options</source>
+                <target xml:lang="de" state="translated">Formular-Element Optionen</target>
+            </trans-unit>
+            <trans-unit id="groups.formElementMore" xml:space="preserve">
+                <source>More Element options</source>
+                <target xml:lang="de" state="translated">Weitere Optionen</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

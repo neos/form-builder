@@ -4,7 +4,7 @@
     'Neos.Form.Builder:DefaultValueMixin': false
     'Neos.Form.Builder:ValidatorsMixin': true
   ui:
-    label: 'Date picker'
+    label: i18n
     icon: 'icon-calendar'
     group: 'form.custom'
     inspector:

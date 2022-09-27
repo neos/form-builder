@@ -6,7 +6,7 @@
     'Neos.Form.Builder:ResourceCollectionsPostprocessor':
       postprocessor: 'Neos\Form\Builder\NodeType\ResourceCollectionsPostprocessor'
   ui:
-    label: 'File upload'
+    label: i18n
     icon: 'icon-upload'
     group: 'form.custom'
     inspector:

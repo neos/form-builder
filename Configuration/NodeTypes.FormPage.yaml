@@ -6,7 +6,7 @@
     nodeTypes:
       '*': false
   ui:
-    label: 'Form Page'
+    label: i18n
     icon: 'icon-file-o'
     group: 'form.pages'
     inlineEditable: true
@@ -45,7 +45,7 @@
 
 'Neos.Form.Builder:PageCollection':
   ui:
-    label: 'Further Pages'
+    label: i18n
     inlineEditable: true
   options:
     fusion:

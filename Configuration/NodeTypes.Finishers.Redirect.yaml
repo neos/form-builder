@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractFinisher': true
   ui:
-    label: 'Redirect Finisher'
+    label: i18n
     icon: 'icon-arrow-right'
     inspector:
       groups:

@@ -3,7 +3,7 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'Form Validator'
+    label: i18n
     icon: 'icon-check'
     inlineEditable: true
     inspector:

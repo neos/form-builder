@@ -6,7 +6,7 @@
     'Neos.Form.Builder:DefaultValueMixin': false
     'Neos.Form.Builder:RequiredCheckboxMixin': false
   ui:
-    label: 'Section'
+    label: i18n
     icon: 'icon-folder-open'
     inspector:
       groups:

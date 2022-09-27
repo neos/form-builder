@@ -2,12 +2,18 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
     <body>
+        <trans-unit id="ui.label" xml:space="preserve">
+                <source>Datetime range validator</source>
+            <target xml:lang="de" state="translated">Zeitraum</target>
+        </trans-unit>
       <trans-unit id="properties.earliestDate" xml:space="preserve">
 				<source>Earliest date</source>
-			<target xml:lang="de" state="translated">Frühestes Datum</target></trans-unit>
+			<target xml:lang="de" state="translated">Frühestes Datum</target>
+        </trans-unit>
       <trans-unit id="properties.latestDate" xml:space="preserve">
 				<source>Latest date</source>
-			<target xml:lang="de" state="translated">Spätestes Datum</target></trans-unit>
+			<target xml:lang="de" state="translated">Spätestes Datum</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

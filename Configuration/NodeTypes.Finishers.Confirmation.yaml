@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractFinisher': true
   ui:
-    label: 'Confirmation Finisher'
+    label: i18n
     icon: 'icon-comment'
     inspector:
       groups:

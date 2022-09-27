@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="properties.message" xml:space="preserve">
-				<source>Confirmation message</source>
-			<target xml:lang="de" state="translated">Bestätigungsnachricht</target></trans-unit>
-      <trans-unit id="properties.message.codeEditor.buttonLabel" xml:space="preserve">
-				<source>Edit confirmation message</source>
-			<target xml:lang="de" state="translated">Bestätigungsnachricht bearbeiten</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Confirmation view</source>
+                <target xml:lang="de" state="translated">Bestätigungsseite</target>
+            </trans-unit>
+            <trans-unit id="properties.message" xml:space="preserve">
+                <source>Confirmation message</source>
+                <target xml:lang="de" state="translated">Bestätigungsnachricht</target>
+            </trans-unit>
+            <trans-unit id="properties.message.codeEditor.buttonLabel" xml:space="preserve">
+                <source>Edit confirmation message</source>
+                <target xml:lang="de" state="translated">Bestätigungsnachricht bearbeiten</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>
