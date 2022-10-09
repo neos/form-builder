@@ -5,7 +5,7 @@
     'Neos.Form.Builder:PlaceholderMixin': true
     'Neos.Form.Builder:MaxlengthMixin': true
   ui:
-    label: 'Single-line text'
+    label: i18n
     icon: 'icon-pencil-square-o'
     inspector:
       groups:

@@ -3,8 +3,9 @@
   <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
     <body>
       <trans-unit id="properties.identifier" xml:space="preserve">
-				<source>Identifier (optional)</source>
-			<target xml:lang="de" state="translated">ID (optional)</target></trans-unit>
+                <source>Identifier (optional)</source>
+            <target xml:lang="de" state="translated">ID (optional)</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

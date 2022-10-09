@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="nodeTypes.groups.formElements" xml:space="preserve">
+                <source>Form Elements</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formSelect" xml:space="preserve">
+                <source>Select Form Elements</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formCustom" xml:space="preserve">
+                <source>Custom Form Elements</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formContainer" xml:space="preserve">
+                <source>Container Elements</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formPages" xml:space="preserve">
+                <source>Form Pages</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formFinisher" xml:space="preserve">
+                <source>Form finisher</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formValidator" xml:space="preserve">
+                <source>Form Validators</source>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formSelectOptions" xml:space="preserve">
+                <source>Select options</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

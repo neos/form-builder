@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="groups.selectOption" xml:space="preserve">
-				<source>Select option</source>
-			<target xml:lang="de" state="translated">Auswahl-Option</target></trans-unit>
-      <trans-unit id="properties.value" xml:space="preserve">
-				<source>Value</source>
-			<target xml:lang="de" state="translated">Wert</target></trans-unit>
-      <trans-unit id="properties.label" xml:space="preserve">
-				<source>Label (optional)</source>
-			<target xml:lang="de" state="translated">Bezeichnung (optional)</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Select option</source>
+                <target xml:lang="de" state="translated">Auswahl-Option</target>
+            </trans-unit>
+            <trans-unit id="groups.selectOption" xml:space="preserve">
+                <source>Select option</source>
+                <target xml:lang="de" state="translated">Auswahl-Option</target>
+            </trans-unit>
+            <trans-unit id="properties.value" xml:space="preserve">
+                <source>Value</source>
+                <target xml:lang="de" state="translated">Wert</target>
+            </trans-unit>
+            <trans-unit id="properties.label" xml:space="preserve">
+                <source>Label (optional)</source>
+                <target xml:lang="de" state="translated">Bezeichnung (optional)</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

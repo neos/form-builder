@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="properties.minimum" xml:space="preserve">
-				<source>Minimum count</source>
-			<target xml:lang="de" state="translated">Minimale Anzahl</target></trans-unit>
-      <trans-unit id="properties.maximum" xml:space="preserve">
-				<source>Maximum count</source>
-			<target xml:lang="de" state="translated">Maximale Anzahl</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Count Validator</source>
+                <target xml:lang="de" state="translated">Mengen-Validator</target>
+            </trans-unit>
+            <trans-unit id="properties.minimum" xml:space="preserve">
+                <source>Minimum count</source>
+                <target xml:lang="de" state="translated">Minimale Anzahl</target>
+            </trans-unit>
+            <trans-unit id="properties.maximum" xml:space="preserve">
+                <source>Maximum count</source>
+                <target xml:lang="de" state="translated">Maximale Anzahl</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

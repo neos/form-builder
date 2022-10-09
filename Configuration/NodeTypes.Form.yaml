@@ -8,7 +8,7 @@
         skipPresets:
           'neos.setup': true
   ui:
-    label: 'Form'
+    label: i18n
     icon: 'icon-list-alt'
     position: 600
     inlineEditable: true

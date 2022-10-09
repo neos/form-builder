@@ -7,7 +7,7 @@
   label: "${q(node).property('label') || q(node).property('value') || '[not set]'}"
   ui:
     inlineEditable: true
-    label: 'Select option'
+    label: i18n
     icon: 'icon-stop-circle-o'
     group: 'form.selectOptions'
     inspector:

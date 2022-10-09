@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="nodeTypes.groups.formElements" xml:space="preserve">
+                <source>Form Elements</source>
+                <target>Eingabeelemente</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formSelect" xml:space="preserve">
+                <source>Select Form Elements</source>
+                <target>Auswahlelemente</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formCustom" xml:space="preserve">
+                <source>Custom Form Elements</source>
+                <target>Erweiterte Elemente</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formContainer" xml:space="preserve">
+                <source>Container Elements</source>
+                <target>Abschnitte</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formPages" xml:space="preserve">
+                <source>Form Pages</source>
+                <target>Formular-Seiten</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formFinisher" xml:space="preserve">
+                <source>Form finisher</source>
+                <target>Absende-Aktionen</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formValidator" xml:space="preserve">
+                <source>Form Validators</source>
+                <target>Formularvalidierung</target>
+            </trans-unit>
+            <trans-unit id="nodeTypes.groups.formSelectOptions" xml:space="preserve">
+                <source>Select options</source>
+                <target>Auswhahlmöglichkeiten</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

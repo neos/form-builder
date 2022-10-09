@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'Regular Expression Validator'
+    label: i18n
     icon: 'icon-terminal'
     inspector:
       groups:

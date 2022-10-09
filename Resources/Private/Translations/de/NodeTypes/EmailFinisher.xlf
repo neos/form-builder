@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="groups.finisher-attachments" xml:space="preserve">
-				<source>Attachments</source>
-			<target xml:lang="de" state="translated">Anhänge</target></trans-unit>
-      <trans-unit id="properties.subject" xml:space="preserve">
-				<source>Email subject</source>
-			<target xml:lang="de" state="translated">E-Mail Betreff</target></trans-unit>
-      <trans-unit id="properties.templateSource" xml:space="preserve">
-				<source>Email body (Fluid)</source>
-			<target xml:lang="de" state="translated">E-Mail Text (Klartext)</target></trans-unit>
-      <trans-unit id="properties.templateSource.codeEditor.buttonLabel" xml:space="preserve">
-				<source>Edit Email body</source>
-			<target xml:lang="de" state="translated">E-Mail Text bearbeiten</target></trans-unit>
-      <trans-unit id="properties.recipientAddress" xml:space="preserve">
-				<source>Recipient email address</source>
-			<target xml:lang="de" state="translated">Empfänger E-Mail Adresse</target></trans-unit>
-      <trans-unit id="properties.recipientName" xml:space="preserve">
-				<source>Recipient name</source>
-			<target xml:lang="de" state="translated">Name des Empfängers</target></trans-unit>
-      <trans-unit id="properties.senderAddress" xml:space="preserve">
-				<source>Sender email address</source>
-			<target xml:lang="de" state="translated">Absender E-Mail Adresse</target></trans-unit>
-      <trans-unit id="properties.senderName" xml:space="preserve">
-				<source>Sender name</source>
-			<target xml:lang="de" state="translated">Name des Absenders</target></trans-unit>
-      <trans-unit id="properties.replyToAddress" xml:space="preserve">
-				<source>ReplyTo email address</source>
-			<target xml:lang="de" state="translated">Antwort E-Mail Adresse</target></trans-unit>
-      <trans-unit id="properties.carbonCopyAddress" xml:space="preserve">
-				<source>CC email address</source>
-			<target xml:lang="de" state="translated">CC E-Mail Adresse</target></trans-unit>
-      <trans-unit id="properties.blindCarbonCopyAddress" xml:space="preserve">
-				<source>BCC email address</source>
-			<target xml:lang="de" state="translated">BCC E-Mail Adresse</target></trans-unit>
-      <trans-unit id="properties.format" xml:space="preserve">
-				<source>Email format</source>
-			<target xml:lang="de" state="translated">E-Mail Format</target></trans-unit>
-      <trans-unit id="properties.format.selectBoxEditor.values.html" xml:space="preserve">
-				<source>HTML</source>
-			<target xml:lang="de" state="translated">HTML</target></trans-unit>
-      <trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
-				<source>Plaintext</source>
-			<target xml:lang="de" state="translated">Klartext</target></trans-unit>
-      <trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
-				<source>Multipart</source>
-			<target xml:lang="de" state="translated">Multipart</target></trans-unit>
-      <trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
-				<source>Attach all uploaded files</source>
-			<target xml:lang="de" state="translated">Alle hochgeladene Dateien anhängen</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>E-mail finisher</source>
+                <target xml:lang="de" state="translated">Email senden</target>
+            </trans-unit>
+            <trans-unit id="groups.finisher-attachments" xml:space="preserve">
+                <source>Attachments</source>
+                <target xml:lang="de" state="translated">Anhänge</target>
+            </trans-unit>
+            <trans-unit id="properties.subject" xml:space="preserve">
+                <source>Email subject</source>
+                <target xml:lang="de" state="translated">E-Mail Betreff</target>
+            </trans-unit>
+            <trans-unit id="properties.templateSource" xml:space="preserve">
+                <source>Email body (Fluid)</source>
+                <target xml:lang="de" state="translated">E-Mail Text (Klartext)</target>
+            </trans-unit>
+            <trans-unit id="properties.templateSource.codeEditor.buttonLabel" xml:space="preserve">
+                <source>Edit Email body</source>
+                <target xml:lang="de" state="translated">E-Mail Text bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="properties.recipientAddress" xml:space="preserve">
+                <source>Recipient email address</source>
+                <target xml:lang="de" state="translated">Empfänger E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="properties.recipientName" xml:space="preserve">
+                <source>Recipient name</source>
+                <target xml:lang="de" state="translated">Name des Empfängers</target>
+            </trans-unit>
+            <trans-unit id="properties.senderAddress" xml:space="preserve">
+                <source>Sender email address</source>
+                <target xml:lang="de" state="translated">Absender E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="properties.senderName" xml:space="preserve">
+                <source>Sender name</source>
+                <target xml:lang="de" state="translated">Name des Absenders</target>
+            </trans-unit>
+            <trans-unit id="properties.replyToAddress" xml:space="preserve">
+                <source>ReplyTo email address</source>
+                <target xml:lang="de" state="translated">Antwort E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="properties.carbonCopyAddress" xml:space="preserve">
+                <source>CC email address</source>
+                <target xml:lang="de" state="translated">CC E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="properties.blindCarbonCopyAddress" xml:space="preserve">
+                <source>BCC email address</source>
+                <target xml:lang="de" state="translated">BCC E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="properties.format" xml:space="preserve">
+                <source>Email format</source>
+                <target xml:lang="de" state="translated">E-Mail Format</target>
+            </trans-unit>
+            <trans-unit id="properties.format.selectBoxEditor.values.html" xml:space="preserve">
+                <source>HTML</source>
+                <target xml:lang="de" state="translated">HTML</target>
+            </trans-unit>
+            <trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
+                <source>Plaintext</source>
+                <target xml:lang="de" state="translated">Klartext</target>
+            </trans-unit>
+            <trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
+                <source>Multipart</source>
+                <target xml:lang="de" state="translated">Multipart</target>
+            </trans-unit>
+            <trans-unit id="properties.attachAllPersistentResources" xml:space="preserve">
+                <source>Attach all uploaded files</source>
+                <target xml:lang="de" state="translated">Alle hochgeladene Dateien anhängen</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

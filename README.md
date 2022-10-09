@@ -28,7 +28,7 @@ used:
 can be inserted. The following snippet can be added to the sites `NodeTypes.yaml` in order
 to disable the Neos.NodeTypes Form:
 ```yaml
-'Neos.NodeTypes:Form': ~
+'Neos.NodeTypes.Form:Form': ~
 ```
 
 Now, *Form Elements* can be added to the Form:

@@ -2,12 +2,18 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
     <body>
+        <trans-unit id="ui.label" xml:space="preserve">
+                <source>Number range</source>
+            <target xml:lang="de" state="translated">Min-/Max-Bereich (Zahlen)</target>
+        </trans-unit>
       <trans-unit id="properties.minimum" xml:space="preserve">
 				<source>Minimum value</source>
-			<target xml:lang="de" state="translated">Mindestwert</target></trans-unit>
+			<target xml:lang="de" state="translated">Mindestwert</target>
+        </trans-unit>
       <trans-unit id="properties.maximum" xml:space="preserve">
 				<source>Maximum value</source>
-			<target xml:lang="de" state="translated">Maximalwert</target></trans-unit>
+			<target xml:lang="de" state="translated">Maximalwert</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

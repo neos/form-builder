@@ -1,6 +1,6 @@
 'Neos.Form.Builder:ElementCollection':
   ui:
-    label: 'Elements'
+    label: i18n
     icon: 'icon-list'
     inlineEditable: true
   options:
