@@ -29,8 +29,10 @@ export const parentNodeContextPath = contextPath => {
   i18nRegistry: globalRegistry.get("i18n"),
   nodeTypeRegistry: globalRegistry.get(
     "@neos-project/neos-ui-contentrepository"
-  )
+  ),
+  frontendConfiguration: globalRegistry.get('frontendConfiguration')
 }))
+
 export default class PlaceholderInsertDropdown extends PureComponent {
   handleOnSelect = value => {
     this.props.executeCommand("placeholderInsert", value);
@@ -47,13 +49,7 @@ export default class PlaceholderInsertDropdown extends PureComponent {
     if (!elementsNode) {
       return null;
     }
-    const options = elementsNode.children
-      .map(node => this.props.nodesByContextPath[node.contextPath])
-      .map(node => ({
-        value: node.properties.identifier || node.identifier,
-        label:
-          node.properties.label || node.properties.identifier || node.identifier
-      }));
+    const options = this.getOptionsRecursively(elementsNode.children);
 
     if (options.length === 0) {
       return null;
@@ -72,5 +68,39 @@ export default class PlaceholderInsertDropdown extends PureComponent {
         value={null}
       />
     );
+  }
+
+  getOptionsRecursively(elements) {
+    const {frontendConfiguration} = this.props;
+    const ignoreNodeTypeInDropdown = frontendConfiguration.get('Neos.Form.Builder:PlaceholderInsert').ignoreNodeTypeInDropdown;
+    const ignoreAllChildNodesOfNodeTypeInDropdown = frontendConfiguration.get('Neos.Form.Builder:PlaceholderInsert').ignoreAllChildNodesOfNodeTypeInDropdown;
+    const returnValues = [];
+
+    elements.forEach((element) => {
+      const node = this.props.nodesByContextPath[element.contextPath];
+      if (!node) {
+        return null;
+      }
+
+      if (!(ignoreNodeTypeInDropdown.hasOwnProperty(node.nodeType) && ignoreNodeTypeInDropdown[node.nodeType] === true)) {
+        returnValues.push({
+          value: node.properties.identifier || node.identifier,
+          label: node.properties.label || node.properties.identifier || node.identifier
+        });
+      }
+
+      if (!(ignoreAllChildNodesOfNodeTypeInDropdown.hasOwnProperty(node.nodeType) && ignoreAllChildNodesOfNodeTypeInDropdown[node.nodeType] === true)) {
+        const childNodes = this.props.nodesByContextPath[element.contextPath].children;
+        const childOptions = this.getOptionsRecursively(childNodes);
+
+        if (Array.isArray(childOptions)) {
+          childOptions.forEach(childOption => {
+            returnValues.push(childOption);
+          });
+        }
+      }
+    });
+
+    return returnValues;
   }
 }

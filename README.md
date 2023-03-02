@@ -384,7 +384,33 @@ selectable:
     }
 ```
 
+### Example: Allow specific NodeTypes in the Placeholder-Insert
+
+By default, all Form-Element NodeTypes are visible in the Placeholder-Insert (except StaticText and Section).
+
+If you want to hide specific Form-Elements from the Placeholder-Insert, add the NodeType with the value `true` to the `ignoreNodeTypeInDropdown` setting.
+
+To exclude all child NodeTypes of a NodeType, add the NodeType with the value `true` to the `ignoreChildNodeTypesInDropdown` setting.
+```yaml
+# Settings.yaml
+
+Neos:
+  Neos:
+    Ui:
+      frontendConfiguration:
+        'Neos.Form.Builder:PlaceholderInsert':
+          # ignore node types in dropdown
+          ignoreNodeTypeInDropdown:
+            'Some.Package:HoneypotField': true
+            'Some.Package:Image': true
+            'Some.Package:Gallery': true
+          # ignore all child nodes of a node type in dropdown
+          ignoreAllChildNodesOfNodeTypeInDropdown:
+            'Some.Package:GalleryCollection': true
+```
+
 ## Upgrade to version 3
+
 ### Neos.Form.Builder:SelectOptionCollection
 The `Neos.Form.Builder:SelectOptionCollection` prototype has been changed and uses now `items` instead of `collection`.
 
