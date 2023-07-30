@@ -31,7 +31,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@neos-project/neos-ui-extensibility-webpack-adapter@~8.3.0":
+"@neos-project/neos-ui-extensibility-webpack-adapter@*":
   version "8.3.3"
   resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility-webpack-adapter/-/neos-ui-extensibility-webpack-adapter-8.3.3.tgz#bd55ef89d744b8ad448c28f76ab3938995843178"
   integrity sha512-L0oTBOPENzGR1EKR4+aXJHHZsRfqF43PK11Btv6s3m/jWzSOqtfjc3eTdZwg/1vTz+fDMthk/PBf3yd/Yf4OCw==
