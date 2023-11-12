@@ -3,10 +3,10 @@ prototype(Neos.Form.Builder:FormPage.Definition) {
 
     identifier = 'page'
     formElementType = 'Neos.Form:Page'
-    renderingOptions = Neos.Fusion:RawArray
+    renderingOptions = Neos.Fusion:DataStructure
     label = ${null}
     elements = Neos.Form.Builder:ElementCollection
 }
 
-prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:RawArray) {
+prototype(Neos.Form.Builder:PageCollection) < prototype(Neos.Fusion:DataStructure) {
 }

@@ -5,8 +5,8 @@ prototype(Neos.Form.Builder:Form) {
     presetName = 'default'
     formElementType = 'Neos.Form:Form'
 
-    renderingOptions = Neos.Fusion:RawArray
-    renderCallbacks = Neos.Fusion:RawArray
+    renderingOptions = Neos.Fusion:DataStructure
+    renderCallbacks = Neos.Fusion:DataStructure
     firstPage = Neos.Form.Builder:FormPage.Definition {
         elements = Neos.Form.Builder:ElementCollection
     }
