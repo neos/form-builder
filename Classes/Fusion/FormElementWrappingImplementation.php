@@ -97,7 +97,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         return $this->wrapNode($node, $output, $fusionPath);
     }
 
-    private function wrapNode(NodeInterface $node, string $output, string $fusionPath): string
+    protected function wrapNode(NodeInterface $node, string $output, string $fusionPath): string
     {
         $additionalAttributes = [
             'data-_neos-form-builder-type' => $node->getNodeType()->getName()
