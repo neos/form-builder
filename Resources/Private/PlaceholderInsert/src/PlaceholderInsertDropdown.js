@@ -39,17 +39,38 @@ export default class PlaceholderInsertDropdown extends PureComponent {
   };
 
   render() {
+    let options = [];
+
     const [formPath, workspace] = parentNodeContextPath(
       parentNodeContextPath(this.props.focusedNode.contextPath)
     ).split("@");
 
+    // get options of first page
     const elementsPath = `${formPath}/elements@${workspace}`;
 
     const elementsNode = this.props.nodesByContextPath[elementsPath];
     if (!elementsNode) {
       return null;
     }
-    const options = this.getOptionsRecursively(elementsNode.children);
+    const firstPageOptions = this.getOptionsRecursively(elementsNode.children);
+    if (firstPageOptions && firstPageOptions.length > 0) {
+      options = options.concat(firstPageOptions);
+    }
+
+    // get options of further pages
+    const furtherPagesPath = `${formPath}/furtherpages@${workspace}`;
+    const furtherPagesNode = this.props.nodesByContextPath[furtherPagesPath];
+    if (furtherPagesNode && furtherPagesNode.children && furtherPagesNode.children.length > 0) {
+      furtherPagesNode.children.forEach(furtherPageChildren => {
+        if (furtherPageChildren) {
+          const pageOptions = this.getOptionsOfPage(furtherPageChildren);
+
+          if (pageOptions && pageOptions.length > 0) {
+            options = options.concat(pageOptions);
+          }
+        }
+      });
+    }
 
     if (options.length === 0) {
       return null;
@@ -68,6 +89,17 @@ export default class PlaceholderInsertDropdown extends PureComponent {
         value={null}
       />
     );
+  }
+
+  getOptionsOfPage(page) {
+    const [path, workspace] = page.contextPath.split("@");
+    const elementsPath = `${path}/elements@${workspace}`;
+    const elementsNode = this.props.nodesByContextPath[elementsPath];
+    if (!elementsNode) {
+      return null;
+    }
+
+    return this.getOptionsRecursively(elementsNode.children);
   }
 
   getOptionsRecursively(elements) {
