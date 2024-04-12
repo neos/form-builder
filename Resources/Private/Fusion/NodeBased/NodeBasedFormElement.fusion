@@ -26,7 +26,7 @@ prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Render
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {

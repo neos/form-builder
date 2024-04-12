@@ -12,7 +12,7 @@ prototype(Neos.Form.Builder:NodeBasedFormPage) < prototype(Neos.Fusion:Renderer)
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'pageNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {

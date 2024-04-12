@@ -5,7 +5,7 @@ prototype(Neos.Form.Builder:NodeBasedValidator) < prototype(Neos.Fusion:Renderer
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {

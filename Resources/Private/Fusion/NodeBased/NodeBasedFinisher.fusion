@@ -5,7 +5,7 @@ prototype(Neos.Form.Builder:NodeBasedFinisher) < prototype(Neos.Fusion:Renderer)
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
