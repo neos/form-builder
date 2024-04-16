@@ -11,7 +11,7 @@ prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion
         formElementTypeFromNodeType {
             condition = ${!finisherNode.nodeType.options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFinisher {
-                type = ${finisherNode.nodeType.name + '.Definition'}
+                type = ${finisherNode.nodeTypeName.value + '.Definition'}
             }
         }
 

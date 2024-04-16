@@ -7,7 +7,7 @@ prototype(Neos.Form.Builder:NodeBasedFormPage) < prototype(Neos.Fusion:Renderer)
         renderingOptions._fusionPath = ${page.path}
 
         elements = Neos.Form.Builder:NodeBasedElementCollection {
-            collection = ${q(pageNode).children('elements').children()}
+            items = ${q(pageNode).children('elements').children()}
         }
     }
 }
@@ -18,7 +18,7 @@ prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Loo
         formElementTypeFromNodeType {
             condition = ${!pageNode.nodeType.options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFormPage {
-                type = ${pageNode.nodeType.name + '.Definition'}
+                type = ${pageNode.nodeTypeName.value + '.Definition'}
             }
         }
 

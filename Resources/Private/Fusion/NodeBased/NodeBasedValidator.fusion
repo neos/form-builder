@@ -11,7 +11,7 @@ prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusio
         formElementTypeFromNodeType {
             condition = ${!validatorNode.nodeType.options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedValidator {
-                type = ${validatorNode.nodeType.name + '.Definition'}
+                type = ${validatorNode.nodeTypeName.value + '.Definition'}
             }
         }
 

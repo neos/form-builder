@@ -7,16 +7,21 @@ use Neos\Utility\ObjectAccess;
 class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
 {
 
-    protected $ignoreProperties = ['prependOptionLabel', 'prependOptionValue', 'labelPropertyPath', 'valuePropertyPath'];
+    protected $ignoreProperties = [
+        'prependOptionLabel',
+        'prependOptionValue',
+        'labelPropertyPath',
+        'valuePropertyPath'
+    ];
 
     public function evaluate()
     {
-        $collection = $this->getCollection();
+        $items = $this->getItems();
         $options = [];
         if (!empty($prependLabel = $this->getPrependOptionLabel())) {
             $options[$this->getPrependOptionValue()] = $prependLabel;
         }
-        if ($collection === null) {
+        if ($items === null) {
             foreach ($this->properties as $propertyName => $propertyValue) {
                 if (in_array($propertyName, $this->ignoreProperties)) {
                     continue;
@@ -24,7 +29,7 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
                 $options[$propertyName] = $propertyValue;
             }
         } else {
-            foreach ($collection as $item) {
+            foreach ($items as $item) {
                 $value = ObjectAccess::getPropertyPath($item, $this->getValuePropertyPath());
                 $label = ObjectAccess::getPropertyPath($item, $this->getLabelPropertyPath());
                 if (strlen($label) === 0) {
@@ -39,9 +44,9 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
     /**
      * @return array|\Traversable
      */
-    private function getCollection()
+    private function getItems()
     {
-        return $this->fusionValue('collection');
+        return $this->fusionValue('items');
     }
 
     private function getValuePropertyPath(): string
