@@ -59,7 +59,10 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                         $output = $this->wrapNodeRecursively($finishersNode, '', $fusionPath . '/finishers') . $output;
                     }
                     if (!$renderable->getRootForm()->hasPageWithIndex(1)) {
-                        $output = $output . $this->wrapNode($node->getNode('furtherPages'), '', $fusionPath . '/furtherPages');
+                        $furtherPagesNode = $node->getNode('furtherPages');
+                        if ($furtherPagesNode !== null) {
+                            $output = $output . $this->wrapNode($furtherPagesNode, '', $fusionPath . '/furtherPages');
+                        }
                     }
                     return $output;
                 }
