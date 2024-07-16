@@ -1,14 +1,14 @@
 <?php
 namespace Neos\Form\Builder\NodeType;
 
-
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationHandlerFactoryInterface;
 use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationHandlerInterface;
 use Neos\ContentRepository\Core\ContentRepository;
 use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationCommands;
 use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationElements;
 use Neos\ContentRepository\Core\NodeType\NodeTypeManager;
 
-class SelectOptionsCreationHandler implements NodeCreationHandlerInterface
+final class SelectOptionsCreationHandler implements NodeCreationHandlerFactoryInterface
 {
 
 	public function build(ContentRepository $contentRepository): NodeCreationHandlerInterface
