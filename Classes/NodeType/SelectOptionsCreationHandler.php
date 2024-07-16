@@ -2,31 +2,46 @@
 namespace Neos\Form\Builder\NodeType;
 
 
-use Neos\Neos\Ui\NodeCreationHandler\NodeCreationHandlerInterface;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationHandlerInterface;
 use Neos\ContentRepository\Core\ContentRepository;
-use Neos\ContentRepository\Core\Feature\NodeCreation\Command\CreateNodeAggregateWithNode;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationCommands;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationElements;
+use Neos\ContentRepository\Core\NodeType\NodeTypeManager;
 
 class SelectOptionsCreationHandler implements NodeCreationHandlerInterface
 {
 
-    /**
-     * @param CreateNodeAggregateWithNode $command The original node creation command
-     * @param array<string|int,mixed> $data incoming data from the creationDialog
-     * @return CreateNodeAggregateWithNode the original command or a new creation command with altered properties
-     */
-    public function handle(CreateNodeAggregateWithNode $command, array $data, ContentRepository $contentRepository): CreateNodeAggregateWithNode
-    {
-        if (!$contentRepository->getNodeTypeManager()->getNodeType($command->nodeTypeName)->isOfType('Neos.Form.Builder:SelectOption')) {
-            return $command;
-        }
+	public function build(ContentRepository $contentRepository): NodeCreationHandlerInterface
+	{
+		return new class ($contentRepository->getNodeTypeManager()) implements NodeCreationHandlerInterface {
+			public function __construct(
+				private readonly NodeTypeManager $nodeTypeManager
+			) {
+			}
 
-        if (isset($data['value'])) {
-            $propertyValues = $propertyValues->withValue('value', $data['value']);
-        }
-        if (isset($data['label'])) {
-            $propertyValues = $propertyValues->withValue('label', $data['label']);
-        }
+			public function handle(NodeCreationCommands $commands, NodeCreationElements $elements): NodeCreationCommands
+			{
+				$nodeType = $this->nodeTypeManager->getNodeType($commands->first->nodeTypeName);
 
-        return $command->withInitialPropertyValues($propertyValues);
-    }
+				if (!$nodeType->isOfType('Neos.Form.Builder:SelectOption')) {
+					return $commands;
+				}
+
+				$propertyValues = $commands->first->initialPropertyValues;
+
+				foreach ($elements as $elementName => $elementValue) {
+					if ($elementName === 'value') {
+						$propertyValues = $propertyValues->withValue('value', $elementValue);
+					}
+					if ($elementName === 'label') {
+						$propertyValues = $propertyValues->withValue('label', $elementValue);
+					}
+				}
+
+				return $commands
+					->withInitialPropertyValues($propertyValues)
+				;
+			}
+		};
+	}
 }
