@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
-    <body>
-      <trans-unit id="properties.allowedExtensions" xml:space="preserve">
-				<source>Allowed file types</source>
-			<target xml:lang="de" state="translated">Erlaubte Dateitypen</target></trans-unit>
-      <trans-unit id="properties.resourceCollection" xml:space="preserve">
-				<source>Target Resource Collection</source>
-			<target xml:lang="de" state="translated">Ziel "Resource Collection"</target></trans-unit>
-    </body>
-  </file>
+    <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="properties.allowedExtensions" xml:space="preserve">
+                <source>Allowed file types</source>
+                <target xml:lang="de" state="translated">Erlaubte Dateitypen</target>
+            </trans-unit>
+            <trans-unit id="properties.resourceCollection" xml:space="preserve">
+                <source>Target Resource Collection</source>
+                <target xml:lang="de" state="translated">Ziel "Resource Collection"</target>
+            </trans-unit>
+            <trans-unit id="properties.deleteAfterLastPage" xml:space="preserve">
+                <source>Delete after last page</source>
+                <target>Nach letzter Seite löschen</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

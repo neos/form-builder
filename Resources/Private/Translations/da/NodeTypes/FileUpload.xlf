@@ -6,6 +6,10 @@
 				<source>Allowed file types</source>
 				<target>Tilladte filtyper</target>
 			</trans-unit>
+			<trans-unit id="properties.deleteAfterLastPage" xml:space="preserve">
+				<source>Delete after last page</source>
+				<target>Slet efter sidste side</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
