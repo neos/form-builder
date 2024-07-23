@@ -8,6 +8,9 @@
 			<trans-unit id="properties.resourceCollection" xml:space="preserve">
 				<source>Target Resource Collection</source>
 			</trans-unit>
+			<trans-unit id="properties.deleteAfterLastPage" xml:space="preserve">
+				<source>Delete after last page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

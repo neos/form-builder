@@ -52,3 +52,9 @@
         inspector:
           group: 'formElement'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+    'deleteAfterLastPage':
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: 'formElement'

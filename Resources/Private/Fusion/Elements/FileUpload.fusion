@@ -3,5 +3,6 @@ prototype(Neos.Form.Builder:FileUpload.Definition) < prototype(Neos.Form.Builder
 
     properties {
         allowedExtensions = Neos.Fusion:DataStructure
+        deleteAfterLastPage = ${false}
     }
 }
