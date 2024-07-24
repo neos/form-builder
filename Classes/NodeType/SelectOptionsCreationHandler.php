@@ -1,26 +1,47 @@
 <?php
 namespace Neos\Form\Builder\NodeType;
 
-use Neos\ContentRepository\Domain\Model\NodeInterface;
-use Neos\Neos\Ui\NodeCreationHandler\NodeCreationHandlerInterface;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationHandlerFactoryInterface;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationHandlerInterface;
+use Neos\ContentRepository\Core\ContentRepository;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationCommands;
+use Neos\Neos\Ui\Domain\NodeCreation\NodeCreationElements;
+use Neos\ContentRepository\Core\NodeType\NodeTypeManager;
 
-class SelectOptionsCreationHandler implements NodeCreationHandlerInterface
+final class SelectOptionsCreationHandler implements NodeCreationHandlerFactoryInterface
 {
-    /**
-     * @param NodeInterface $node The newly created node
-     * @param array $data incoming data from the creationDialog
-     * @return void
-     */
-    public function handle(NodeInterface $node, array $data)
-    {
-        if (!$node->getNodeType()->isOfType('Neos.Form.Builder:SelectOption')) {
-            return;
-        }
-        if (isset($data['value'])) {
-            $node->setProperty('value', $data['value']);
-        }
-        if (isset($data['label'])) {
-            $node->setProperty('label', $data['label']);
-        }
-    }
+
+	public function build(ContentRepository $contentRepository): NodeCreationHandlerInterface
+	{
+		return new class ($contentRepository->getNodeTypeManager()) implements NodeCreationHandlerInterface {
+			public function __construct(
+				private readonly NodeTypeManager $nodeTypeManager
+			) {
+			}
+
+			public function handle(NodeCreationCommands $commands, NodeCreationElements $elements): NodeCreationCommands
+			{
+				$nodeType = $this->nodeTypeManager->getNodeType($commands->first->nodeTypeName);
+
+				if (!$nodeType->isOfType('Neos.Form.Builder:SelectOption')) {
+					return $commands;
+				}
+
+				$propertyValues = $commands->first->initialPropertyValues;
+
+				foreach ($elements as $elementName => $elementValue) {
+					if ($elementName === 'value') {
+						$propertyValues = $propertyValues->withValue('value', $elementValue);
+					}
+					if ($elementName === 'label') {
+						$propertyValues = $propertyValues->withValue('label', $elementValue);
+					}
+				}
+
+				return $commands
+					->withInitialPropertyValues($propertyValues)
+				;
+			}
+		};
+	}
 }
