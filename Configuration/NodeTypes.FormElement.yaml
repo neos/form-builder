@@ -9,7 +9,7 @@
   constraints:
     nodeTypes:
       '*': false
-  label: "${q(node).property('identifier') || q(node).property('label') || ((node.nodeType.label || node.nodeTypeName.value) + ' (' + node.name + ')')}"
+  label: "${q(node).property('identifier') || q(node).property('label') || ((Neos.Node.getNodeType(node).label || node.nodeTypeName.value) + ' (' + node.name + ')')}"
   ui:
     inlineEditable: true
     label: 'Form Element'
