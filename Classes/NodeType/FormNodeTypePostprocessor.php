@@ -1,8 +1,8 @@
 <?php
 namespace Neos\Form\Builder\NodeType;
 
-use Neos\ContentRepository\Domain\Model\NodeType;
-use Neos\ContentRepository\NodeTypePostprocessor\NodeTypePostprocessorInterface;
+use Neos\ContentRepository\Core\NodeType\NodeTypePostprocessorInterface;
+use Neos\ContentRepository\Core\NodeType\NodeType;
 use Neos\Flow\Annotations as Flow;
 
 class FormNodeTypePostprocessor implements NodeTypePostprocessorInterface

@@ -375,7 +375,7 @@ selectable:
     // ...
     properties {
         options = Neos.Form.Builder:SelectOptionCollection {
-            collection = ${q(site).children('[instanceof Some.Package:NewsletterCategory]')}
+            items = ${q(site).children('[instanceof Some.Package:NewsletterCategory]')}
             # we use the node identifier as value, we could use "name" or "label" instead for example
             valuePropertyPath = 'identifier'
         }

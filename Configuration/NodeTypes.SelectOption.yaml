@@ -33,7 +33,7 @@
   options:
     nodeCreationHandlers:
       documentTitle:
-        nodeCreationHandler: 'Neos\Form\Builder\NodeType\SelectOptionsCreationHandler'
+        factoryClassName: 'Neos\Form\Builder\NodeType\SelectOptionsCreationHandler'
     fusion:
       prototypeGenerator: null
   properties:
