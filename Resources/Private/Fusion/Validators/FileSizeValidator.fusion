@@ -1,0 +1,8 @@
+# See Neos\Flow\Validation\Validator\FileSizeValidator
+prototype(Neos.Form.Builder:FileSizeValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
+    formElementType = 'Neos.Flow:FileSize'
+    options {
+        minimum = 0
+        maximum = 10000000
+    }
+}

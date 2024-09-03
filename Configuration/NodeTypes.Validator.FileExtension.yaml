@@ -1,19 +1,13 @@
-'Neos.Form.Builder:FileUpload':
+'Neos.Form.Builder:FileExtensionValidator':
   superTypes:
-    'Neos.Form.Builder:FormElement': true
-    'Neos.Form.Builder:DefaultValueMixin': false
-    'Neos.Form.Builder:FileValidatorsMixin': true
-  postprocessors:
-    'Neos.Form.Builder:ResourceCollectionsPostprocessor':
-      postprocessor: 'Neos\Form\Builder\NodeType\ResourceCollectionsPostprocessor'
+    'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'File upload'
-    icon: 'icon-upload'
-    group: 'form.custom'
+    label: 'File Type Validator'
+    icon: 'icon-sort-numeric-asc'
     inspector:
       groups:
-        'formElement':
-          icon: 'icon-upload'
+        'validator':
+          icon: 'icon-sort-numeric-asc'
   properties:
     'allowedExtensions':
       type: array
@@ -21,7 +15,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: 'formElement'
+          group: 'validator'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
@@ -46,10 +40,6 @@
               'csv':
                 label: '.csv'
                 icon: 'icon-file-text'
-    'resourceCollection':
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'formElement'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+              'zip':
+                label: '.zip'
+                icon: 'icon-file-text'
