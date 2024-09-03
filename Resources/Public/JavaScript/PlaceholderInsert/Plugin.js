@@ -1,1 +1,329 @@
-!function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=3)}([function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e){return function(){var t;if(window["@Neos:HostPluginAPI"]&&window["@Neos:HostPluginAPI"]["@"+e])return(t=window["@Neos:HostPluginAPI"])["@"+e].apply(t,arguments);throw new Error("You are trying to read from a consumer api that hasn't been initialized yet!")}}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=i(r(9)),o=i(r(10));function i(e){return e&&e.__esModule?e:{default:e}}var a=class extends n.default{constructor(e){super(e),this._registry=[]}set(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;if("string"!=typeof e)throw new Error("Key must be a string");if("string"!=typeof r&&"number"!=typeof r)throw new Error("Position must be a string or a number");var n={key:e,value:t};r&&(n.position=r);var o=this._registry.findIndex((function(t){return t.key===e}));return-1===o?this._registry.push(n):this._registry[o]=n,t}get(e){if("string"!=typeof e)return console.error("Key must be a string"),null;var t=this._registry.find((function(t){return t.key===e}));return t?t.value:null}_getChildrenWrapped(e){var t=this._registry.filter((function(t){return 0===t.key.indexOf(e+"/")}));return(0,o.default)(t)}getChildrenAsObject(e){var t={};return this._getChildrenWrapped(e).forEach((function(e){t[e.key]=e.value})),t}getChildren(e){return this._getChildrenWrapped(e).map((function(e){return e.value}))}has(e){return"string"!=typeof e?(console.error("Key must be a string"),!1):Boolean(this._registry.find((function(t){return t.key===e})))}_getAllWrapped(){return(0,o.default)(this._registry)}getAllAsObject(){var e={};return this._getAllWrapped().forEach((function(t){e[t.key]=t.value})),e}getAllAsList(){return this._getAllWrapped().map((function(e){return Object.assign({id:e.key},e.value)}))}};t.default=a},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("vendor")().plow},function(e,t,r){"use strict";r(4)},function(e,t,r){"use strict";var n=u(r(5)),o=u(r(12)),i=u(r(18)),a=r(2);function u(e){return e&&e.__esModule?e:{default:e}}(0,n.default)("Neos.Form.Builder:PlaceholderInsert",{},(function(e){var t,r;e.get("ckEditor5").get("richtextToolbar").set("placeholderInsertt",{component:o.default,isVisible:(0,a.$get)("formatting.placeholderInsert")}),e.get("ckEditor5").get("config").set("placeholderInsert",(t=i.default,r=(0,a.$get)("formatting.placeholderInsert"),function(e,n){return!r||r(n.editorOptions,n)?(e.plugins=e.plugins||[],(0,a.$add)("plugins",t,e)):e}))}))},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.SynchronousMetaRegistry=t.SynchronousRegistry=t.readFromConsumerApi=t.createConsumerApi=void 0;var n=a(r(6)),o=a(r(0)),i=r(8);function a(e){return e&&e.__esModule?e:{default:e}}t.default=(0,o.default)("manifest"),t.createConsumerApi=n.default,t.readFromConsumerApi=o.default,t.SynchronousRegistry=i.SynchronousRegistry,t.SynchronousMetaRegistry=i.SynchronousMetaRegistry},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){var r={};Object.keys(t).forEach((function(e){Object.defineProperty(r,e,a(t[e]))})),Object.defineProperty(r,"@manifest",a((0,i.default)(e))),Object.defineProperty(window,"@Neos:HostPluginAPI",a(r))};var n,o=r(7),i=(n=o)&&n.__esModule?n:{default:n};var a=function(e){return{value:e,writable:!1,enumerable:!1,configurable:!0}}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e){return function(t,r,n){var o,i,a;e.push((a={options:r,bootstrap:n},(i=t)in(o={})?Object.defineProperty(o,i,{value:a,enumerable:!0,configurable:!0,writable:!0}):o[i]=a,o))}}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.SynchronousMetaRegistry=t.SynchronousRegistry=void 0;var n=i(r(1)),o=i(r(11));function i(e){return e&&e.__esModule?e:{default:e}}t.SynchronousRegistry=n.default,t.SynchronousMetaRegistry=o.default},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=class{constructor(e){this.SERIAL_VERSION_UID="d8a5aa78-978e-11e6-ae22-56b6b6499611",this.description=e}}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"position",r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"key",n="string"==typeof t?function(e){return e[t]}:t,o={},i={},a={},u={},s={},l={};e.forEach((function(e,t){var f=e[r]?e[r]:String(t);o[f]=t;var d=n(e),c=String(d||t),y=!1;if(c.startsWith("start")){var v=c.match(/start\s+(\d+)/),p=v&&v[1]?Number(v[1]):0;a[p]||(a[p]=[]),a[p].push(f)}else if(c.startsWith("end")){var h=c.match(/end\s+(\d+)/),g=h&&h[1]?Number(h[1]):0;u[g]||(u[g]=[]),u[g].push(f)}else if(c.startsWith("before")){var b=c.match(/before\s+(\S+)(\s+(\d+))?/);if(b){var _=b[1],m=b[3]?Number(b[3]):0;s[_]||(s[_]={}),s[_][m]||(s[_][m]=[]),s[_][m].push(f)}else y=!0}else if(c.startsWith("after")){var x=c.match(/after\s+(\S+)(\s+(\d+))?/);if(x){var P=x[1],O=x[3]?Number(x[3]):0;l[P]||(l[P]={}),l[P][O]||(l[P][O]=[]),l[P][O].push(f)}else y=!0}else y=!0;if(y){var S=parseFloat(c);!isNaN(S)&&isFinite(S)||(S=t),i[S]||(i[S]=[]),i[S].push(f)}}));var f=[],d=[],c=[],y=[],v=function(e,t){var r=Object.keys(e).map((function(e){return Number(e)})).sort((function(e,t){return e-t}));return t?r:r.reverse()},p=function e(t,r){t.forEach((function(t){if(!(y.indexOf(t)>=0)){if(y.push(t),s[t]){var n=v(s[t],!0),o=!0,i=!1,a=void 0;try{for(var u,f=n[Symbol.iterator]();!(o=(u=f.next()).done);o=!0){var d=u.value;e(s[t][d],r)}}catch(e){i=!0,a=e}finally{try{!o&&f.return&&f.return()}finally{if(i)throw a}}}if(r.push(t),l[t]){var c=v(l[t],!1),p=!0,h=!1,g=void 0;try{for(var b,_=c[Symbol.iterator]();!(p=(b=_.next()).done);p=!0){var m=b.value;e(l[t][m],r)}}catch(e){h=!0,g=e}finally{try{!p&&_.return&&_.return()}finally{if(h)throw g}}}}}))},h=!0,g=!1,b=void 0;try{for(var _,m=v(a,!1)[Symbol.iterator]();!(h=(_=m.next()).done);h=!0){var x=_.value;p(a[x],f)}}catch(e){g=!0,b=e}finally{try{!h&&m.return&&m.return()}finally{if(g)throw b}}var P=!0,O=!1,S=void 0;try{for(var M,j=v(i,!0)[Symbol.iterator]();!(P=(M=j.next()).done);P=!0){var w=M.value;p(i[w],d)}}catch(e){O=!0,S=e}finally{try{!P&&j.return&&j.return()}finally{if(O)throw S}}var N=!0,C=!1,R=void 0;try{for(var I,A=v(u,!0)[Symbol.iterator]();!(N=(I=A.next()).done);N=!0){var k=I.value;p(u[k],c)}}catch(e){C=!0,R=e}finally{try{!N&&A.return&&A.return()}finally{if(C)throw R}}var E=!0,W=!1,B=void 0;try{for(var F,T=Object.keys(s)[Symbol.iterator]();!(E=(F=T.next()).done);E=!0){var U=F.value;if(!(y.indexOf(U)>=0)){var H=!0,V=!1,$=void 0;try{for(var D,K=v(s[U],!1)[Symbol.iterator]();!(H=(D=K.next()).done);H=!0){var L=D.value;p(s[U][L],f)}}catch(e){V=!0,$=e}finally{try{!H&&K.return&&K.return()}finally{if(V)throw $}}}}}catch(e){W=!0,B=e}finally{try{!E&&T.return&&T.return()}finally{if(W)throw B}}var Y=!0,z=!1,q=void 0;try{for(var G,J=Object.keys(l)[Symbol.iterator]();!(Y=(G=J.next()).done);Y=!0){var Q=G.value;if(!(y.indexOf(Q)>=0)){var X=!0,Z=!1,ee=void 0;try{for(var te,re=v(l[Q],!1)[Symbol.iterator]();!(X=(te=re.next()).done);X=!0){var ne=te.value;p(l[Q][ne],d)}}catch(e){Z=!0,ee=e}finally{try{!X&&re.return&&re.return()}finally{if(Z)throw ee}}}}}catch(e){z=!0,q=e}finally{try{!Y&&J.return&&J.return()}finally{if(z)throw q}}var oe=[].concat(f,d,c);return oe.map((function(e){return o[e]})).map((function(t){return e[t]}))}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n,o=r(1),i=(n=o)&&n.__esModule?n:{default:n};var a=class extends i.default{set(e,t){if("d8a5aa78-978e-11e6-ae22-56b6b6499611"!==t.SERIAL_VERSION_UID)throw new Error("You can only add registries to a meta registry");return super.set(e,t)}};t.default=a},function(e,t,r){"use strict";var n;Object.defineProperty(t,"__esModule",{value:!0}),t.default=t.parentNodeContextPath=void 0;var o,i=function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var r=[],n=!0,o=!1,i=void 0;try{for(var a,u=e[Symbol.iterator]();!(n=(a=u.next()).done)&&(r.push(a.value),!t||r.length!==t);n=!0);}catch(e){o=!0,i=e}finally{try{!n&&u.return&&u.return()}finally{if(o)throw i}}return r}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")},a=r(13),u=r(14),s=r(15),l=(o=s)&&o.__esModule?o:{default:o},f=r(16),d=r(2),c=r(17);var y=t.parentNodeContextPath=function(e){if("string"!=typeof e)return console.error("`contextPath` must be a string!"),null;var t=e.split("@"),r=i(t,2),n=r[0],o=r[1];return 0===n.length?null:n.substr(0,n.lastIndexOf("/"))+"@"+o},v=(0,a.connect)((0,d.$transform)({nodesByContextPath:c.selectors.CR.Nodes.nodesByContextPathSelector,focusedNode:c.selectors.CR.Nodes.focusedSelector}))(n=(0,f.neos)((function(e){return{i18nRegistry:e.get("i18n"),nodeTypeRegistry:e.get("@neos-project/neos-ui-contentrepository")}}))(n=class extends s.PureComponent{constructor(){var e,t;return e=t=super(...arguments),this.handleOnSelect=function(e){t.props.executeCommand("placeholderInsert",e)},e}render(){var e=this,t=y(y(this.props.focusedNode.contextPath)).split("@"),r=i(t,2),n=r[0]+"/elements@"+r[1],o=this.props.nodesByContextPath[n];if(!o)return null;var a=o.children.map((function(t){return e.props.nodesByContextPath[t.contextPath]})).map((function(e){return{value:e.properties.identifier||e.identifier,label:e.properties.label||e.properties.identifier||e.identifier}}));if(0===a.length)return null;var s=this.props.i18nRegistry.translate("Neos.Form.Builder:Main:placeholder","Insert placeholder");return l.default.createElement(u.SelectBox,{placeholder:s,options:a,onValueChange:this.handleOnSelect,value:null})}})||n)||n;t.default=v},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("vendor")().reactRedux},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("NeosProjectPackages")().ReactUiComponents},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("vendor")().React},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("NeosProjectPackages")().NeosUiDecorators},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("NeosProjectPackages")().NeosUiReduxStore},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=r(19),o=class extends n.Command{execute(e){var t=this.editor.model,r=t.document.selection,o=new n.ModelText("{"+e+"}");t.insertContent(o,r)}},i=class extends n.Plugin{static get pluginName(){return"PlaceholderInsert"}init(){this.editor.commands.add("placeholderInsert",new o(this.editor))}};t.default=i},function(e,t,r){"use strict";var n,o=r(0),i=(n=o)&&n.__esModule?n:{default:n};e.exports=(0,i.default)("vendor")().CkEditor5}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = createConsumerApi;\n\nvar _manifest = __webpack_require__(/*! ./manifest */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js\");\n\nvar _manifest2 = _interopRequireDefault(_manifest);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar createReadOnlyValue = function createReadOnlyValue(value) {\n    return {\n        value: value,\n        writable: false,\n        enumerable: false,\n        configurable: true\n    };\n};\nfunction createConsumerApi(manifests, exposureMap) {\n    var api = {};\n    Object.keys(exposureMap).forEach(function (key) {\n        Object.defineProperty(api, key, createReadOnlyValue(exposureMap[key]));\n    });\n    Object.defineProperty(api, '@manifest', createReadOnlyValue((0, _manifest2.default)(manifests)));\n    Object.defineProperty(window, '@Neos:HostPluginAPI', createReadOnlyValue(api));\n}\n//# sourceMappingURL=createConsumerApi.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/index.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.SynchronousMetaRegistry = exports.SynchronousRegistry = exports.readFromConsumerApi = exports.createConsumerApi = undefined;\n\nvar _createConsumerApi = __webpack_require__(/*! ./createConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js\");\n\nvar _createConsumerApi2 = _interopRequireDefault(_createConsumerApi);\n\nvar _readFromConsumerApi = __webpack_require__(/*! ./readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nvar _index = __webpack_require__(/*! ./registry/index */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = (0, _readFromConsumerApi2.default)('manifest');\nexports.createConsumerApi = _createConsumerApi2.default;\nexports.readFromConsumerApi = _readFromConsumerApi2.default;\nexports.SynchronousRegistry = _index.SynchronousRegistry;\nexports.SynchronousMetaRegistry = _index.SynchronousMetaRegistry;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nexports.default = function (manifests) {\n    return function (identifier, options, bootstrap) {\n        manifests.push(_defineProperty({}, identifier, {\n            options: options,\n            bootstrap: bootstrap\n        }));\n    };\n};\n//# sourceMappingURL=manifest.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = readFromConsumerApi;\nfunction readFromConsumerApi(key) {\n    return function () {\n        if (window['@Neos:HostPluginAPI'] && window['@Neos:HostPluginAPI']['@' + key]) {\n            var _window$NeosHostPlu;\n\n            return (_window$NeosHostPlu = window['@Neos:HostPluginAPI'])['@' + key].apply(_window$NeosHostPlu, arguments);\n        }\n        throw new Error('You are trying to read from a consumer api that hasn\\'t been initialized yet!');\n    };\n}\n//# sourceMappingURL=readFromConsumerApi.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar AbstractRegistry = class AbstractRegistry {\n    constructor(description) {\n        this.SERIAL_VERSION_UID = 'd8a5aa78-978e-11e6-ae22-56b6b6499611';\n        this.description = description;\n    }\n};\n//# sourceMappingURL=AbstractRegistry.js.map\n\nexports.default = AbstractRegistry;\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = undefined;\n\nvar _SynchronousRegistry = __webpack_require__(/*! ./SynchronousRegistry */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js\");\n\nvar _SynchronousRegistry2 = _interopRequireDefault(_SynchronousRegistry);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SynchronousMetaRegistry = class SynchronousMetaRegistry extends _SynchronousRegistry2.default {\n    set(key, value) {\n        if (value.SERIAL_VERSION_UID !== 'd8a5aa78-978e-11e6-ae22-56b6b6499611') {\n            throw new Error('You can only add registries to a meta registry');\n        }\n        return super.set(key, value);\n    }\n};\n//# sourceMappingURL=SynchronousMetaRegistry.js.map\n\nexports.default = SynchronousMetaRegistry;\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = undefined;\n\nvar _AbstractRegistry = __webpack_require__(/*! ./AbstractRegistry */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js\");\n\nvar _AbstractRegistry2 = _interopRequireDefault(_AbstractRegistry);\n\nvar _positionalArraySorter = __webpack_require__(/*! @neos-project/positional-array-sorter */ \"./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js\");\n\nvar _positionalArraySorter2 = _interopRequireDefault(_positionalArraySorter);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SynchronousRegistry = class SynchronousRegistry extends _AbstractRegistry2.default {\n    constructor(description) {\n        super(description);\n        this._registry = [];\n    }\n    set(key, value) {\n        var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;\n\n        if (typeof key !== 'string') {\n            throw new Error('Key must be a string');\n        }\n        if (typeof position !== 'string' && typeof position !== 'number') {\n            throw new Error('Position must be a string or a number');\n        }\n        var entry = { key: key, value: value };\n        if (position) {\n            entry.position = position;\n        }\n        var indexOfItemWithTheSameKey = this._registry.findIndex(function (item) {\n            return item.key === key;\n        });\n        if (indexOfItemWithTheSameKey === -1) {\n            this._registry.push(entry);\n        } else {\n            this._registry[indexOfItemWithTheSameKey] = entry;\n        }\n        return value;\n    }\n    get(key) {\n        if (typeof key !== 'string') {\n            console.error('Key must be a string');\n            return null;\n        }\n        var result = this._registry.find(function (item) {\n            return item.key === key;\n        });\n        return result ? result.value : null;\n    }\n    _getChildrenWrapped(searchKey) {\n        var unsortedChildren = this._registry.filter(function (item) {\n            return item.key.indexOf(searchKey + '/') === 0;\n        });\n        return (0, _positionalArraySorter2.default)(unsortedChildren);\n    }\n    getChildrenAsObject(searchKey) {\n        var result = {};\n        this._getChildrenWrapped(searchKey).forEach(function (item) {\n            result[item.key] = item.value;\n        });\n        return result;\n    }\n    getChildren(searchKey) {\n        return this._getChildrenWrapped(searchKey).map(function (item) {\n            return item.value;\n        });\n    }\n    has(key) {\n        if (typeof key !== 'string') {\n            console.error('Key must be a string');\n            return false;\n        }\n        return Boolean(this._registry.find(function (item) {\n            return item.key === key;\n        }));\n    }\n    _getAllWrapped() {\n        return (0, _positionalArraySorter2.default)(this._registry);\n    }\n    getAllAsObject() {\n        var result = {};\n        this._getAllWrapped().forEach(function (item) {\n            result[item.key] = item.value;\n        });\n        return result;\n    }\n    getAllAsList() {\n        return this._getAllWrapped().map(function (item) {\n            return Object.assign({ id: item.key }, item.value);\n        });\n    }\n};\n//# sourceMappingURL=SynchronousRegistry.js.map\n\nexports.default = SynchronousRegistry;\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.SynchronousMetaRegistry = exports.SynchronousRegistry = undefined;\n\nvar _SynchronousRegistry = __webpack_require__(/*! ./SynchronousRegistry */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js\");\n\nvar _SynchronousRegistry2 = _interopRequireDefault(_SynchronousRegistry);\n\nvar _SynchronousMetaRegistry = __webpack_require__(/*! ./SynchronousMetaRegistry */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js\");\n\nvar _SynchronousMetaRegistry2 = _interopRequireDefault(_SynchronousMetaRegistry);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.SynchronousRegistry = _SynchronousRegistry2.default;\nexports.SynchronousMetaRegistry = _SynchronousMetaRegistry2.default;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().NeosUiDecorators;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-redux-store/index.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-redux-store/index.js ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().NeosUiReduxStore;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-redux-store/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/react-ui-components/index.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/react-ui-components/index.js ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().ReactUiComponents;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/react-ui-components/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('vendor')().CkEditor5;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('vendor')().plow;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react-redux/index.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react-redux/index.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('vendor')().reactRedux;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react-redux/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react/index.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react/index.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _readFromConsumerApi = __webpack_require__(/*! ../../../readFromConsumerApi */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js\");\n\nvar _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = (0, _readFromConsumerApi2.default)('vendor')().React;\n//# sourceMappingURL=index.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar positionalArraySorter = function positionalArraySorter(subject) {\n    var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'position';\n    var idKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'key';\n\n    var positionAccessor = typeof position === 'string' ? function (value) {\n        return value[position];\n    } : position;\n    var indexMapping = {};\n    var middleKeys = {};\n    var startKeys = {};\n    var endKeys = {};\n    var beforeKeys = {};\n    var afterKeys = {};\n    subject.forEach(function (item, index) {\n        var key = item[idKey] ? item[idKey] : String(index);\n        indexMapping[key] = index;\n        var positionValue = positionAccessor(item);\n        var position = String(positionValue ? positionValue : index);\n        var invalid = false;\n        if (position.startsWith('start')) {\n            var weightMatch = position.match(/start\\s+(\\d+)/);\n            var weight = weightMatch && weightMatch[1] ? Number(weightMatch[1]) : 0;\n            if (!startKeys[weight]) {\n                startKeys[weight] = [];\n            }\n            startKeys[weight].push(key);\n        } else if (position.startsWith('end')) {\n            var _weightMatch = position.match(/end\\s+(\\d+)/);\n            var _weight = _weightMatch && _weightMatch[1] ? Number(_weightMatch[1]) : 0;\n            if (!endKeys[_weight]) {\n                endKeys[_weight] = [];\n            }\n            endKeys[_weight].push(key);\n        } else if (position.startsWith('before')) {\n            var match = position.match(/before\\s+(\\S+)(\\s+(\\d+))?/);\n            if (!match) {\n                invalid = true;\n            } else {\n                var reference = match[1];\n                var _weight2 = match[3] ? Number(match[3]) : 0;\n                if (!beforeKeys[reference]) {\n                    beforeKeys[reference] = {};\n                }\n                if (!beforeKeys[reference][_weight2]) {\n                    beforeKeys[reference][_weight2] = [];\n                }\n                beforeKeys[reference][_weight2].push(key);\n            }\n        } else if (position.startsWith('after')) {\n            var _match = position.match(/after\\s+(\\S+)(\\s+(\\d+))?/);\n            if (!_match) {\n                invalid = true;\n            } else {\n                var _reference = _match[1];\n                var _weight3 = _match[3] ? Number(_match[3]) : 0;\n                if (!afterKeys[_reference]) {\n                    afterKeys[_reference] = {};\n                }\n                if (!afterKeys[_reference][_weight3]) {\n                    afterKeys[_reference][_weight3] = [];\n                }\n                afterKeys[_reference][_weight3].push(key);\n            }\n        } else {\n            invalid = true;\n        }\n        if (invalid) {\n            var numberPosition = parseFloat(position);\n            if (isNaN(numberPosition) || !isFinite(numberPosition)) {\n                numberPosition = index;\n            }\n            if (!middleKeys[numberPosition]) {\n                middleKeys[numberPosition] = [];\n            }\n            middleKeys[numberPosition].push(key);\n        }\n    });\n    var resultStart = [];\n    var resultMiddle = [];\n    var resultEnd = [];\n    var processedKeys = [];\n    var sortedWeights = function sortedWeights(dict, asc) {\n        var weights = Object.keys(dict).map(function (x) {\n            return Number(x);\n        }).sort(function (a, b) {\n            return a - b;\n        });\n        return asc ? weights : weights.reverse();\n    };\n    var addToResults = function addToResults(keys, result) {\n        keys.forEach(function (key) {\n            if (processedKeys.indexOf(key) >= 0) {\n                return;\n            }\n            processedKeys.push(key);\n            if (beforeKeys[key]) {\n                var beforeWeights = sortedWeights(beforeKeys[key], true);\n                var _iteratorNormalCompletion = true;\n                var _didIteratorError = false;\n                var _iteratorError = undefined;\n\n                try {\n                    for (var _iterator = beforeWeights[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n                        var i = _step.value;\n\n                        addToResults(beforeKeys[key][i], result);\n                    }\n                } catch (err) {\n                    _didIteratorError = true;\n                    _iteratorError = err;\n                } finally {\n                    try {\n                        if (!_iteratorNormalCompletion && _iterator.return) {\n                            _iterator.return();\n                        }\n                    } finally {\n                        if (_didIteratorError) {\n                            throw _iteratorError;\n                        }\n                    }\n                }\n            }\n            result.push(key);\n            if (afterKeys[key]) {\n                var afterWeights = sortedWeights(afterKeys[key], false);\n                var _iteratorNormalCompletion2 = true;\n                var _didIteratorError2 = false;\n                var _iteratorError2 = undefined;\n\n                try {\n                    for (var _iterator2 = afterWeights[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {\n                        var _i = _step2.value;\n\n                        addToResults(afterKeys[key][_i], result);\n                    }\n                } catch (err) {\n                    _didIteratorError2 = true;\n                    _iteratorError2 = err;\n                } finally {\n                    try {\n                        if (!_iteratorNormalCompletion2 && _iterator2.return) {\n                            _iterator2.return();\n                        }\n                    } finally {\n                        if (_didIteratorError2) {\n                            throw _iteratorError2;\n                        }\n                    }\n                }\n            }\n        });\n    };\n    var _iteratorNormalCompletion3 = true;\n    var _didIteratorError3 = false;\n    var _iteratorError3 = undefined;\n\n    try {\n        for (var _iterator3 = sortedWeights(startKeys, false)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {\n            var i = _step3.value;\n\n            addToResults(startKeys[i], resultStart);\n        }\n    } catch (err) {\n        _didIteratorError3 = true;\n        _iteratorError3 = err;\n    } finally {\n        try {\n            if (!_iteratorNormalCompletion3 && _iterator3.return) {\n                _iterator3.return();\n            }\n        } finally {\n            if (_didIteratorError3) {\n                throw _iteratorError3;\n            }\n        }\n    }\n\n    var _iteratorNormalCompletion4 = true;\n    var _didIteratorError4 = false;\n    var _iteratorError4 = undefined;\n\n    try {\n        for (var _iterator4 = sortedWeights(middleKeys, true)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {\n            var _i2 = _step4.value;\n\n            addToResults(middleKeys[_i2], resultMiddle);\n        }\n    } catch (err) {\n        _didIteratorError4 = true;\n        _iteratorError4 = err;\n    } finally {\n        try {\n            if (!_iteratorNormalCompletion4 && _iterator4.return) {\n                _iterator4.return();\n            }\n        } finally {\n            if (_didIteratorError4) {\n                throw _iteratorError4;\n            }\n        }\n    }\n\n    var _iteratorNormalCompletion5 = true;\n    var _didIteratorError5 = false;\n    var _iteratorError5 = undefined;\n\n    try {\n        for (var _iterator5 = sortedWeights(endKeys, true)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {\n            var _i3 = _step5.value;\n\n            addToResults(endKeys[_i3], resultEnd);\n        }\n    } catch (err) {\n        _didIteratorError5 = true;\n        _iteratorError5 = err;\n    } finally {\n        try {\n            if (!_iteratorNormalCompletion5 && _iterator5.return) {\n                _iterator5.return();\n            }\n        } finally {\n            if (_didIteratorError5) {\n                throw _iteratorError5;\n            }\n        }\n    }\n\n    var _iteratorNormalCompletion6 = true;\n    var _didIteratorError6 = false;\n    var _iteratorError6 = undefined;\n\n    try {\n        for (var _iterator6 = Object.keys(beforeKeys)[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {\n            var key = _step6.value;\n\n            if (processedKeys.indexOf(key) >= 0) {\n                continue;\n            }\n            var _iteratorNormalCompletion8 = true;\n            var _didIteratorError8 = false;\n            var _iteratorError8 = undefined;\n\n            try {\n                for (var _iterator8 = sortedWeights(beforeKeys[key], false)[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {\n                    var _i4 = _step8.value;\n\n                    addToResults(beforeKeys[key][_i4], resultStart);\n                }\n            } catch (err) {\n                _didIteratorError8 = true;\n                _iteratorError8 = err;\n            } finally {\n                try {\n                    if (!_iteratorNormalCompletion8 && _iterator8.return) {\n                        _iterator8.return();\n                    }\n                } finally {\n                    if (_didIteratorError8) {\n                        throw _iteratorError8;\n                    }\n                }\n            }\n        }\n    } catch (err) {\n        _didIteratorError6 = true;\n        _iteratorError6 = err;\n    } finally {\n        try {\n            if (!_iteratorNormalCompletion6 && _iterator6.return) {\n                _iterator6.return();\n            }\n        } finally {\n            if (_didIteratorError6) {\n                throw _iteratorError6;\n            }\n        }\n    }\n\n    var _iteratorNormalCompletion7 = true;\n    var _didIteratorError7 = false;\n    var _iteratorError7 = undefined;\n\n    try {\n        for (var _iterator7 = Object.keys(afterKeys)[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {\n            var _key = _step7.value;\n\n            if (processedKeys.indexOf(_key) >= 0) {\n                continue;\n            }\n            var _iteratorNormalCompletion9 = true;\n            var _didIteratorError9 = false;\n            var _iteratorError9 = undefined;\n\n            try {\n                for (var _iterator9 = sortedWeights(afterKeys[_key], false)[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {\n                    var _i5 = _step9.value;\n\n                    addToResults(afterKeys[_key][_i5], resultMiddle);\n                }\n            } catch (err) {\n                _didIteratorError9 = true;\n                _iteratorError9 = err;\n            } finally {\n                try {\n                    if (!_iteratorNormalCompletion9 && _iterator9.return) {\n                        _iterator9.return();\n                    }\n                } finally {\n                    if (_didIteratorError9) {\n                        throw _iteratorError9;\n                    }\n                }\n            }\n        }\n    } catch (err) {\n        _didIteratorError7 = true;\n        _iteratorError7 = err;\n    } finally {\n        try {\n            if (!_iteratorNormalCompletion7 && _iterator7.return) {\n                _iterator7.return();\n            }\n        } finally {\n            if (_didIteratorError7) {\n                throw _iteratorError7;\n            }\n        }\n    }\n\n    var sortedKeys = [].concat(resultStart, resultMiddle, resultEnd);\n    return sortedKeys.map(function (key) {\n        return indexMapping[key];\n    }).map(function (i) {\n        return subject[i];\n    });\n};\nexports.default = positionalArraySorter;\n//# sourceMappingURL=positionalArraySorter.js.map\n\n//# sourceURL=webpack:///./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js?");
+
+/***/ }),
+
+/***/ "./src/PlaceholderInsertDropdown.js":
+/*!******************************************!*\
+  !*** ./src/PlaceholderInsertDropdown.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = exports.parentNodeContextPath = undefined;\n\nvar _dec, _dec2, _class;\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react-redux/index.js\");\n\nvar _reactUiComponents = __webpack_require__(/*! @neos-project/react-ui-components */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/react-ui-components/index.js\");\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _neosUiDecorators = __webpack_require__(/*! @neos-project/neos-ui-decorators */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js\");\n\nvar _plowJs = __webpack_require__(/*! plow-js */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js\");\n\nvar _neosUiReduxStore = __webpack_require__(/*! @neos-project/neos-ui-redux-store */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-redux-store/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar parentNodeContextPath = exports.parentNodeContextPath = function parentNodeContextPath(contextPath) {\n  if (typeof contextPath !== \"string\") {\n    console.error(\"`contextPath` must be a string!\"); // tslint:disable-line\n    return null;\n  }\n\n  var _contextPath$split = contextPath.split(\"@\"),\n      _contextPath$split2 = _slicedToArray(_contextPath$split, 2),\n      path = _contextPath$split2[0],\n      context = _contextPath$split2[1];\n\n  if (path.length === 0) {\n    // We are at top level; so there is no parent anymore!\n    return null;\n  }\n\n  return path.substr(0, path.lastIndexOf(\"/\")) + \"@\" + context;\n};\n\nvar PlaceholderInsertDropdown = (_dec = (0, _reactRedux.connect)((0, _plowJs.$transform)({\n  nodesByContextPath: _neosUiReduxStore.selectors.CR.Nodes.nodesByContextPathSelector,\n  focusedNode: _neosUiReduxStore.selectors.CR.Nodes.focusedSelector\n})), _dec2 = (0, _neosUiDecorators.neos)(function (globalRegistry) {\n  return {\n    i18nRegistry: globalRegistry.get(\"i18n\"),\n    nodeTypeRegistry: globalRegistry.get(\"@neos-project/neos-ui-contentrepository\"),\n    frontendConfiguration: globalRegistry.get('frontendConfiguration')\n  };\n}), _dec(_class = _dec2(_class = class PlaceholderInsertDropdown extends _react.PureComponent {\n  constructor() {\n    var _temp, _this;\n\n    return _temp = _this = super(...arguments), this.handleOnSelect = function (value) {\n      _this.props.executeCommand(\"placeholderInsert\", value);\n    }, _temp;\n  }\n\n  render() {\n    var _this2 = this;\n\n    var options = [];\n\n    var _parentNodeContextPat = parentNodeContextPath(parentNodeContextPath(this.props.focusedNode.contextPath)).split(\"@\"),\n        _parentNodeContextPat2 = _slicedToArray(_parentNodeContextPat, 2),\n        formPath = _parentNodeContextPat2[0],\n        workspace = _parentNodeContextPat2[1];\n\n    // get options of first page\n\n\n    var elementsPath = formPath + \"/elements@\" + workspace;\n\n    var elementsNode = this.props.nodesByContextPath[elementsPath];\n    if (!elementsNode) {\n      return null;\n    }\n    var firstPageOptions = this.getOptionsRecursively(elementsNode.children);\n    if (firstPageOptions && firstPageOptions.length > 0) {\n      options = options.concat(firstPageOptions);\n    }\n\n    // get options of further pages\n    var furtherPagesPath = formPath + \"/furtherpages@\" + workspace;\n    var furtherPagesNode = this.props.nodesByContextPath[furtherPagesPath];\n    if (furtherPagesNode && furtherPagesNode.children && furtherPagesNode.children.length > 0) {\n      furtherPagesNode.children.forEach(function (furtherPageChildren) {\n        if (furtherPageChildren) {\n          var pageOptions = _this2.getOptionsOfPage(furtherPageChildren);\n\n          if (pageOptions && pageOptions.length > 0) {\n            options = options.concat(pageOptions);\n          }\n        }\n      });\n    }\n\n    if (options.length === 0) {\n      return null;\n    }\n\n    var placeholderLabel = this.props.i18nRegistry.translate(\"Neos.Form.Builder:Main:placeholder\", \"Insert placeholder\");\n\n    return _react2.default.createElement(_reactUiComponents.SelectBox, {\n      placeholder: placeholderLabel,\n      options: options,\n      onValueChange: this.handleOnSelect,\n      value: null\n    });\n  }\n\n  getOptionsOfPage(page) {\n    var _page$contextPath$spl = page.contextPath.split(\"@\"),\n        _page$contextPath$spl2 = _slicedToArray(_page$contextPath$spl, 2),\n        path = _page$contextPath$spl2[0],\n        workspace = _page$contextPath$spl2[1];\n\n    var elementsPath = path + \"/elements@\" + workspace;\n    var elementsNode = this.props.nodesByContextPath[elementsPath];\n    if (!elementsNode) {\n      return null;\n    }\n\n    return this.getOptionsRecursively(elementsNode.children);\n  }\n\n  getOptionsRecursively(elements) {\n    var _this3 = this;\n\n    var frontendConfiguration = this.props.frontendConfiguration;\n\n    var ignoreNodeTypeInDropdown = frontendConfiguration.get('Neos.Form.Builder:PlaceholderInsert').ignoreNodeTypeInDropdown;\n    var ignoreAllChildNodesOfNodeTypeInDropdown = frontendConfiguration.get('Neos.Form.Builder:PlaceholderInsert').ignoreAllChildNodesOfNodeTypeInDropdown;\n    var returnValues = [];\n\n    elements.forEach(function (element) {\n      var node = _this3.props.nodesByContextPath[element.contextPath];\n      if (!node) {\n        return null;\n      }\n\n      if (!(ignoreNodeTypeInDropdown.hasOwnProperty(node.nodeType) && ignoreNodeTypeInDropdown[node.nodeType] === true)) {\n        returnValues.push({\n          value: node.properties.identifier || node.identifier,\n          label: node.properties.label || node.properties.identifier || node.identifier\n        });\n      }\n\n      if (!(ignoreAllChildNodesOfNodeTypeInDropdown.hasOwnProperty(node.nodeType) && ignoreAllChildNodesOfNodeTypeInDropdown[node.nodeType] === true)) {\n        var childNodes = _this3.props.nodesByContextPath[element.contextPath].children;\n        var childOptions = _this3.getOptionsRecursively(childNodes);\n\n        if (Array.isArray(childOptions)) {\n          childOptions.forEach(function (childOption) {\n            returnValues.push(childOption);\n          });\n        }\n      }\n    });\n\n    return returnValues;\n  }\n}) || _class) || _class);\nexports.default = PlaceholderInsertDropdown;\n\n//# sourceURL=webpack:///./src/PlaceholderInsertDropdown.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n__webpack_require__(/*! ./manifest */ \"./src/manifest.js\");\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/manifest.js":
+/*!*************************!*\
+  !*** ./src/manifest.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _neosUiExtensibility = __webpack_require__(/*! @neos-project/neos-ui-extensibility */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/index.js\");\n\nvar _neosUiExtensibility2 = _interopRequireDefault(_neosUiExtensibility);\n\nvar _PlaceholderInsertDropdown = __webpack_require__(/*! ./PlaceholderInsertDropdown */ \"./src/PlaceholderInsertDropdown.js\");\n\nvar _PlaceholderInsertDropdown2 = _interopRequireDefault(_PlaceholderInsertDropdown);\n\nvar _placeholderInsertPlugin = __webpack_require__(/*! ./placeholderInsertPlugin */ \"./src/placeholderInsertPlugin.js\");\n\nvar _placeholderInsertPlugin2 = _interopRequireDefault(_placeholderInsertPlugin);\n\nvar _plowJs = __webpack_require__(/*! plow-js */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar addPlugin = function addPlugin(Plugin, isEnabled) {\n  return function (ckEditorConfiguration, options) {\n    if (!isEnabled || isEnabled(options.editorOptions, options)) {\n      ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];\n      return (0, _plowJs.$add)(\"plugins\", Plugin, ckEditorConfiguration);\n    }\n    return ckEditorConfiguration;\n  };\n};\n\n(0, _neosUiExtensibility2.default)(\"Neos.Form.Builder:PlaceholderInsert\", {}, function (globalRegistry) {\n  var richtextToolbar = globalRegistry.get(\"ckEditor5\").get(\"richtextToolbar\");\n  richtextToolbar.set(\"placeholderInsertt\", {\n    component: _PlaceholderInsertDropdown2.default,\n    isVisible: (0, _plowJs.$get)(\"formatting.placeholderInsert\")\n  });\n\n  var config = globalRegistry.get(\"ckEditor5\").get(\"config\");\n  config.set(\"placeholderInsert\", addPlugin(_placeholderInsertPlugin2.default, (0, _plowJs.$get)(\"formatting.placeholderInsert\")));\n});\n\n//# sourceURL=webpack:///./src/manifest.js?");
+
+/***/ }),
+
+/***/ "./src/placeholderInsertPlugin.js":
+/*!****************************************!*\
+  !*** ./src/placeholderInsertPlugin.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _ckeditor5Exports = __webpack_require__(/*! ckeditor5-exports */ \"./node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js\");\n\nvar PlaceholderInsertCommand = class PlaceholderInsertCommand extends _ckeditor5Exports.Command {\n  execute(value) {\n    var model = this.editor.model;\n    var doc = model.document;\n    var selection = doc.selection;\n    var placeholder = new _ckeditor5Exports.ModelText(\"{\" + value + \"}\");\n    model.insertContent(placeholder, selection);\n  }\n};\nvar PlaceholderInsertPlugin = class PlaceholderInsertPlugin extends _ckeditor5Exports.Plugin {\n  static get pluginName() {\n    return \"PlaceholderInsert\";\n  }\n  init() {\n    var editor = this.editor;\n\n    editor.commands.add(\"placeholderInsert\", new PlaceholderInsertCommand(this.editor));\n  }\n};\nexports.default = PlaceholderInsertPlugin;\n\n//# sourceURL=webpack:///./src/placeholderInsertPlugin.js?");
+
+/***/ })
+
+/******/ });
