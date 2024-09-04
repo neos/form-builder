@@ -2,6 +2,15 @@
 prototype(Neos.Form.Builder:FileExtensionValidator.Definition) < prototype(Neos.Form.Builder:Validator.Definition) {
     formElementType = 'Neos.Flow:FileExtension'
     options {
-      allowedExtensions = Neos.Fusion:DataStructure
+      allowedExtensions = Neos.Fusion:DataStructure {
+        pdf = 'pdf'
+        xls = 'xls'
+        xlsx = 'xlsx'
+        doc = 'doc'
+        docx = 'docx'
+        odt = 'odt'
+        csv = 'csv'
+        zip = 'zip'
+      }
     }
 }
