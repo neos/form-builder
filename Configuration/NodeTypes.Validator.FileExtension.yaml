@@ -3,11 +3,11 @@
     'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'File Extension Validator'
-    icon: 'file-archive'
+    icon: 'icon-file-archive'
     inspector:
       groups:
         'validator':
-          icon: 'icon-sort-numeric-asc'
+          icon: 'icon-filter'
   properties:
     'allowedExtensions':
       type: array
