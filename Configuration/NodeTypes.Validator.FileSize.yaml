@@ -3,11 +3,11 @@
     'Neos.Form.Builder:AbstractValidator': true
   ui:
     label: 'File size range Validator'
-    icon: 'icon-sort-numeric-asc'
+    icon: 'icon-arrows-alt-h'
     inspector:
       groups:
         'validator':
-          icon: 'icon-sort-numeric-asc'
+          icon: 'icon-filter'
   properties:
     'minimum':
       type: integer
