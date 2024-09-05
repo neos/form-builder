@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'File size range Validator'
+    label: 'File-Size range Validator'
     icon: 'icon-arrows-alt-h'
     inspector:
       groups:

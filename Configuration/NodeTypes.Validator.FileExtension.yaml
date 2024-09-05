@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:AbstractValidator': true
   ui:
-    label: 'File Extension Validator'
+    label: 'File-Extension Validator'
     icon: 'icon-file-archive'
     inspector:
       groups:
