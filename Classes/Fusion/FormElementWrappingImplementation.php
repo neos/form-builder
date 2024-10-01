@@ -108,7 +108,7 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         if ($node->getNodeType()->isOfType('Neos.Neos:ContentCollection') && count($node->getChildNodes()) === 0) {
             $additionalAttributes['data-_neos-form-builder-empty-collection'] = true;
         }
-        return $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath, $additionalAttributes);
+        return $this->contentElementWrappingService->wrapContentObject($node,'<div>'.$output.'</div>', $fusionPath, $additionalAttributes);
     }
 
 }
