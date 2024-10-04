@@ -3,13 +3,11 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "build": "neos-react-scripts build",
-        "watch": "neos-react-scripts watch"
+        "build": "node build.js",
+        "watch": "node build.js --watch"
     },
     "devDependencies": {
-      "@neos-project/neos-ui-extensibility-webpack-adapter": "*"
-    },
-    "neos": {
-        "buildTargetDirectory": "../../Public/JavaScript/PlaceholderInsert"
+        "@neos-project/neos-ui-extensibility": "^8.3",
+        "esbuild": "^0.17.0"
     }
 }
