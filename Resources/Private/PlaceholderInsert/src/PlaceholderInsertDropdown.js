@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { SelectBox } from "@neos-project/react-ui-components";
 import React, { PureComponent } from "react";
 import { neos } from "@neos-project/neos-ui-decorators";
-import { $transform } from "plow-js";
 import { selectors } from "@neos-project/neos-ui-redux-store";
 
 export const parentNodeContextPath = contextPath => {
@@ -21,9 +20,9 @@ export const parentNodeContextPath = contextPath => {
 };
 
 @connect(
-  $transform({
-    nodesByContextPath: selectors.CR.Nodes.nodesByContextPathSelector,
-    focusedNode: selectors.CR.Nodes.focusedSelector
+  state => ({
+    nodesByContextPath: selectors.CR.Nodes.nodesByContextPathSelector(state),
+    focusedNode: selectors.CR.Nodes.focusedSelector(state)
   })
 )
 @neos(globalRegistry => ({
