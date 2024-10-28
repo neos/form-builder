@@ -30,7 +30,7 @@ prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!Neos.Node.getNodeType(elementNode).options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(elementNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFormElement {
                 type = ${elementNode.nodeTypeName.value + '.Definition'}
             }
@@ -39,7 +39,7 @@ prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedFormElement {
                 type = 'Neos.Form.Builder:FormElement.Definition'
-                element.formElementType = ${Neos.Node.getNodeType(elementNode).options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(elementNode).options.form.formElementType}
             }
         }
     }

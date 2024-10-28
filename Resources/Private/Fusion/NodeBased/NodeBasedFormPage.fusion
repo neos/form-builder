@@ -16,7 +16,7 @@ prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Loo
     itemName = 'pageNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!Neos.Node.getNodeType(pageNode).options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(pageNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFormPage {
                 type = ${pageNode.nodeTypeName.value + '.Definition'}
             }
@@ -26,7 +26,7 @@ prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Loo
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedFormPage {
                 type = 'Neos.Form.Builder:FormPage.Definition'
-                element.formElementType = ${Neos.Node.getNodeType(pageNode).options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(pageNode).options.form.formElementType}
             }
         }
     }

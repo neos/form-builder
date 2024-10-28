@@ -9,7 +9,7 @@ prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion
     itemName = 'finisherNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!Neos.Node.getNodeType(finisherNode).options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(finisherNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFinisher {
                 type = ${finisherNode.nodeTypeName.value + '.Definition'}
             }
@@ -19,7 +19,7 @@ prototype(Neos.Form.Builder:NodeBasedFinisherCollection) < prototype(Neos.Fusion
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedFinisher {
                 type = 'Neos.Form.Builder:Finisher.Definition'
-                element.formElementType = ${Neos.Node.getNodeType(finisherNode).options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(finisherNode).options.form.formElementType}
             }
         }
     }
