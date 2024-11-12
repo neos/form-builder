@@ -44,3 +44,10 @@ Neos:
         javascript:
           "Neos.Form.Builder:PlaceholderInsert":
             resource: '${"resource://Neos.Form.Builder/Public/JavaScript/PlaceholderInsert/Plugin.js"}'
+
+  ContentRepositoryRegistry:
+    presets:
+      'default':
+        commandHooks:
+          'UniqueIdentifierCommandHookFactory':
+            factoryObjectName: Neos\Form\Builder\CommandHook\UniqueIdentifierCommandHookFactory
