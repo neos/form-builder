@@ -1,7 +1,7 @@
 prototype(Neos.Form.Builder:NodeBasedFormPage) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.page = ${this}
-        identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+        identifier = ${pageNode.properties.identifier || pageNode.aggregateId.value}
         label = ${pageNode.properties.label}
         renderingOptions._node = ${pageNode}
         renderingOptions._fusionPath = ${page.path}
