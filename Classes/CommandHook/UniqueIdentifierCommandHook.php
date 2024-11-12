@@ -4,21 +4,20 @@ namespace Neos\Form\Builder\CommandHook;
 
 use Neos\ContentRepository\Core\CommandHandler\CommandHookInterface;
 use Neos\ContentRepository\Core\CommandHandler\CommandInterface;
-use Neos\ContentRepository\Core\ContentRepository;
 use Neos\ContentRepository\Core\Feature\NodeCreation\Command\CreateNodeAggregateWithNode;
 use Neos\ContentRepository\Core\Feature\NodeModification\Command\SetNodeProperties;
+use Neos\ContentRepository\Core\NodeType\NodeTypeManager;
 use Neos\ContentRepository\Core\NodeType\NodeTypeName;
 use Neos\ContentRepository\Core\NodeType\NodeTypeNames;
+use Neos\ContentRepository\Core\Projection\ContentGraph\ContentGraphReadModelInterface;
 use Neos\ContentRepository\Core\Projection\ContentGraph\ContentSubgraphInterface;
 use Neos\ContentRepository\Core\Projection\ContentGraph\Filter\FindClosestNodeFilter;
 use Neos\ContentRepository\Core\Projection\ContentGraph\Filter\FindDescendantNodesFilter;
 use Neos\ContentRepository\Core\Projection\ContentGraph\Filter\NodeType\NodeTypeCriteria;
 use Neos\ContentRepository\Core\Projection\ContentGraph\Filter\PropertyValue\Criteria\PropertyValueEquals;
 use Neos\ContentRepository\Core\Projection\ContentGraph\VisibilityConstraints;
-use Neos\ContentRepository\Core\SharedModel\ContentRepository\ContentRepositoryId;
 use Neos\ContentRepository\Core\SharedModel\Node\NodeAggregateId;
 use Neos\ContentRepository\Core\SharedModel\Node\PropertyName;
-use Neos\ContentRepositoryRegistry\ContentRepositoryRegistry;
 
 class UniqueIdentifierCommandHook implements CommandHookInterface
 {
@@ -26,8 +25,8 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
     const NEOS_FORM_BUILDER_IDENTIFIER_MIXIN = 'Neos.Form.Builder:IdentifierMixin';
 
     public function __construct(
-        protected ContentRepositoryRegistry $contentRepositoryRegistry,
-        protected ContentRepositoryId $contentRepositoryId
+        protected ContentGraphReadModelInterface $contentGraphReadModel,
+        protected NodeTypeManager $nodeTypeMananger
     ) {
     }
 
@@ -43,10 +42,10 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
     private function handleSetNodeProperties(SetNodeProperties $command): CommandInterface
     {
         if (isset($command->propertyValues->values['identifier'])) {
-            $contentGraph = $this->getContentRepository()->getContentGraph($command->workspaceName);
+            $contentGraph = $this->contentGraphReadModel->getContentGraph($command->workspaceName);
             $subgraph = $contentGraph->getSubgraph($command->originDimensionSpacePoint->toDimensionSpacePoint(), VisibilityConstraints::withoutRestrictions());
             $node = $subgraph->findNodeById($command->nodeAggregateId);
-            if ($node === null || !$this->getContentRepository()->getNodeTypeManager()->getNodeType($node->nodeTypeName)->isOfType(NodeTypeName::fromString(self::NEOS_FORM_BUILDER_IDENTIFIER_MIXIN))) {
+            if ($node === null || !$this->nodeTypeMananger->getNodeType($node->nodeTypeName)->isOfType(NodeTypeName::fromString(self::NEOS_FORM_BUILDER_IDENTIFIER_MIXIN))) {
                 return $command;
             }
             $identifier = $this->findUniqueIdentifier($subgraph, $command->nodeAggregateId, $command->propertyValues->values['identifier']);
@@ -63,7 +62,7 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
     private function handleCreateNodeAggregateWithNode(CreateNodeAggregateWithNode $command): CommandInterface
     {
         if (isset($command->initialPropertyValues->values['identifier'])) {
-            $contentGraph = $this->getContentRepository()->getContentGraph($command->workspaceName);
+            $contentGraph = $this->contentGraphReadModel->getContentGraph($command->workspaceName);
             $subgraph = $contentGraph->getSubgraph($command->originDimensionSpacePoint->toDimensionSpacePoint(), VisibilityConstraints::withoutRestrictions());
 
             $identifier = $this->findUniqueIdentifier($subgraph, $command->nodeAggregateId, $command->initialPropertyValues->values['identifier']);
@@ -108,10 +107,5 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
             }
         }
         return $uniqueIdentifier;
-    }
-
-    private function getContentRepository(): ContentRepository
-    {
-        return $this->contentRepositoryRegistry->get($this->contentRepositoryId);
     }
 }
