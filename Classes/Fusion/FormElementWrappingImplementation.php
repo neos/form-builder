@@ -64,7 +64,9 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                     }
                     if (!$renderable->getRootForm()->hasPageWithIndex(1)) {
                         $furtherPages = $subgraph->findNodeByPath(NodeName::fromString('furtherPages'), $node->aggregateId);
-                        $output = $output . $this->wrapNode($subgraph, $furtherPages, '', $fusionPath . '/furtherPages');
+                        if ($furtherPagesNode !== null) {
+                            $output = $output . $this->wrapNode($subgraph, $furtherPages, '', $fusionPath . '/furtherPages');
+                        }
                     }
                     return $output;
                 }
