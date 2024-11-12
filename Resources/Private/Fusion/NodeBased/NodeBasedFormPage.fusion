@@ -1,24 +1,24 @@
 prototype(Neos.Form.Builder:NodeBasedFormPage) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.page = ${this}
-        identifier = ${pageNode.properties.identifier ? pageNode.properties.identifier : pageNode.identifier}
+        identifier = ${pageNode.properties.identifier || pageNode.aggregateId.value}
         label = ${pageNode.properties.label}
         renderingOptions._node = ${pageNode}
         renderingOptions._fusionPath = ${page.path}
 
         elements = Neos.Form.Builder:NodeBasedElementCollection {
-            collection = ${q(pageNode).children('elements').children()}
+            items = ${q(pageNode).children('elements').children()}
         }
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'pageNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!pageNode.nodeType.options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(pageNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFormPage {
-                type = ${pageNode.nodeType.name + '.Definition'}
+                type = ${pageNode.nodeTypeName.value + '.Definition'}
             }
         }
 
@@ -26,7 +26,7 @@ prototype(Neos.Form.Builder:NodeBasedPageCollection) < prototype(Neos.Fusion:Col
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedFormPage {
                 type = 'Neos.Form.Builder:FormPage.Definition'
-                element.formElementType = ${pageNode.nodeType.options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(pageNode).options.form.formElementType}
             }
         }
     }

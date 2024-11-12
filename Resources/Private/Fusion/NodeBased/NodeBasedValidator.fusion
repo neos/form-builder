@@ -5,13 +5,13 @@ prototype(Neos.Form.Builder:NodeBasedValidator) < prototype(Neos.Fusion:Renderer
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'validatorNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!validatorNode.nodeType.options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(validatorNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedValidator {
-                type = ${validatorNode.nodeType.name + '.Definition'}
+                type = ${validatorNode.nodeTypeName.value + '.Definition'}
             }
         }
 
@@ -19,7 +19,7 @@ prototype(Neos.Form.Builder:NodeBasedValidatorCollection) < prototype(Neos.Fusio
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedValidator {
                 type = 'Neos.Form.Builder:Validator.Definition'
-                element.formElementType = ${validatorNode.nodeType.options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(validatorNode).options.form.formElementType}
             }
         }
     }

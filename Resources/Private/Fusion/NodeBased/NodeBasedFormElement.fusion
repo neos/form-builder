@@ -1,45 +1,45 @@
 prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.element = ${this}
-        identifier = ${elementNode.properties.identifier ? elementNode.properties.identifier : elementNode.identifier}
+        identifier = ${elementNode.properties.identifier || pageNode.aggregateId.value}
         label = ${elementNode.properties.label}
         required = ${elementNode.properties.required}
         defaultValue = ${elementNode.properties.defaultValue}
         properties.@process.addNodeProperties = ${Neos.Form.Builder.Node.mergeProperties(value, elementNode)}
         validators = Neos.Form.Builder:NodeBasedValidatorCollection {
-            collection = ${q(elementNode).children('validators').children()}
+            items = ${q(elementNode).children('validators').children()}
         }
         renderingOptions._node = ${elementNode}
         renderingOptions._fusionPath = ${element.path}
 
         properties.options.@process.overrideFromNode = Neos.Form.Builder:SelectOptionCollection {
-            collection = ${q(elementNode).children('options').children()}
+            items = ${q(elementNode).children('options').children()}
             valuePropertyPath = 'properties.value'
             labelPropertyPath = 'properties.label'
             @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
         }
 
         elements.@process.overrideFromNode = Neos.Form.Builder:NodeBasedElementCollection {
-            collection = ${q(elementNode).children('elements').children()}
+            items = ${q(elementNode).children('elements').children()}
             @if.isSectionFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SectionMixin]')}
         }
     }
 }
 
-prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:Collection) {
+prototype(Neos.Form.Builder:NodeBasedElementCollection) < prototype(Neos.Fusion:Loop) {
     itemName = 'elementNode'
     itemRenderer = Neos.Fusion:Case {
         formElementTypeFromNodeType {
-            condition = ${!elementNode.nodeType.options.form.formElementType}
+            condition = ${!Neos.Node.nodeType(elementNode).options.form.formElementType}
             renderer = Neos.Form.Builder:NodeBasedFormElement {
-                type = ${elementNode.nodeType.name + '.Definition'}
+                type = ${elementNode.nodeTypeName.value + '.Definition'}
             }
         }
         default {
             condition = ${true}
             renderer = Neos.Form.Builder:NodeBasedFormElement {
                 type = 'Neos.Form.Builder:FormElement.Definition'
-                element.formElementType = ${elementNode.nodeType.options.form.formElementType}
+                element.formElementType = ${Neos.Node.nodeType(elementNode).options.form.formElementType}
             }
         }
     }

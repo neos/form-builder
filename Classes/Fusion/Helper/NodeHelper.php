@@ -1,7 +1,8 @@
 <?php
 namespace Neos\Form\Builder\Fusion\Helper;
 
-use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Core\Projection\ContentGraph\Node;
+use Neos\ContentRepository\Core\Projection\ContentGraph\PropertyCollection;
 use Neos\Eel\ProtectedContextAwareInterface;
 
 /**
@@ -13,16 +14,14 @@ class NodeHelper implements ProtectedContextAwareInterface
     /**
      * Merge properties of the specified $node to the given $properties (with precedence to node properties)
      *
-     * Note: This is required since NodeInterface::getProperties() does no longer return an array but an instance of PropertyCollectionInterface
-     *
      * @param array $properties
-     * @param NodeInterface $node
+     * @param Node $node
      * @return array
      */
-    public function mergeProperties(array $properties, NodeInterface $node): array
+    public function mergeProperties(array $properties, Node $node): array
     {
-        $nodeProperties = $node->getProperties();
-        if ($nodeProperties instanceof \Traversable) {
+        $nodeProperties = $node->properties;
+        if ($nodeProperties instanceof PropertyCollection) {
             $nodeProperties = iterator_to_array($nodeProperties);
         }
         return array_merge($properties, $nodeProperties);

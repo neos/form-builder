@@ -1,12 +1,12 @@
 prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
     @context.formNode = ${q(node).closest('[instanceof Neos.Form.Builder:NodeBasedForm]').get(0)}
     @context.formFusionPath = ${this.path}
-    identifier = ${formNode.properties.identifier ? formNode.properties.identifier : 'form-' + formNode.identifier}
+    identifier = ${formNode.properties.identifier || 'form-' + pageNode.aggregateId.value}
     presetName = ${formNode.properties.preset ? formNode.properties.preset : 'default'}
-    formElementType = ${formNode.context.inBackend ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
+    formElementType = ${renderingMode.isEdit ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
 
     renderCallbacks.formElementWrapping = Neos.Form.Builder:FormElementWrapping {
-        @if.isInBackend = ${formNode.context.inBackend}
+        @if.isInBackend = ${renderingMode.isEdit}
     }
 
     firstPage {
@@ -14,18 +14,18 @@ prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
         renderingOptions._node = ${formNode}
         renderingOptions._fusionPath = ${formFusionPath}
         elements = Neos.Form.Builder:NodeBasedElementCollection {
-            collection = ${q(formNode).children('elements').children()}
+            items = ${q(formNode).children('elements').children()}
         }
     }
     furtherPages = Neos.Form.Builder:NodeBasedPageCollection {
-        collection = ${q(formNode).children('furtherPages').children()}
+        items = ${q(formNode).children('furtherPages').children()}
     }
     finishers = Neos.Form.Builder:NodeBasedFinisherCollection {
-        collection = ${q(formNode).children('finishers').children()}
+        items = ${q(formNode).children('finishers').children()}
     }
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping {
         additionalAttributes {
-            'data-_neos-form-builder-type' = ${formNode.nodeType.name}
+            'data-_neos-form-builder-type' = ${formNode.nodeTypeName.value}
         }
     }
 
