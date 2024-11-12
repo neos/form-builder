@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Form.Builder:FormElement': true
     'Neos.Form.Builder:SectionMixin': true
-    'Neos.Form.Builder:IdentifierMixin': true
+    'Neos.Form.Builder:IdentifierMixin': false
     'Neos.Form.Builder:DefaultValueMixin': false
     'Neos.Form.Builder:RequiredCheckboxMixin': false
   ui:
