@@ -113,5 +113,4 @@ class FormElementWrappingImplementation extends AbstractFusionObject
         }
         return $this->contentElementWrappingService->wrapContentObject($node, $output, $fusionPath, $additionalAttributes);
     }
-
 }
