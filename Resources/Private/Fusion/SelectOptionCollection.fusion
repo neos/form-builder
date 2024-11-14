@@ -3,6 +3,11 @@ prototype(Neos.Form.Builder:SelectOptionCollection) {
 
     prependOptionLabel = ${null}
     prependOptionValue = ${null}
-    valuePropertyPath = 'value'
-    labelPropertyPath = 'label'
+
+    items = null
+    itemName = 'item'
+    itemRenderer = Neos.Fusion:DataStructure {
+        value = null
+        label = null
+    }
 }
