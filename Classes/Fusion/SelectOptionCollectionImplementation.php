@@ -49,15 +49,12 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
         return $options;
     }
 
-    /**
-     * @return array|\Traversable
-     */
-    private function getItems()
+    private function getItems(): ?iterable
     {
         return $this->fusionValue('items');
     }
 
-    private function getItemName()
+    private function getItemName(): string
     {
         return $this->fusionValue('itemName');
     }
