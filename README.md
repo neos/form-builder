@@ -376,8 +376,17 @@ selectable:
     properties {
         options = Neos.Form.Builder:SelectOptionCollection {
             items = ${q(site).children('[instanceof Some.Package:NewsletterCategory]')}
-            # we use the node identifier as value, we could use "name" or "label" instead for example
-            valuePropertyPath = 'identifier'
+            itemRenderer = Neos.Fusion:DataStructure {
+                value = ${item.aggregateId}
+                label = ${q(item).property('title')}
+            }
         }
     }
 ```
+
+## Upgrade from to version 5
+### Neos.Form.Builder:SelectOptionCollection
+The `Neos.Form.Builder:SelectOptionCollection` prototype has been changed and uses now `items` instead of `collection`.
+
+Also, the way how dynamic options got collected has been changed. Instead of defining the property path, you now need to 
+use a renderer to render the `value` and `label` of your option. 

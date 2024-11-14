@@ -1,8 +1,9 @@
 <?php
+
 namespace Neos\Form\Builder\Fusion;
 
+use Neos\ContentRepository\Core\Projection\ContentGraph\Node;
 use Neos\Fusion\FusionObjects\AbstractArrayFusionObject;
-use Neos\Utility\ObjectAccess;
 
 class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
 {
@@ -10,8 +11,9 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
     protected $ignoreProperties = [
         'prependOptionLabel',
         'prependOptionValue',
-        'labelPropertyPath',
-        'valuePropertyPath'
+        'items',
+        'itemName',
+        'itemRenderer'
     ];
 
     public function evaluate()
@@ -29,13 +31,19 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
                 $options[$propertyName] = $propertyValue;
             }
         } else {
-            foreach ($items as $item) {
-                $value = ObjectAccess::getPropertyPath($item, $this->getValuePropertyPath());
-                $label = ObjectAccess::getPropertyPath($item, $this->getLabelPropertyPath());
+            $renderedItems = $this->renderItems($items);
+            foreach ($renderedItems as $renderedItem) {
+                $value = $renderedItem['value'] ?? null;
+                $label = $renderedItem['label'] ?? null;
+
+                if ($value === null) {
+                    continue;
+                }
+
                 if (strlen($label) === 0) {
                     $label = $value;
                 }
-                $options[$value] = $label;
+                $options[(string)$value] = $label;
             }
         }
         return $options;
@@ -49,14 +57,9 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
         return $this->fusionValue('items');
     }
 
-    private function getValuePropertyPath(): string
+    private function getItemName()
     {
-        return $this->fusionValue('valuePropertyPath');
-    }
-
-    private function getLabelPropertyPath(): string
-    {
-        return $this->fusionValue('labelPropertyPath');
+        return $this->fusionValue('itemName');
     }
 
     private function getPrependOptionLabel(): string
@@ -67,5 +70,26 @@ class SelectOptionCollectionImplementation extends AbstractArrayFusionObject
     private function getPrependOptionValue(): string
     {
         return $this->fusionValue('prependOptionValue') ?? '';
+    }
+
+    private function renderItems(iterable $items): array
+    {
+        $itemName = $this->getItemName();
+        $itemRenderPath = $this->path . '/itemRenderer';
+
+        $result = [];
+        if ($this->runtime->canRender($itemRenderPath) === true) {
+            foreach ($items as $item) {
+                $context = $this->runtime->getCurrentContext();
+                $context[$itemName] = $item;
+
+                $this->runtime->pushContextArray($context);
+
+                $result[] = $this->runtime->render($itemRenderPath);
+
+                $this->runtime->popContext();
+            }
+        }
+        return $result;
     }
 }
