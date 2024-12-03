@@ -384,7 +384,7 @@ selectable:
     }
 ```
 
-## Upgrade from to version 5
+## Upgrade to version 3
 ### Neos.Form.Builder:SelectOptionCollection
 The `Neos.Form.Builder:SelectOptionCollection` prototype has been changed and uses now `items` instead of `collection`.
 
