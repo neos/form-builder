@@ -1,0 +1,25 @@
+'Neos.Form.Builder:FileSizeValidator':
+  superTypes:
+    'Neos.Form.Builder:AbstractValidator': true
+  ui:
+    label: 'File-Size range Validator'
+    icon: 'icon-arrows-alt-h'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-filter'
+  properties:
+    'minimum':
+      type: integer
+      defaultValue: 0
+      ui:
+        label: i18n
+        inspector:
+          group: 'validator'
+    'maximum':
+      type: integer
+      defaultValue: 100
+      ui:
+        label: i18n
+        inspector:
+          group: 'validator'
