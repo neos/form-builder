@@ -4,6 +4,8 @@ namespace Neos\Form\Builder\CommandHook;
 
 use Neos\ContentRepository\Core\CommandHandler\CommandHookInterface;
 use Neos\ContentRepository\Core\CommandHandler\CommandInterface;
+use Neos\ContentRepository\Core\CommandHandler\Commands;
+use Neos\ContentRepository\Core\EventStore\PublishedEvents;
 use Neos\ContentRepository\Core\Feature\NodeCreation\Command\CreateNodeAggregateWithNode;
 use Neos\ContentRepository\Core\Feature\NodeModification\Command\SetNodeProperties;
 use Neos\ContentRepository\Core\NodeType\NodeTypeManager;
@@ -37,6 +39,11 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
             $command instanceof CreateNodeAggregateWithNode => $this->handleCreateNodeAggregateWithNode($command),
             default => $command
         };
+    }
+
+    public function onAfterHandle(CommandInterface $command, PublishedEvents $events): Commands
+    {
+        return Commands::createEmpty();
     }
 
     private function handleSetNodeProperties(SetNodeProperties $command): CommandInterface
