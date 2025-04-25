@@ -1,0 +1,10 @@
+'Neos.Form.Builder:FileMixin':
+  abstract: true
+  superTypes:
+    'Neos.Form.Builder:ValidatorsMixin': true
+  childNodes:
+    'validators':
+      constraints:
+        nodeTypes:
+          'Neos.Form.Builder:FileSizeValidator': true
+          'Neos.Form.Builder:FileTypeValidator': true
