@@ -1,7 +1,7 @@
 prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Renderer) {
     element {
         @context.element = ${this}
-        identifier = ${elementNode.properties.identifier || pageNode.aggregateId.value}
+        identifier = ${elementNode.properties.identifier || elementNode.aggregateId.value}
         label = ${elementNode.properties.label}
         required = ${elementNode.properties.required}
         defaultValue = ${elementNode.properties.defaultValue}

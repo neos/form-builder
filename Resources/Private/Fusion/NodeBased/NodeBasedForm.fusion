@@ -1,7 +1,7 @@
 prototype(Neos.Form.Builder:NodeBasedForm) < prototype(Neos.Form.Builder:Form) {
     @context.formNode = ${q(node).closest('[instanceof Neos.Form.Builder:NodeBasedForm]').get(0)}
     @context.formFusionPath = ${this.path}
-    identifier = ${formNode.properties.identifier || 'form-' + pageNode.aggregateId.value}
+    identifier = ${formNode.properties.identifier || 'form-' + formNode.aggregateId.value}
     presetName = ${formNode.properties.preset ? formNode.properties.preset : 'default'}
     formElementType = ${renderingMode.isEdit ? 'Neos.Form:FormEditMode' : 'Neos.Form:Form'}
 
