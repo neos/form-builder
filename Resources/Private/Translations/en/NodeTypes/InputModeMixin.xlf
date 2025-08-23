@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.inputMode" xml:space="preserve">
+				<source>Input mode (relevant for mobile browsers)</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.decimal" xml:space="preserve">
+				<source>Decimal</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.email" xml:space="preserve">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.none" xml:space="preserve">
+				<source>None</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.numeric" xml:space="preserve">
+				<source>Numeric</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.search" xml:space="preserve">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.tel" xml:space="preserve">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.text" xml:space="preserve">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="properties.inputMode.selectBoxEditor.values.url" xml:space="preserve">
+				<source>URL</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
