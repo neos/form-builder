@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Neos.Form.Builder" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="properties.minimum" xml:space="preserve">
+				<source>Minimum value</source>
+			<target xml:lang="de" state="translated">Mindestwert in Bytes</target></trans-unit>
+      <trans-unit id="properties.maximum" xml:space="preserve">
+				<source>Maximum value</source>
+			<target xml:lang="de" state="translated">Maximalwert in Bytes</target></trans-unit>
+    </body>
+  </file>
+</xliff>

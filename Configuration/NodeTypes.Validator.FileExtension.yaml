@@ -1,0 +1,45 @@
+'Neos.Form.Builder:FileExtensionValidator':
+  superTypes:
+    'Neos.Form.Builder:AbstractValidator': true
+  ui:
+    label: 'File-Extension Validator'
+    icon: 'icon-file-archive'
+    inspector:
+      groups:
+        'validator':
+          icon: 'icon-filter'
+  properties:
+    'allowedExtensions':
+      type: array
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: 'validator'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'pdf':
+                label: '.pdf'
+                icon: 'icon-file-pdf-o'
+              'xls':
+                label: '.xls'
+                icon: 'icon-file-excel-o'
+              'xlsx':
+                label: '.xlsx'
+                icon: 'icon-file-excel-o'
+              'doc':
+                label: '.doc'
+                icon: 'icon-file-text'
+              'docx':
+                label: '.docx'
+                icon: 'icon-file-text'
+              'odt':
+                label: '.odt'
+                icon: 'icon-file-text'
+              'csv':
+                label: '.csv'
+                icon: 'icon-file-text'
+              'zip':
+                label: '.zip'
+                icon: 'icon-file-text'
