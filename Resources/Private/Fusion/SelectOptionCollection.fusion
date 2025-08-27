@@ -7,7 +7,7 @@ prototype(Neos.Form.Builder:SelectOptionCollection) {
     items = null
     itemName = 'item'
     itemRenderer = Neos.Fusion:DataStructure {
-        value = null
-        label = null
+        value = ${q(item).property("value")}
+        label = ${q(item).property("label")}
     }
 }
