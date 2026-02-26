@@ -92,6 +92,10 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
             )
         );
 
+        if ($form === null) {
+            return $identifier;
+        }
+
         $uniqueIdentifier = null;
         $possibleIdentifier = $identifier;
         $i = 1;
@@ -107,7 +111,7 @@ class UniqueIdentifierCommandHook implements CommandHookInterface
             );
 
             if ($descendants->count() === 0
-                || $descendants->count() === 1 && $descendants->first()->aggregateId->equals($currentNodeAggregateId)) {
+                || ($descendants->count() === 1 && $descendants->first()->aggregateId->equals($currentNodeAggregateId))) {
                 $uniqueIdentifier = $possibleIdentifier;
             } else {
                 $possibleIdentifier = $identifier . '-' . $i++;
