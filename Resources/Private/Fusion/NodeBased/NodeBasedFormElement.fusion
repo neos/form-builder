@@ -14,8 +14,10 @@ prototype(Neos.Form.Builder:NodeBasedFormElement) < prototype(Neos.Fusion:Render
 
         properties.options.@process.overrideFromNode = Neos.Form.Builder:SelectOptionCollection {
             items = ${q(elementNode).children('options').children()}
-            valuePropertyPath = 'properties.value'
-            labelPropertyPath = 'properties.label'
+            itemRenderer = Neos.Fusion:DataStructure {
+                value = ${item.aggregateId}
+                label = ${q(item).property('label') || q(item).property('value')}
+            }
             @if.isSelectFormElement = ${q(elementNode).is('[instanceof Neos.Form.Builder:SelectionMixin]')}
         }
 
