@@ -44,7 +44,19 @@ Neos:
         javascript:
           "Neos.Form.Builder:PlaceholderInsert":
             resource: '${"resource://Neos.Form.Builder/Public/JavaScript/PlaceholderInsert/Plugin.js"}'
-
+      frontendConfiguration:
+        'Neos.Form.Builder:PlaceholderInsert':
+          # ignore node types in dropdown
+          ignoreNodeTypeInDropdown:
+            'Neos.Form.Builder:Section': true
+            'Neos.Form.Builder:StaticText': true
+            'Neos.Form.Builder:ElementCollection': true
+            'Neos.Form.Builder:SelectOptionCollection': true
+            'Neos.Form.Builder:ValidatorCollection': true
+          # ignore all child nodes of node type in dropdown
+          ignoreAllChildNodesOfNodeTypeInDropdown:
+            'Neos.Form.Builder:SelectOptionCollection': true
+            'Neos.Form.Builder:ValidatorCollection': true
   ContentRepositoryRegistry:
     presets:
       'default':
