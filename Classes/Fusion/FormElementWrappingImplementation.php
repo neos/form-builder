@@ -76,7 +76,8 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                 if (!$this->isLastPageNode($node)) {
                     return '';
                 }
-                return $this->wrapNode($subgraph, $node, $this->pendingOutput, $this->parentFusionPath($fusionPath));
+                $pageCollectionNode = $subgraph->findParentNode($node->aggregateId) ?? $node;
+                return $this->wrapNode($subgraph, $pageCollectionNode, $this->pendingOutput, $this->parentFusionPath($fusionPath));
             }
             return $this->wrapNodeRecursively($subgraph, $node, $output, $fusionPath);
         });
