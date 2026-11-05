@@ -76,6 +76,11 @@ class FormElementWrappingImplementation extends AbstractFusionObject
                 if (!$this->isLastPageNode($node)) {
                     return '';
                 }
+                $pageCollectionNode = $subgraph->findParentNode($node->aggregateId);
+                if ($pageCollectionNode instanceof Node
+                    && $nodeTypeManager->getNodeType($pageCollectionNode->nodeTypeName)?->isOfType('Neos.Form.Builder:PageCollection')) {
+                    return $this->wrapNode($subgraph, $pageCollectionNode, $this->pendingOutput, $this->parentFusionPath($fusionPath));
+                }
                 return $this->wrapNode($subgraph, $node, $this->pendingOutput, $this->parentFusionPath($fusionPath));
             }
             return $this->wrapNodeRecursively($subgraph, $node, $output, $fusionPath);
